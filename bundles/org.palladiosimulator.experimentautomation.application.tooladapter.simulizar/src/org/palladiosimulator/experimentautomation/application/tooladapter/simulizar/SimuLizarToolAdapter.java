@@ -26,7 +26,7 @@ import de.uka.ipd.sdq.simucomframework.SimuComConfig;
  */
 public class SimuLizarToolAdapter implements IToolAdapter {
 
-    private static final String SIMULATOR_ID_SIMULIZAR = "de.uka.ipd.sdq.codegen.simucontroller.simucom";
+    private static final String SIMULATOR_ID_SIMULIZAR = "de.uka.ipd.sdq.codegen.simucontroller.simulizar";
 
     /**
      * {@inheritDoc}
