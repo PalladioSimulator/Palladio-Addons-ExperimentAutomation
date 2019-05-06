@@ -10,18 +10,15 @@
    <description url="https://sdqweb.ipd.kit.edu/wiki/Palladio_Experiment_Automation">
       Experiment Automation examples.
    </description>
+   
+   <requires>
+      <import plugin="org.palladiosimulator.branding"/>
+   </requires>
 
    <plugin
          id="org.palladiosimulator.experimentautomation.examples.espresso"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
-
-   <plugin
-         id="org.palladiosimulator.branding"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
 
 </feature>

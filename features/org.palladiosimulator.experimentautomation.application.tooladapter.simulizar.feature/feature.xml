@@ -36,6 +36,7 @@
       <import plugin="org.palladiosimulator.servicelevelobjective"/>
       <import plugin="org.scaledl.usageevolution"/>
       <import plugin="tools.descartes.dlim.generator"/>
+      <import plugin="org.palladiosimulator.branding"/>
    </requires>
 
    <plugin
@@ -47,13 +48,6 @@
 
    <plugin
          id="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.palladiosimulator.branding"
          download-size="0"
          install-size="0"
          version="0.0.0"
