@@ -1,6 +1,7 @@
 package org.palladiosimulator.experimentautomation.application.jobs;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration;
@@ -74,6 +75,20 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
             final Variation variation = copy.remove(0);
 
             new ExperimentsSwitch<Void>() {
+            	@Override
+            	public Void caseLinearValueProvider(org.palladiosimulator.experimentautomation.experiments.LinearValueProvider object) {
+            		final IValueProviderStrategy<Double> valueProvider = ValueProviderFactory
+                            .createDoubleValueProvider(object);
+            		
+            		for (long i = (long) variation.getMinValue(); i < (long) variation.getMaxValue(); i++) {
+            			VariationFactorTuple variationFactorTuple = new VariationFactorTuple<Long>(variation, i);
+            			List<VariationFactorTuple> singletonList = Collections.singletonList(variationFactorTuple);
+						ComputeVariantsAndAddExperimentJob.this.add(new VaryJob(singletonList));
+						ComputeVariantsAndAddExperimentJob.this.add(new RepeatExperimentJob(experiment, simulationConfiguration, singletonList));
+            		}
+            		
+            		return null;
+            	};
 
                 @Override
                 public Void caseNestedIntervalsLongValueProvider(
