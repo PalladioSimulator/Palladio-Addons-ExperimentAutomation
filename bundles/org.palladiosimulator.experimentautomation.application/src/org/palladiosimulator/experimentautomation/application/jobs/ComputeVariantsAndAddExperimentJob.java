@@ -1,18 +1,33 @@
 package org.palladiosimulator.experimentautomation.application.jobs;
 
+import java.io.File;
+import java.sql.BatchUpdateException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.palladiosimulator.edp2.batchexport.BatchExporter;
+import org.palladiosimulator.edp2.impl.RepositoryManager;
+import org.palladiosimulator.edp2.local.LocalDirectoryRepository;
+import org.palladiosimulator.edp2.models.Repository.Repository;
+import org.palladiosimulator.edp2.repository.local.LocalDirectoryRepositoryHelper;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration;
+import org.palladiosimulator.experimentautomation.abstractsimulation.EDP2Datasource;
+import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasource;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
+import org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl;
 import org.palladiosimulator.experimentautomation.application.variation.valueprovider.IValueProviderStrategy;
 import org.palladiosimulator.experimentautomation.application.variation.valueprovider.ValueProviderFactory;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
 import org.palladiosimulator.experimentautomation.experiments.util.ExperimentsSwitch;
 
+import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
+import de.uka.ipd.sdq.workflow.jobs.IJob;
+import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
+import de.uka.ipd.sdq.workflow.jobs.UserCanceledException;
 import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
 
 /**
@@ -86,6 +101,30 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
 						ComputeVariantsAndAddExperimentJob.this.add(new VaryJob(singletonList));
 						ComputeVariantsAndAddExperimentJob.this.add(new RepeatExperimentJob(experiment, simulationConfiguration, singletonList));
             		}
+            		
+            		ComputeVariantsAndAddExperimentJob.this.add(new IJob() {
+						
+						@Override
+						public String getName() {
+							// TODO Auto-generated method stub
+							return null;
+						}
+						
+						@Override
+						public void execute(IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
+							SimuLizarConfigurationImpl sci = ((SimuLizarConfigurationImpl) experiment.getToolConfiguration().get(0));
+							FileDatasource o = (FileDatasource) sci.getDatasource();
+							Repository repository = RepositoryManager.getRepositoryFromUUID(sci.getDatasource().getId());
+							String edp2target = System.getProperty("edp2target");
+							BatchExporter.batchExport(repository, edp2target);
+						}
+						
+						@Override
+						public void cleanup(IProgressMonitor monitor) throws CleanupFailedException {
+							// TODO Auto-generated method stub
+							
+						}
+					});
             		
             		return null;
             	};

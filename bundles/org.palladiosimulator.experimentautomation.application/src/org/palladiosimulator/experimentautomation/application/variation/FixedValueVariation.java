@@ -35,8 +35,10 @@ public class FixedValueVariation implements IVariationStrategy<Long> {
 		 relevantResources = resourceSet.getResources().stream().filter(new Predicate<Resource>() {
 			@Override
 			public boolean test(Resource it) {
+				if (it == null || it.getContents() == null || it.getContents().isEmpty())
+					return false;
 				EObject root = it.getContents().get(0);
-				 return root instanceof Repository || root instanceof UsageModel; 
+				return root instanceof Repository || root instanceof UsageModel; 
 			 
 			}}).collect(Collectors.<Resource>toList());
 		 
