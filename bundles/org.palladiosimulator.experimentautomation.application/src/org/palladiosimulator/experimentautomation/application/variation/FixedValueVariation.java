@@ -11,10 +11,12 @@ import java.util.stream.Collectors;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.palladiosimulator.pcm.repository.OperationSignature;
 import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.seff.AbstractAction;
 import org.palladiosimulator.pcm.seff.InternalAction;
 import org.palladiosimulator.pcm.usagemodel.ClosedWorkload;
+import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall;
 import org.palladiosimulator.pcm.usagemodel.OpenWorkload;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
 import org.palladiosimulator.pcm.usagemodel.UsageScenario;
@@ -99,6 +101,10 @@ public class FixedValueVariation implements IVariationStrategy<Long> {
 			UsageScenario us = (UsageScenario) targetObject;
 			OpenWorkload cw = (OpenWorkload) us.getWorkload_UsageScenario();
 			cw.getInterArrivalTime_OpenWorkload().setSpecification(newValue);
+		} else if (navigation.equals("ELSC_OperationSignature")) {
+			EntryLevelSystemCall elsc = (EntryLevelSystemCall) targetObject;
+			OperationSignature os = (OperationSignature) findObject(newValue);
+			elsc.setOperationSignature__EntryLevelSystemCall(os);
 		} else {
 			throw new IllegalStateException();
 		}
