@@ -104,6 +104,8 @@ public class FixedValueVariation implements IVariationStrategy<Long> {
 		} else if (navigation.equals("ELSC_OperationSignature")) {
 			EntryLevelSystemCall elsc = (EntryLevelSystemCall) targetObject;
 			OperationSignature os = (OperationSignature) findObject(newValue);
+			if (os == null)
+				throw new IllegalStateException();
 			elsc.setOperationSignature__EntryLevelSystemCall(os);
 		} else {
 			throw new IllegalStateException();
