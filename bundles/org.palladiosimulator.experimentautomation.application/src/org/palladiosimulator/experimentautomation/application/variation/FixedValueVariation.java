@@ -23,7 +23,7 @@ import org.palladiosimulator.pcm.usagemodel.UsageScenario;
 
 
 public class FixedValueVariation implements IVariationStrategy<Long> {
-	private final String pathToValueSource = "C:\\git\\BA_Sebastian_Weber\\BA_Data_Share\\edu.kit.ipd.are.cassandra\\valuesToInstall.txt";
+	private final String pathToValueSource = "";
 	private final List<String> allConfigurations = new ArrayList<String>();
 
 	private ResourceSet resourceSet;
@@ -63,6 +63,7 @@ public class FixedValueVariation implements IVariationStrategy<Long> {
 		
 		String[] adjustmentOperations = configuration.split("###");
 		for (int i = 0; i < adjustmentOperations.length; i++) {
+			System.out.println(adjustmentOperations[i]);
 			parseAndExecute(adjustmentOperations[i]);
 		}
 		
