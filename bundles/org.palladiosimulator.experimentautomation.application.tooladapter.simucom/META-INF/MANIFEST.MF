@@ -4,7 +4,7 @@ Bundle-Name: Experimentautomationadapter
 Bundle-SymbolicName: org.palladiosimulator.experimentautomation.application.tooladapter.simucom;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: palladiosimulator.org
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Require-Bundle: de.uka.ipd.sdq.simulation;bundle-version="1.0.0",
  de.uka.ipd.sdq.simucomframework;bundle-version="2.0.0",
  de.uka.ipd.sdq.codegen.simucontroller;bundle-version="1.0.0",

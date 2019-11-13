@@ -21,7 +21,7 @@ Require-Bundle: de.uka.ipd.sdq.simucomframework;bundle-version="2.0.0",
  org.palladiosimulator.simulizar.reconfiguration.storydiagram,
  org.palladiosimulator.servicelevelobjective.edp2;bundle-version="1.0.1",
  org.palladiosimulator.edp2.repository.local;bundle-version="1.0.0"
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.experimentautomation.application,
  org.palladiosimulator.experimentautomation.application.config,
  org.palladiosimulator.experimentautomation.application.jobs,

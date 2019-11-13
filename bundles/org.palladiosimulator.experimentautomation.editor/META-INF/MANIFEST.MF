@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.experimentautomation.variation.presentation.ExperimentAutomationEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.experimentautomation.abstractsimulation.presentation,
  org.palladiosimulator.experimentautomation.experiments.presentation,
  org.palladiosimulator.experimentautomation.variation.presentation
