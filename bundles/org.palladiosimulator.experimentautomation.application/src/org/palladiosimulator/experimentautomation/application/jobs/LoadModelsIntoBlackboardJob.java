@@ -6,13 +6,9 @@ import java.util.List;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.analyzer.workflow.jobs.LoadPCMModelsIntoBlackboardJob;
-import org.palladiosimulator.commons.eclipseutils.FileHelper;
 import org.palladiosimulator.experimentautomation.experiments.InitialModel;
-import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
-import org.palladiosimulator.simulizar.reconfiguration.storydiagram.jobs.LoadSDMModelsIntoBlackboardJob;
 
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
@@ -67,43 +63,6 @@ public class LoadModelsIntoBlackboardJob extends SequentialBlackboardInteracting
 
         // load the PCM model into the standard partition
         loadIntoBlackboard(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, pcmModels);
-
-        // load SDM models
-        final ReconfigurationRulesFolder reconfigurationRulesFolder = this.initialModel.getReconfigurationRules();
-        if (reconfigurationRulesFolder != null) {
-            if (LOGGER.isEnabledFor(Level.INFO)) {
-                LOGGER.info("Loading models for partition " + LoadSDMModelsIntoBlackboardJob.SDM_MODEL_PARTITION_ID);
-            }
-
-            final URI[] files = getStoryDiagramFiles(reconfigurationRulesFolder.getFolderUri());
-            if (files.length > 0) {
-                for (final URI file : files) {
-                    this.getBlackboard().getPartition(LoadSDMModelsIntoBlackboardJob.SDM_MODEL_PARTITION_ID)
-                            .loadModel(file);
-                }
-            } else {
-                LOGGER.info("No SDM models found, SD reconfigurations disabled.");
-            }
-        }
-    }
-
-    /**
-     * Gets the StoryDiagram files within the specified path.
-     * 
-     * @param path
-     *            Path to reconfiguration rules.
-     * @return The StoryDiagram files within the given path. Returns an empty array in case no files
-     *         are found.
-     */
-    private URI[] getStoryDiagramFiles(final String path) {
-        if (path.equals("")) {
-            if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("No path to Story Diagrams given.");
-            }
-            return new URI[0];
-        }
-
-        return FileHelper.getURIs(path, LoadSDMModelsIntoBlackboardJob.STORYDIAGRAMS_FILE_EXTENSION);
     }
 
     private void loadIntoBlackboard(final String partitionId, final List<EObject> eObjects) {
