@@ -49,7 +49,7 @@ public class RunExperimentJob extends SequentialBlackboardInteractingJob<MDSDBla
         if (FileDatasource.class.isAssignableFrom(simulationConfiguration.getDatasource().getClass())) {
             FileDatasource source = (FileDatasource)simulationConfiguration.getDatasource();
             if (source.getExportOption().equals(ExportOption.CSV)) {
-              BatchExporter.batchExport(RepositoryManager.getRepositoryFromUUID(simulationConfiguration.getDatasource().getId()), ((FileDatasource)simulationConfiguration.getDatasource()).getLocation());
+              BatchExporter.batchExport(RepositoryManager.getRepositoryFromUUID(source.getId()), source.getLocation());
             }
         }
     }

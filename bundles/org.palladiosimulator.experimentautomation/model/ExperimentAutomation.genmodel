@@ -162,6 +162,10 @@
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Abstractsimulation"
         basePackage="org.palladiosimulator.experimentautomation" resource="XML" disposableProviderFactory="true"
         extensibleProviderFactory="true" ecorePackage="experimentautomation.ecore#//abstractsimulation">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="experimentautomation.ecore#//abstractsimulation/ExportOption">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="experimentautomation.ecore#//abstractsimulation/ExportOption/EDP2"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="experimentautomation.ecore#//abstractsimulation/ExportOption/CSV"/>
+      </genEnums>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration">
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/stopConditions"/>
@@ -186,6 +190,7 @@
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//abstractsimulation/MemoryDatasource"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//abstractsimulation/FileDatasource">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/FileDatasource/location"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/FileDatasource/exportOption"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition/measurementCount"/>
