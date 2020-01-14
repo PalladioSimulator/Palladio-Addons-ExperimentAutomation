@@ -4,6 +4,7 @@ package org.palladiosimulator.experimentautomation.abstractsimulation.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage;
+import org.palladiosimulator.experimentautomation.abstractsimulation.ExportOption;
 import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasource;
 
 /**
@@ -13,8 +14,8 @@ import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasou
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.experimentautomation.abstractsimulation.impl.FileDatasourceImpl#getLocation
- * <em>Location</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.abstractsimulation.impl.FileDatasourceImpl#getLocation <em>Location</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.abstractsimulation.impl.FileDatasourceImpl#getExportOption <em>Export Option</em>}</li>
  * </ul>
  *
  * @generated
@@ -23,7 +24,6 @@ public class FileDatasourceImpl extends EDP2DatasourceImpl implements FileDataso
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     public static final String copyright = "Palladiosimulator.org 2008-2017";
@@ -39,7 +39,6 @@ public class FileDatasourceImpl extends EDP2DatasourceImpl implements FileDataso
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected FileDatasourceImpl() {
@@ -48,7 +47,6 @@ public class FileDatasourceImpl extends EDP2DatasourceImpl implements FileDataso
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
@@ -58,50 +56,73 @@ public class FileDatasourceImpl extends EDP2DatasourceImpl implements FileDataso
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
     public String getLocation() {
-        return (String) this.eDynamicGet(AbstractsimulationPackage.FILE_DATASOURCE__LOCATION,
+        return (String) eDynamicGet(AbstractsimulationPackage.FILE_DATASOURCE__LOCATION,
                 AbstractsimulationPackage.Literals.FILE_DATASOURCE__LOCATION, true, true);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void setLocation(final String newLocation) {
-        this.eDynamicSet(AbstractsimulationPackage.FILE_DATASOURCE__LOCATION,
+    public void setLocation(String newLocation) {
+        eDynamicSet(AbstractsimulationPackage.FILE_DATASOURCE__LOCATION,
                 AbstractsimulationPackage.Literals.FILE_DATASOURCE__LOCATION, newLocation);
     }
 
     /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      * @generated
      */
     @Override
-    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+    public ExportOption getExportOption() {
+        return (ExportOption) eDynamicGet(AbstractsimulationPackage.FILE_DATASOURCE__EXPORT_OPTION,
+                AbstractsimulationPackage.Literals.FILE_DATASOURCE__EXPORT_OPTION, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setExportOption(ExportOption newExportOption) {
+        eDynamicSet(AbstractsimulationPackage.FILE_DATASOURCE__EXPORT_OPTION,
+                AbstractsimulationPackage.Literals.FILE_DATASOURCE__EXPORT_OPTION, newExportOption);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Object eGet(int featureID, boolean resolve, boolean coreType) {
         switch (featureID) {
         case AbstractsimulationPackage.FILE_DATASOURCE__LOCATION:
-            return this.getLocation();
+            return getLocation();
+        case AbstractsimulationPackage.FILE_DATASOURCE__EXPORT_OPTION:
+            return getExportOption();
         }
         return super.eGet(featureID, resolve, coreType);
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eSet(final int featureID, final Object newValue) {
+    public void eSet(int featureID, Object newValue) {
         switch (featureID) {
         case AbstractsimulationPackage.FILE_DATASOURCE__LOCATION:
-            this.setLocation((String) newValue);
+            setLocation((String) newValue);
+            return;
+        case AbstractsimulationPackage.FILE_DATASOURCE__EXPORT_OPTION:
+            setExportOption((ExportOption) newValue);
             return;
         }
         super.eSet(featureID, newValue);
@@ -109,14 +130,16 @@ public class FileDatasourceImpl extends EDP2DatasourceImpl implements FileDataso
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public void eUnset(final int featureID) {
+    public void eUnset(int featureID) {
         switch (featureID) {
         case AbstractsimulationPackage.FILE_DATASOURCE__LOCATION:
-            this.setLocation(LOCATION_EDEFAULT);
+            setLocation(LOCATION_EDEFAULT);
+            return;
+        case AbstractsimulationPackage.FILE_DATASOURCE__EXPORT_OPTION:
+            setExportOption((ExportOption) null);
             return;
         }
         super.eUnset(featureID);
@@ -124,15 +147,15 @@ public class FileDatasourceImpl extends EDP2DatasourceImpl implements FileDataso
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     @Override
-    public boolean eIsSet(final int featureID) {
+    public boolean eIsSet(int featureID) {
         switch (featureID) {
         case AbstractsimulationPackage.FILE_DATASOURCE__LOCATION:
-            return LOCATION_EDEFAULT == null ? this.getLocation() != null
-                    : !LOCATION_EDEFAULT.equals(this.getLocation());
+            return LOCATION_EDEFAULT == null ? getLocation() != null : !LOCATION_EDEFAULT.equals(getLocation());
+        case AbstractsimulationPackage.FILE_DATASOURCE__EXPORT_OPTION:
+            return getExportOption() != null;
         }
         return super.eIsSet(featureID);
     }
