@@ -12,33 +12,30 @@ import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2D
  *
  * @generated
  */
-public class SchedulingPolicy2DelayModificationImpl extends ModificationImpl implements
-        SchedulingPolicy2DelayModification {
+public class SchedulingPolicy2DelayModificationImpl extends ModificationImpl
+		implements SchedulingPolicy2DelayModification {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Palladiosimulator.org 2008-2017";
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected SchedulingPolicy2DelayModificationImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SchedulingPolicy2DelayModificationImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return ExperimentsPackage.Literals.SCHEDULING_POLICY2_DELAY_MODIFICATION;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return ExperimentsPackage.Literals.SCHEDULING_POLICY2_DELAY_MODIFICATION;
+	}
 
 } // SchedulingPolicy2DelayModificationImpl

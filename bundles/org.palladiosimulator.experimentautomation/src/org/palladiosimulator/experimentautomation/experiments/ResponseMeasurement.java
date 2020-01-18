@@ -16,10 +16,9 @@ import org.eclipse.emf.cdo.CDOObject;
  */
 public interface ResponseMeasurement extends CDOObject {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Palladiosimulator.org 2008-2017";
 } // ResponseMeasurement
