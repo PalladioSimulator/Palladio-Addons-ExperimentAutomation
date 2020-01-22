@@ -46,10 +46,11 @@ public class RunExperimentJob extends SequentialBlackboardInteractingJob<MDSDBla
         this.add(runAnalysisJob);
         this.add(new AddDynamicVariationJob(runAnalysisJob, analysisTool, experiment, simulationConfiguration,
                 variationFactorTuples, repetition));
+
         if (FileDatasource.class.isAssignableFrom(simulationConfiguration.getDatasource().getClass())) {
             FileDatasource source = (FileDatasource)simulationConfiguration.getDatasource();
             if (source.getExportOption().equals(ExportOption.CSV)) {
-              BatchExporter.batchExport(RepositoryManager.getRepositoryFromUUID(source.getId()), source.getLocation());
+            	this.add(new BatchExporterJob(source));
             }
         }
     }
