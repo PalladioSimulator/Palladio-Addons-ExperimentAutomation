@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.feature"
       label="Experiment Automation SimuCom Feature"
-      version="4.2.0.qualifier"
+      version="4.3.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
@@ -17,7 +17,7 @@
       <import plugin="de.uka.ipd.sdq.codegen.simucontroller" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.experimentautomation" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.experimentautomation.application" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model" version="4.2.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model" version="4.3.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.edp2.util" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.edp2.dao" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.analyzer.workflow" version="1.0.0" match="greaterOrEqual"/>
