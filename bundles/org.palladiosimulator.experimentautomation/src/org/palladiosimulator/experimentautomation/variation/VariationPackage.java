@@ -19,436 +19,399 @@ import de.uka.ipd.sdq.identifier.IdentifierPackage;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- *
  * @see org.palladiosimulator.experimentautomation.variation.VariationFactory
  * @model kind="package"
  * @generated
  */
 public interface VariationPackage extends EPackage {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Palladiosimulator.org 2008-2017";
 
-    /**
-     * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String eNAME = "variation";
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "variation";
 
-    /**
-     * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String eNS_URI = "http://palladiosimulator.org/ExperimentAutomation/Variation/1.0";
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://palladiosimulator.org/ExperimentAutomation/Variation/1.0";
 
-    /**
-     * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String eNS_PREFIX = "ExperimentAutomation.Variation";
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "ExperimentAutomation.Variation";
 
-    /**
-     * The singleton instance of the package. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    VariationPackage eINSTANCE = org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl.init();
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	VariationPackage eINSTANCE = org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl.init();
 
-    /**
-     * The meta object id for the
-     * '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl
-     * <em>Type</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl
-     * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationType()
-     * @generated
-     */
-    int VARIATION_TYPE = 0;
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl <em>Type</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationType()
+	 * @generated
+	 */
+	int VARIATION_TYPE = 0;
 
-    /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_TYPE__ID = IdentifierPackage.IDENTIFIER__ID;
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_TYPE__ID = IdentifierPackage.IDENTIFIER__ID;
 
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_TYPE__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_TYPE__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
-    /**
-     * The feature id for the '<em><b>Strategy Class</b></em>' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_TYPE__STRATEGY_CLASS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
+	/**
+	 * The feature id for the '<em><b>Strategy Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_TYPE__STRATEGY_CLASS = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
-    /**
-     * The feature id for the '<em><b>Varied Entity Interface</b></em>' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_TYPE__VARIED_ENTITY_INTERFACE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
+	/**
+	 * The feature id for the '<em><b>Varied Entity Interface</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_TYPE__VARIED_ENTITY_INTERFACE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
-    /**
-     * The number of structural features of the '<em>Type</em>' class. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_TYPE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+	/**
+	 * The number of structural features of the '<em>Type</em>' class.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_TYPE_FEATURE_COUNT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
-    /**
-     * The meta object id for the
-     * '{@link org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl
-     * <em>Value Variation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl
-     * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getValueVariation()
-     * @generated
-     */
-    int VALUE_VARIATION = 1;
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl <em>Value Variation</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getValueVariation()
+	 * @generated
+	 */
+	int VALUE_VARIATION = 1;
 
-    /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VALUE_VARIATION__ID = VARIATION_TYPE__ID;
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_VARIATION__ID = VARIATION_TYPE__ID;
 
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VALUE_VARIATION__NAME = VARIATION_TYPE__NAME;
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_VARIATION__NAME = VARIATION_TYPE__NAME;
 
-    /**
-     * The feature id for the '<em><b>Strategy Class</b></em>' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VALUE_VARIATION__STRATEGY_CLASS = VARIATION_TYPE__STRATEGY_CLASS;
+	/**
+	 * The feature id for the '<em><b>Strategy Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_VARIATION__STRATEGY_CLASS = VARIATION_TYPE__STRATEGY_CLASS;
 
-    /**
-     * The feature id for the '<em><b>Varied Entity Interface</b></em>' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VALUE_VARIATION__VARIED_ENTITY_INTERFACE = VARIATION_TYPE__VARIED_ENTITY_INTERFACE;
+	/**
+	 * The feature id for the '<em><b>Varied Entity Interface</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_VARIATION__VARIED_ENTITY_INTERFACE = VARIATION_TYPE__VARIED_ENTITY_INTERFACE;
 
-    /**
-     * The number of structural features of the '<em>Value Variation</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VALUE_VARIATION_FEATURE_COUNT = VARIATION_TYPE_FEATURE_COUNT + 0;
+	/**
+	 * The number of structural features of the '<em>Value Variation</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_VARIATION_FEATURE_COUNT = VARIATION_TYPE_FEATURE_COUNT + 0;
 
-    /**
-     * The meta object id for the
-     * '{@link org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl
-     * <em>Structural Variation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl
-     * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getStructuralVariation()
-     * @generated
-     */
-    int STRUCTURAL_VARIATION = 2;
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl <em>Structural Variation</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getStructuralVariation()
+	 * @generated
+	 */
+	int STRUCTURAL_VARIATION = 2;
 
-    /**
-     * The feature id for the '<em><b>Id</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int STRUCTURAL_VARIATION__ID = VARIATION_TYPE__ID;
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_VARIATION__ID = VARIATION_TYPE__ID;
 
-    /**
-     * The feature id for the '<em><b>Name</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int STRUCTURAL_VARIATION__NAME = VARIATION_TYPE__NAME;
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_VARIATION__NAME = VARIATION_TYPE__NAME;
 
-    /**
-     * The feature id for the '<em><b>Strategy Class</b></em>' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int STRUCTURAL_VARIATION__STRATEGY_CLASS = VARIATION_TYPE__STRATEGY_CLASS;
+	/**
+	 * The feature id for the '<em><b>Strategy Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_VARIATION__STRATEGY_CLASS = VARIATION_TYPE__STRATEGY_CLASS;
 
-    /**
-     * The feature id for the '<em><b>Varied Entity Interface</b></em>' attribute. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int STRUCTURAL_VARIATION__VARIED_ENTITY_INTERFACE = VARIATION_TYPE__VARIED_ENTITY_INTERFACE;
+	/**
+	 * The feature id for the '<em><b>Varied Entity Interface</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_VARIATION__VARIED_ENTITY_INTERFACE = VARIATION_TYPE__VARIED_ENTITY_INTERFACE;
 
-    /**
-     * The number of structural features of the '<em>Structural Variation</em>' class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int STRUCTURAL_VARIATION_FEATURE_COUNT = VARIATION_TYPE_FEATURE_COUNT + 0;
+	/**
+	 * The number of structural features of the '<em>Structural Variation</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int STRUCTURAL_VARIATION_FEATURE_COUNT = VARIATION_TYPE_FEATURE_COUNT + 0;
 
-    /**
-     * The meta object id for the
-     * '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl
-     * <em>Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @see org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl
-     * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationRepository()
-     * @generated
-     */
-    int VARIATION_REPOSITORY = 3;
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl <em>Repository</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl
+	 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationRepository()
+	 * @generated
+	 */
+	int VARIATION_REPOSITORY = 3;
 
-    /**
-     * The feature id for the '<em><b>Variation</b></em>' containment reference list. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_REPOSITORY__VARIATION = 0;
+	/**
+	 * The feature id for the '<em><b>Variation</b></em>' containment reference list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_REPOSITORY__VARIATION = 0;
 
-    /**
-     * The number of structural features of the '<em>Repository</em>' class. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     * @ordered
-     */
-    int VARIATION_REPOSITORY_FEATURE_COUNT = 1;
+	/**
+	 * The number of structural features of the '<em>Repository</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_REPOSITORY_FEATURE_COUNT = 1;
 
-    /**
-     * Returns the meta object for class
-     * '{@link org.palladiosimulator.experimentautomation.variation.VariationType <em>Type</em>}'.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for class '<em>Type</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationType
-     * @generated
-     */
-    EClass getVariationType();
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.variation.VariationType <em>Type</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Type</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationType
+	 * @generated
+	 */
+	EClass getVariationType();
 
-    /**
-     * Returns the meta object for the attribute
-     * '{@link org.palladiosimulator.experimentautomation.variation.VariationType#getName
-     * <em>Name</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the attribute '<em>Name</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationType#getName()
-     * @see #getVariationType()
-     * @generated
-     */
-    EAttribute getVariationType_Name();
+	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.variation.VariationType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationType#getName()
+	 * @see #getVariationType()
+	 * @generated
+	 */
+	EAttribute getVariationType_Name();
 
-    /**
-     * Returns the meta object for the attribute
-     * '{@link org.palladiosimulator.experimentautomation.variation.VariationType#getStrategyClass
-     * <em>Strategy Class</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the attribute '<em>Strategy Class</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationType#getStrategyClass()
-     * @see #getVariationType()
-     * @generated
-     */
-    EAttribute getVariationType_StrategyClass();
+	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.variation.VariationType#getStrategyClass <em>Strategy Class</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Strategy Class</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationType#getStrategyClass()
+	 * @see #getVariationType()
+	 * @generated
+	 */
+	EAttribute getVariationType_StrategyClass();
 
-    /**
-     * Returns the meta object for the attribute
-     * '{@link org.palladiosimulator.experimentautomation.variation.VariationType#getVariedEntityInterface
-     * <em>Varied Entity Interface</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the attribute '<em>Varied Entity Interface</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationType#getVariedEntityInterface()
-     * @see #getVariationType()
-     * @generated
-     */
-    EAttribute getVariationType_VariedEntityInterface();
+	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.experimentautomation.variation.VariationType#getVariedEntityInterface <em>Varied Entity Interface</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Varied Entity Interface</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationType#getVariedEntityInterface()
+	 * @see #getVariationType()
+	 * @generated
+	 */
+	EAttribute getVariationType_VariedEntityInterface();
 
-    /**
-     * Returns the meta object for class
-     * '{@link org.palladiosimulator.experimentautomation.variation.ValueVariation <em>Value
-     * Variation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for class '<em>Value Variation</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.ValueVariation
-     * @generated
-     */
-    EClass getValueVariation();
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.variation.ValueVariation <em>Value Variation</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Value Variation</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.ValueVariation
+	 * @generated
+	 */
+	EClass getValueVariation();
 
-    /**
-     * Returns the meta object for class
-     * '{@link org.palladiosimulator.experimentautomation.variation.StructuralVariation
-     * <em>Structural Variation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for class '<em>Structural Variation</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.StructuralVariation
-     * @generated
-     */
-    EClass getStructuralVariation();
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.variation.StructuralVariation <em>Structural Variation</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Structural Variation</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.StructuralVariation
+	 * @generated
+	 */
+	EClass getStructuralVariation();
 
-    /**
-     * Returns the meta object for class
-     * '{@link org.palladiosimulator.experimentautomation.variation.VariationRepository
-     * <em>Repository</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for class '<em>Repository</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationRepository
-     * @generated
-     */
-    EClass getVariationRepository();
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.experimentautomation.variation.VariationRepository <em>Repository</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Repository</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationRepository
+	 * @generated
+	 */
+	EClass getVariationRepository();
 
-    /**
-     * Returns the meta object for the containment reference list
-     * '{@link org.palladiosimulator.experimentautomation.variation.VariationRepository#getVariation
-     * <em>Variation</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @return the meta object for the containment reference list '<em>Variation</em>'.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationRepository#getVariation()
-     * @see #getVariationRepository()
-     * @generated
-     */
-    EReference getVariationRepository_Variation();
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.palladiosimulator.experimentautomation.variation.VariationRepository#getVariation <em>Variation</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variation</em>'.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationRepository#getVariation()
+	 * @see #getVariationRepository()
+	 * @generated
+	 */
+	EReference getVariationRepository_Variation();
 
-    /**
-     * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     *
-     * @return the factory that creates the instances of the model.
-     * @generated
-     */
-    VariationFactory getVariationFactory();
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	VariationFactory getVariationFactory();
 
-    /**
-     * <!-- begin-user-doc --> Defines literals for the meta objects that represent
-     * <ul>
-     * <li>each class,</li>
-     * <li>each feature of each class,</li>
-     * <li>each enum,</li>
-     * <li>and each data type</li>
-     * </ul>
-     * <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    interface Literals {
+	/**
+	 * <!-- begin-user-doc --> Defines literals for the meta objects that represent
+	 * <ul>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
 
-        /**
-         * The meta object literal for the
-         * '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl
-         * <em>Type</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @see org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl
-         * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationType()
-         * @generated
-         */
-        EClass VARIATION_TYPE = eINSTANCE.getVariationType();
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl <em>Type</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationTypeImpl
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationType()
+		 * @generated
+		 */
+		EClass VARIATION_TYPE = eINSTANCE.getVariationType();
 
-        /**
-         * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EAttribute VARIATION_TYPE__NAME = eINSTANCE.getVariationType_Name();
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute VARIATION_TYPE__NAME = eINSTANCE.getVariationType_Name();
 
-        /**
-         * The meta object literal for the '<em><b>Strategy Class</b></em>' attribute feature. <!--
-         * begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EAttribute VARIATION_TYPE__STRATEGY_CLASS = eINSTANCE.getVariationType_StrategyClass();
+		/**
+		 * The meta object literal for the '<em><b>Strategy Class</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
+		 * @generated
+		 */
+		EAttribute VARIATION_TYPE__STRATEGY_CLASS = eINSTANCE.getVariationType_StrategyClass();
 
-        /**
-         * The meta object literal for the '<em><b>Varied Entity Interface</b></em>' attribute
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EAttribute VARIATION_TYPE__VARIED_ENTITY_INTERFACE = eINSTANCE.getVariationType_VariedEntityInterface();
+		/**
+		 * The meta object literal for the '<em><b>Varied Entity Interface</b></em>' attribute feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIATION_TYPE__VARIED_ENTITY_INTERFACE = eINSTANCE.getVariationType_VariedEntityInterface();
 
-        /**
-         * The meta object literal for the
-         * '{@link org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl
-         * <em>Value Variation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @see org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl
-         * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getValueVariation()
-         * @generated
-         */
-        EClass VALUE_VARIATION = eINSTANCE.getValueVariation();
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl <em>Value Variation</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.ValueVariationImpl
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getValueVariation()
+		 * @generated
+		 */
+		EClass VALUE_VARIATION = eINSTANCE.getValueVariation();
 
-        /**
-         * The meta object literal for the
-         * '{@link org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl
-         * <em>Structural Variation</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @see org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl
-         * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getStructuralVariation()
-         * @generated
-         */
-        EClass STRUCTURAL_VARIATION = eINSTANCE.getStructuralVariation();
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl <em>Structural Variation</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.StructuralVariationImpl
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getStructuralVariation()
+		 * @generated
+		 */
+		EClass STRUCTURAL_VARIATION = eINSTANCE.getStructuralVariation();
 
-        /**
-         * The meta object literal for the
-         * '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl
-         * <em>Repository</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @see org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl
-         * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationRepository()
-         * @generated
-         */
-        EClass VARIATION_REPOSITORY = eINSTANCE.getVariationRepository();
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl <em>Repository</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationRepositoryImpl
+		 * @see org.palladiosimulator.experimentautomation.variation.impl.VariationPackageImpl#getVariationRepository()
+		 * @generated
+		 */
+		EClass VARIATION_REPOSITORY = eINSTANCE.getVariationRepository();
 
-        /**
-         * The meta object literal for the '<em><b>Variation</b></em>' containment reference list
-         * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-         *
-         * @generated
-         */
-        EReference VARIATION_REPOSITORY__VARIATION = eINSTANCE.getVariationRepository_Variation();
+		/**
+		 * The meta object literal for the '<em><b>Variation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIATION_REPOSITORY__VARIATION = eINSTANCE.getVariationRepository_Variation();
 
-    }
+	}
 
 } // VariationPackage

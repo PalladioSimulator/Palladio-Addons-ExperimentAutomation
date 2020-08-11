@@ -1,8 +1,11 @@
 package org.palladiosimulator.experimentautomation.application.jobs;
 
 import java.util.List;
-
+import org.palladiosimulator.edp2.batchexport.BatchExporter;
+import org.palladiosimulator.edp2.impl.RepositoryManager;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration;
+import org.palladiosimulator.experimentautomation.abstractsimulation.ExportOption;
+import org.palladiosimulator.experimentautomation.abstractsimulation.FileDatasource;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
 import org.palladiosimulator.experimentautomation.application.tooladapter.AnalysisToolFactory;
 import org.palladiosimulator.experimentautomation.application.tooladapter.IToolAdapter;
@@ -43,5 +46,12 @@ public class RunExperimentJob extends SequentialBlackboardInteractingJob<MDSDBla
         this.add(runAnalysisJob);
         this.add(new AddDynamicVariationJob(runAnalysisJob, analysisTool, experiment, simulationConfiguration,
                 variationFactorTuples, repetition));
+
+        if (FileDatasource.class.isAssignableFrom(simulationConfiguration.getDatasource().getClass())) {
+            FileDatasource source = (FileDatasource)simulationConfiguration.getDatasource();
+            if (source.getExportOption().equals(ExportOption.CSV)) {
+            	this.add(new BatchExporterJob(source));
+            }
+        }
     }
 }

@@ -13,8 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.experimentautomation.variation.VariationRepository#getVariation
- * <em>Variation</em>}</li>
+ *   <li>{@link org.palladiosimulator.experimentautomation.variation.VariationRepository#getVariation <em>Variation</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.experimentautomation.variation.VariationPackage#getVariationRepository()
@@ -24,29 +23,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface VariationRepository extends CDOObject {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Palladiosimulator.org 2008-2017";
 
-    /**
-     * Returns the value of the '<em><b>Variation</b></em>' containment reference list. The list
-     * contents are of type
-     * {@link org.palladiosimulator.experimentautomation.variation.VariationType}. <!--
-     * begin-user-doc -->
-     * <p>
-     * If the meaning of the '<em>Variation</em>' containment reference list isn't clear, there
-     * really should be more of a description here...
-     * </p>
-     * <!-- end-user-doc -->
-     *
-     * @return the value of the '<em>Variation</em>' containment reference list.
-     * @see org.palladiosimulator.experimentautomation.variation.VariationPackage#getVariationRepository_Variation()
-     * @model containment="true" ordered="false"
-     * @generated
-     */
-    EList<VariationType> getVariation();
+	/**
+	 * Returns the value of the '<em><b>Variation</b></em>' containment reference list. The list
+	 * contents are of type
+	 * {@link org.palladiosimulator.experimentautomation.variation.VariationType}. <!--
+	 * begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variation</em>' containment reference list isn't clear, there
+	 * really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 *
+	 * @return the value of the '<em>Variation</em>' containment reference list.
+	 * @see org.palladiosimulator.experimentautomation.variation.VariationPackage#getVariationRepository_Variation()
+	 * @model containment="true" ordered="false"
+	 * @generated
+	 */
+	EList<VariationType> getVariation();
 
 } // VariationRepository
