@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.palladiosimulator.analyzer.workflow.jobs.LoadPCMModelsIntoBlackboardJob;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
 import org.palladiosimulator.experimentautomation.application.jobs.CheckForSLOViolationsJob;
+import org.palladiosimulator.experimentautomation.application.jobs.CopyPartitionJob;
 import org.palladiosimulator.experimentautomation.application.jobs.LogExperimentInformationJob;
 import org.palladiosimulator.experimentautomation.application.tooladapter.IToolAdapter;
 import org.palladiosimulator.experimentautomation.application.tooladapter.RunAnalysisJob;
@@ -16,6 +18,7 @@ import org.palladiosimulator.experimentautomation.application.tooladapter.simuli
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
+import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
 import org.palladiosimulator.simulizar.launcher.jobs.PCMStartInterpretationJob;
 import org.palladiosimulator.simulizar.runconfig.SimuLizarWorkflowConfiguration;
 
@@ -45,10 +48,8 @@ public class SimuLizarToolAdapter implements IToolAdapter {
         result.setConfiguration(configMap);
         result.addJob(new LogExperimentInformationJob(experiment, simuComConfig, variationFactorTuples, repetition));
 
-        // FIXME I get an array out of bounds exceptions during analysis (when enabled) [Lehrig]
-        // result.addJob(new
-        // CopyPartitionJob(LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID,
-        // LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID));
+		result.addJob(new CopyPartitionJob(LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID,
+				LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID));
         result.addJob(new PCMStartInterpretationJob(workflowConfig));
         if (experiment.getInitialModel().getServiceLevelObjectives() != null) {
             result.addJob(new CheckForSLOViolationsJob(result,
