@@ -42,19 +42,21 @@ public class SimuLizarToolAdapter implements IToolAdapter {
                 simuLizarToolConfig, SIMULATOR_ID_SIMULIZAR, variationFactorTuples);
         final SimuComConfig simuComConfig = createSimuComConfig(configMap);
         final SimuLizarWorkflowConfiguration workflowConfig = createSimuLizarWorkflowConfiguration(simuComConfig,
-                experiment.getInitialModel().getReconfigurationRules());
+                experiment.getInitialModel()
+                    .getReconfigurationRules());
 
         final RunAnalysisJob result = new RunAnalysisJob();
         result.setConfiguration(configMap);
         result.addJob(new LogExperimentInformationJob(experiment, simuComConfig, variationFactorTuples, repetition));
 
-		result.addJob(new CopyPartitionJob(LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID,
-				LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID));
+        result.addJob(new CopyPartitionJob(LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID,
+                LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID));
         result.addJob(new PCMStartInterpretationJob(workflowConfig));
-        if (experiment.getInitialModel().getServiceLevelObjectives() != null) {
-            result.addJob(new CheckForSLOViolationsJob(result,
-                    experiment.getInitialModel().getServiceLevelObjectives(), simuLizarToolConfig.getDatasource(),
-                    simuComConfig.getNameBase(), simuComConfig.getVariationId()));
+        if (experiment.getInitialModel()
+            .getServiceLevelObjectives() != null) {
+            result.addJob(new CheckForSLOViolationsJob(result, experiment.getInitialModel()
+                .getServiceLevelObjectives(), simuLizarToolConfig.getDatasource(), simuComConfig.getNameBase(),
+                    simuComConfig.getVariationId()));
         }
         return result;
     }
@@ -64,7 +66,8 @@ public class SimuLizarToolAdapter implements IToolAdapter {
      */
     @Override
     public boolean hasSupportFor(final ToolConfiguration configuration) {
-        return SimulizartooladapterPackage.eINSTANCE.getSimuLizarConfiguration().isInstance(configuration);
+        return SimulizartooladapterPackage.eINSTANCE.getSimuLizarConfiguration()
+            .isInstance(configuration);
     }
 
     private SimuComConfig createSimuComConfig(final Map<String, Object> configMap) {
