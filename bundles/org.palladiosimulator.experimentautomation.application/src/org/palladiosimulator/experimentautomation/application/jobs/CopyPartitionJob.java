@@ -37,7 +37,7 @@ public class CopyPartitionJob extends SequentialBlackboardInteractingJob<MDSDBla
 
     @Override
     public void execute(final IProgressMonitor monitor) throws JobFailedException, UserCanceledException {
-        LOGGER.info("Cloning " + this.sourcePartition + " to " + this.targetPartition);
+        LOGGER.info("Copy resource set from " + this.sourcePartition + " to " + this.targetPartition);
         this.getBlackboard().removePartition(this.targetPartition);
 
         final PCMResourceSetPartition newPartition = new PCMResourceSetPartition();
@@ -49,7 +49,10 @@ public class CopyPartitionJob extends SequentialBlackboardInteractingJob<MDSDBla
         }
 
         this.getBlackboard().addPartition(this.targetPartition, newPartition);
+
     }
+    
+
 
     /**
      * {@inheritDoc}

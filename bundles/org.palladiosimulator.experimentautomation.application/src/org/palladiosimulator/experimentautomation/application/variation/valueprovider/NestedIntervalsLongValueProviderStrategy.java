@@ -73,9 +73,9 @@ public class NestedIntervalsLongValueProviderStrategy extends AbstractNestedInte
         final StringBuilder stringBuilder = new StringBuilder();
 
         stringBuilder.append("Capacity Interval: [");
-        stringBuilder.append(this.min);
+        stringBuilder.append(String.valueOf(this.min));
         stringBuilder.append(", ");
-        stringBuilder.append(this.max);
+        stringBuilder.append(String.valueOf(this.max));
         stringBuilder.append("]");
 
         return stringBuilder.toString();
