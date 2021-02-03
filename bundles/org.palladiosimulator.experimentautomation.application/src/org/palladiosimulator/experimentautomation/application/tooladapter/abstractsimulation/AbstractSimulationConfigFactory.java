@@ -18,6 +18,7 @@ import org.palladiosimulator.experimentautomation.application.VariationFactorTup
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.recorderframework.edp2.config.EDP2RecorderConfigurationFactory;
 
+import de.uka.ipd.sdq.simucomframework.SimuComConfig;
 import de.uka.ipd.sdq.simulation.AbstractSimulationConfig;
 
 /**
@@ -51,6 +52,9 @@ public class AbstractSimulationConfigFactory {
         /***************************************************/
         /** Simulator */
         map.put(AbstractSimulationConfig.SIMULATOR_ID, simulatorID);
+        
+        /** Failure simulation */
+        map.put(SimuComConfig.SIMULATE_FAILURES, simConfig.isSimulateFailures());
 
         /** Experiment Run */
         map.put(AbstractSimulationConfig.EXPERIMENT_RUN, computeExperimentGroupPurpose(experiment));
