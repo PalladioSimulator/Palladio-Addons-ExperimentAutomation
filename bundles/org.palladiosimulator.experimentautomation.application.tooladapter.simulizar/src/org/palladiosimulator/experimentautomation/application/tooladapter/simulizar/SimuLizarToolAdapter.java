@@ -72,8 +72,6 @@ public class SimuLizarToolAdapter implements IToolAdapter {
 
     private SimuComConfig createSimuComConfig(final Map<String, Object> configMap) {
         configMap.put(SimuComConfig.SIMULATE_LINKING_RESOURCES, false);
-        configMap.put(SimuComConfig.SIMULATE_FAILURES, false);
-
         return new SimuComConfig(configMap, false);
     }
 
