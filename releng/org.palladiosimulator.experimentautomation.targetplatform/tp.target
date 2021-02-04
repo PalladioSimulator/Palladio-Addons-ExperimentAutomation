@@ -199,7 +199,7 @@
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.palladiosimulator.simulizar.feature.feature.group" version="2.1.0.201711211534-8h_SEFbcPueBA312721262539"/>
 <unit id="org.palladiosimulator.simulizar.reconfiguration.storydiagram.feature.feature.group" version="1.0.0.201711211534"/>
-<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simulizar/branches/simulizar-136-1/"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simulizar/nightly/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="release" refresh="true">
 <unit id="org.palladiosimulator.mdsdprofiles.feature.feature.group" version="1.0.1.201609191729"/>

@@ -19,6 +19,8 @@ import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 import org.palladiosimulator.simulizar.SimuLizarPlatform;
+import org.palladiosimulator.simulizar.di.component.core.DaggerSimuLizarRuntimeComponent;
+import org.palladiosimulator.simulizar.di.component.core.SimuLizarRootComponent;
 import org.palladiosimulator.simulizar.di.component.core.SimuLizarRuntimeComponent;
 import org.palladiosimulator.simulizar.di.modules.stateless.mdsd.MDSDBlackboardProvidingModule;
 import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
@@ -47,6 +49,7 @@ public class SimuLizarToolAdapter implements IToolAdapter {
         final SimuLizarWorkflowConfiguration workflowConfig = createSimuLizarWorkflowConfiguration(simuComConfig,
                 experiment.getInitialModel()
                     .getReconfigurationRules());
+        workflowConfig.getAttributes().putAll(configMap);
 
         final RunAnalysisJob result = new RunAnalysisJob();
         result.setConfiguration(configMap);
@@ -56,9 +59,12 @@ public class SimuLizarToolAdapter implements IToolAdapter {
                 ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
         result.addJob(new JobProxy(() -> {
             var rootComponentFactory = SimuLizarPlatform.getPlatformComponent().analysisFactory();
-            var component = rootComponentFactory.create(workflowConfig, rootComponentFactory.defaultComponentFactoriesModule(),
-                    rootComponentFactory.defaultExtensionComponentsModule(), new MDSDBlackboardProvidingModule(result.getBlackboard()));
-            return ((SimuLizarRuntimeComponent) component).runtimeJob();
+            var rootComponent = rootComponentFactory.create(workflowConfig, 
+                    rootComponentFactory.defaultComponentFactoriesModule(),
+                    rootComponentFactory.defaultExtensionComponentsModule(), 
+                    new MDSDBlackboardProvidingModule(result.getBlackboard()));
+            var runtimeComponent = rootComponent.runtimeComponentFactory().create(); 
+            return runtimeComponent.runtimeJob();
         }));
         if (experiment.getInitialModel()
             .getServiceLevelObjectives() != null) {
