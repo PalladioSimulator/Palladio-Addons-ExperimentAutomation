@@ -18,16 +18,11 @@ import org.palladiosimulator.experimentautomation.application.tooladapter.simuli
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
-import org.palladiosimulator.simulizar.SimuLizarPlatform;
-import org.palladiosimulator.simulizar.di.component.core.DaggerSimuLizarRuntimeComponent;
-import org.palladiosimulator.simulizar.di.component.core.SimuLizarRootComponent;
-import org.palladiosimulator.simulizar.di.component.core.SimuLizarRuntimeComponent;
-import org.palladiosimulator.simulizar.di.modules.stateless.mdsd.MDSDBlackboardProvidingModule;
 import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
 import org.palladiosimulator.simulizar.runconfig.SimuLizarWorkflowConfiguration;
 
 import de.uka.ipd.sdq.simucomframework.SimuComConfig;
-import de.uka.ipd.sdq.workflow.jobs.JobProxy;
+import de.uka.ipd.sdq.workflow.jobs.BlackboardAwareJobProxy;
 
 /**
  * @author Sebastian Lehrig
@@ -55,23 +50,21 @@ public class SimuLizarToolAdapter implements IToolAdapter {
         result.setConfiguration(configMap);
         result.addJob(new LogExperimentInformationJob(experiment, simuComConfig, variationFactorTuples, repetition));
 
-        result.addJob(new CopyPartitionJob(LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID,
-                ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
-        result.addJob(new JobProxy(() -> {
-            var rootComponentFactory = SimuLizarPlatform.getPlatformComponent().analysisFactory();
-            var rootComponent = rootComponentFactory.create(workflowConfig, 
-                    rootComponentFactory.defaultComponentFactoriesModule(),
-                    rootComponentFactory.defaultExtensionComponentsModule(), 
-                    new MDSDBlackboardProvidingModule(result.getBlackboard()));
-            var runtimeComponent = rootComponent.runtimeComponentFactory().create(); 
-            return runtimeComponent.runtimeJob();
-        }));
+        // Save the state of the varied model before starting the simulation in order to be able to
+        // revert the changes of runtime adaptations
+        result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID,
+                LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID));
+        result.addJob(
+                new BlackboardAwareJobProxy<>("Run SimuLizar", () -> new StartSimuLizarInterpreterJob(workflowConfig)));
         if (experiment.getInitialModel()
             .getServiceLevelObjectives() != null) {
             result.addJob(new CheckForSLOViolationsJob(result, experiment.getInitialModel()
                 .getServiceLevelObjectives(), simuLizarToolConfig.getDatasource(), simuComConfig.getNameBase(),
                     simuComConfig.getVariationId()));
         }
+        // Restore the state of the blackboard to get rid of changes made by runtime adaptations
+        result.addJob(new CopyPartitionJob(LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID,
+                ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
         return result;
     }
 
