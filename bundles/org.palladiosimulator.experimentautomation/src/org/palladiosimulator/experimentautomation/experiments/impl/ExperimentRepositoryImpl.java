@@ -21,123 +21,139 @@ import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ExperimentRepositoryImpl#getExperiments <em>Experiments</em>}</li>
+ * <li>{@link org.palladiosimulator.experimentautomation.experiments.impl.ExperimentRepositoryImpl#getExperiments
+ * <em>Experiments</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ExperimentRepositoryImpl extends CDOObjectImpl implements ExperimentRepository {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static final String copyright = "Palladiosimulator.org 2008-2017";
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static final String copyright = "Palladiosimulator.org 2008-2017";
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExperimentRepositoryImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ExperimentRepositoryImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ExperimentsPackage.Literals.EXPERIMENT_REPOSITORY;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return ExperimentsPackage.Literals.EXPERIMENT_REPOSITORY;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Experiment> getExperiments() {
-		return (EList<Experiment>) eDynamicGet(ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS,
-				ExperimentsPackage.Literals.EXPERIMENT_REPOSITORY__EXPERIMENTS, true, true);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public EList<Experiment> getExperiments() {
+        return (EList<Experiment>) this.eDynamicGet(ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS,
+                ExperimentsPackage.Literals.EXPERIMENT_REPOSITORY__EXPERIMENTS, true, true);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-		case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
-			return ((InternalEList<?>) getExperiments()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+            final NotificationChain msgs) {
+        switch (featureID) {
+        case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
+            return ((InternalEList<?>) this.getExperiments()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-		case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
-			return getExperiments();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
+        switch (featureID) {
+        case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
+            return this.getExperiments();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-		case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
-			getExperiments().clear();
-			getExperiments().addAll((Collection<? extends Experiment>) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID) {
+        case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
+            this.getExperiments()
+                .clear();
+            this.getExperiments()
+                .addAll((Collection<? extends Experiment>) newValue);
+            return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-		case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
-			getExperiments().clear();
-			return;
-		}
-		super.eUnset(featureID);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void eUnset(final int featureID) {
+        switch (featureID) {
+        case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
+            this.getExperiments()
+                .clear();
+            return;
+        }
+        super.eUnset(featureID);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-		case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
-			return !getExperiments().isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public boolean eIsSet(final int featureID) {
+        switch (featureID) {
+        case ExperimentsPackage.EXPERIMENT_REPOSITORY__EXPERIMENTS:
+            return !this.getExperiments()
+                .isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } // ExperimentRepositoryImpl

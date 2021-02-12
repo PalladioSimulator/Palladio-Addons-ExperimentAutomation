@@ -13,9 +13,10 @@ package org.palladiosimulator.experimentautomation.abstractsimulation;
  */
 public interface MemoryDatasource extends EDP2Datasource {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	String copyright = "Palladiosimulator.org 2008-2017";
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    String copyright = "Palladiosimulator.org 2008-2017";
 } // MemoryDatasource
