@@ -30,8 +30,8 @@
   <foreignModel>experimentautomation.ecore</foreignModel>
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages xsi:type="genmodel:GenPackage" prefix="ExperimentAutomation" basePackage="org.palladiosimulator"
-      resource="XML" disposableProviderFactory="true" extensibleProviderFactory="true"
-      ecorePackage="experimentautomation.ecore#/" publicationLocation="">
+      resource="XML" disposableProviderFactory="true" ecorePackage="experimentautomation.ecore#/"
+      publicationLocation="">
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Variation" basePackage="org.palladiosimulator.experimentautomation"
         resource="XML" disposableProviderFactory="true" extensibleProviderFactory="true"
         ecorePackage="experimentautomation.ecore#//variation">
@@ -61,8 +61,8 @@
             createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/modifications"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/id"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/name"/>
-        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-            propertySortChoices="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/toolConfiguration"/>
+        <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
+            createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/toolConfiguration"/>
         <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
             createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/stopConditions"/>
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/description"/>
