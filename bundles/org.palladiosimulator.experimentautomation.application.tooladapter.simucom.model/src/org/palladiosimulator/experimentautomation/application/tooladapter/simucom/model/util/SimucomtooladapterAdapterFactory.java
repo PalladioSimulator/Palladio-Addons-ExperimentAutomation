@@ -51,7 +51,8 @@ public class SimucomtooladapterAdapterFactory extends AdapterFactoryImpl {
             return true;
         }
         if (object instanceof EObject) {
-            return ((EObject) object).eClass().getEPackage() == modelPackage;
+            return ((EObject) object).eClass()
+                .getEPackage() == modelPackage;
         }
         return false;
     }
@@ -98,8 +99,8 @@ public class SimucomtooladapterAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.SimuComConfiguration
+     * Creates a new adapter for an object of class
+     * '{@link org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.SimuComConfiguration
      * <em>Simu Com Configuration</em>}'. <!-- begin-user-doc --> This default implementation
      * returns null so that we can easily ignore cases; it's useful to ignore a case when
      * inheritance will catch all the cases anyway. <!-- end-user-doc -->
@@ -113,11 +114,11 @@ public class SimucomtooladapterAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.experimentautomation.experiments.ToolConfiguration
-     * <em>Tool Configuration</em>}'. <!-- begin-user-doc --> This default implementation returns
-     * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
-     * catch all the cases anyway. <!-- end-user-doc -->
+     * Creates a new adapter for an object of class
+     * '{@link org.palladiosimulator.experimentautomation.experiments.ToolConfiguration <em>Tool
+     * Configuration</em>}'. <!-- begin-user-doc --> This default implementation returns null so
+     * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+     * the cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
      * @see org.palladiosimulator.experimentautomation.experiments.ToolConfiguration
@@ -128,8 +129,8 @@ public class SimucomtooladapterAdapterFactory extends AdapterFactoryImpl {
     }
 
     /**
-     * Creates a new adapter for an object of class '
-     * {@link org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration
+     * Creates a new adapter for an object of class
+     * '{@link org.palladiosimulator.experimentautomation.abstractsimulation.AbstractSimulationConfiguration
      * <em>Abstract Simulation Configuration</em>}'. <!-- begin-user-doc --> This default
      * implementation returns null so that we can easily ignore cases; it's useful to ignore a case
      * when inheritance will catch all the cases anyway. <!-- end-user-doc -->

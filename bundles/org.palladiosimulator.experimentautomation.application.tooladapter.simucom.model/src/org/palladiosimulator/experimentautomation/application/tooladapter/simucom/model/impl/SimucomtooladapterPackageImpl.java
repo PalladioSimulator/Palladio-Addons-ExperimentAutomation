@@ -4,13 +4,28 @@ package org.palladiosimulator.experimentautomation.application.tooladapter.simuc
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage;
 import org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.SimuComConfiguration;
 import org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.SimucomtooladapterFactory;
 import org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.SimucomtooladapterPackage;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 import org.palladiosimulator.experimentautomation.variation.VariationPackage;
+import org.palladiosimulator.metricspec.MetricSpecPackage;
+import org.palladiosimulator.monitorrepository.MonitorRepositoryPackage;
+import org.palladiosimulator.pcm.PcmPackage;
+import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
+import org.scaledl.usageevolution.UsageevolutionPackage;
+
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
+import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -67,20 +82,35 @@ public class SimucomtooladapterPackageImpl extends EPackageImpl implements Simuc
     public static SimucomtooladapterPackage init() {
         if (isInited) {
             return (SimucomtooladapterPackage) EPackage.Registry.INSTANCE
-                    .getEPackage(SimucomtooladapterPackage.eNS_URI);
+                .getEPackage(SimucomtooladapterPackage.eNS_URI);
         }
 
         // Obtain or create and register package
-        final SimucomtooladapterPackageImpl theSimucomtooladapterPackage = (SimucomtooladapterPackageImpl) (EPackage.Registry.INSTANCE
-                .get(eNS_URI) instanceof SimucomtooladapterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                        : new SimucomtooladapterPackageImpl());
+        final Object registeredSimucomtooladapterPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+        final SimucomtooladapterPackageImpl theSimucomtooladapterPackage = registeredSimucomtooladapterPackage instanceof SimucomtooladapterPackageImpl
+                ? (SimucomtooladapterPackageImpl) registeredSimucomtooladapterPackage
+                : new SimucomtooladapterPackageImpl();
 
         isInited = true;
 
         // Initialize simple dependencies
+        ExperimentDataPackage.eINSTANCE.eClass();
+        RepositoryPackage.eINSTANCE.eClass();
+        MeasuringpointPackage.eINSTANCE.eClass();
         VariationPackage.eINSTANCE.eClass();
         ExperimentsPackage.eINSTANCE.eClass();
         AbstractsimulationPackage.eINSTANCE.eClass();
+        IdentifierPackage.eINSTANCE.eClass();
+        MetricSpecPackage.eINSTANCE.eClass();
+        PcmPackage.eINSTANCE.eClass();
+        MonitorRepositoryPackage.eINSTANCE.eClass();
+        ProbfunctionPackage.eINSTANCE.eClass();
+        StoexPackage.eINSTANCE.eClass();
+        UnitsPackage.eINSTANCE.eClass();
+        ServicelevelObjectivePackage.eINSTANCE.eClass();
+        UsageevolutionPackage.eINSTANCE.eClass();
+        DlimPackage.eINSTANCE.eClass();
+        EcorePackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
         theSimucomtooladapterPackage.createPackageContents();
@@ -165,15 +195,15 @@ public class SimucomtooladapterPackageImpl extends EPackageImpl implements Simuc
 
         // Obtain other dependent packages
         final AbstractsimulationPackage theAbstractsimulationPackage = (AbstractsimulationPackage) EPackage.Registry.INSTANCE
-                .getEPackage(AbstractsimulationPackage.eNS_URI);
+            .getEPackage(AbstractsimulationPackage.eNS_URI);
 
         // Create type parameters
 
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        this.simuComConfigurationEClass.getESuperTypes().add(
-                theAbstractsimulationPackage.getAbstractSimulationConfiguration());
+        this.simuComConfigurationEClass.getESuperTypes()
+            .add(theAbstractsimulationPackage.getAbstractSimulationConfiguration());
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.simuComConfigurationEClass, SimuComConfiguration.class, "SimuComConfiguration",
