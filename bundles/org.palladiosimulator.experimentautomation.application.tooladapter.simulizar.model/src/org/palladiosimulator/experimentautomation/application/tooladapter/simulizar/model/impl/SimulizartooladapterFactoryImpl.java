@@ -25,7 +25,7 @@ public class SimulizartooladapterFactoryImpl extends EFactoryImpl implements Sim
     public static SimulizartooladapterFactory init() {
         try {
             final SimulizartooladapterFactory theSimulizartooladapterFactory = (SimulizartooladapterFactory) EPackage.Registry.INSTANCE
-                    .getEFactory(SimulizartooladapterPackage.eNS_URI);
+                .getEFactory(SimulizartooladapterPackage.eNS_URI);
             if (theSimulizartooladapterFactory != null) {
                 return theSimulizartooladapterFactory;
             }

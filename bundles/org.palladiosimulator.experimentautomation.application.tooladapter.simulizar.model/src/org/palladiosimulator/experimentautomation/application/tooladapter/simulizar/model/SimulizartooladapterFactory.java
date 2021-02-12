@@ -18,7 +18,7 @@ public interface SimulizartooladapterFactory extends EFactory {
      * @generated
      */
     SimulizartooladapterFactory eINSTANCE = org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimulizartooladapterFactoryImpl
-            .init();
+        .init();
 
     /**
      * Returns a new object of class '<em>Simu Lizar Configuration</em>'. <!-- begin-user-doc -->

@@ -8,10 +8,8 @@ import org.palladiosimulator.experimentautomation.application.tooladapter.simuli
 import org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.SimulizartooladapterPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Simu Lizar Configuration</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Simu Lizar
+ * Configuration</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
