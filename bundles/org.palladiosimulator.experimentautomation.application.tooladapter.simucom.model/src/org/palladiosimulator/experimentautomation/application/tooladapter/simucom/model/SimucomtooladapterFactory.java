@@ -18,7 +18,7 @@ public interface SimucomtooladapterFactory extends EFactory {
      * @generated
      */
     SimucomtooladapterFactory eINSTANCE = org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.impl.SimucomtooladapterFactoryImpl
-            .init();
+        .init();
 
     /**
      * Returns a new object of class '<em>Simu Com Configuration</em>'. <!-- begin-user-doc --> <!--

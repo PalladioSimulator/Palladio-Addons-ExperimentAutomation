@@ -8,10 +8,8 @@ import org.palladiosimulator.experimentautomation.application.tooladapter.simuco
 import org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.SimucomtooladapterPackage;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '
- * <em><b>Simu Com Configuration</b></em>'. <!-- end-user-doc -->
- * <p>
- * </p>
+ * <!-- begin-user-doc --> An implementation of the model object ' <em><b>Simu Com
+ * Configuration</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */

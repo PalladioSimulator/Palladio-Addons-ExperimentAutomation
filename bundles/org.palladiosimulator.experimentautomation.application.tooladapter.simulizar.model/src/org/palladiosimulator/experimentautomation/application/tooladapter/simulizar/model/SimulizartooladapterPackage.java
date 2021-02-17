@@ -49,11 +49,11 @@ public interface SimulizartooladapterPackage extends EPackage {
      * @generated
      */
     SimulizartooladapterPackage eINSTANCE = org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimulizartooladapterPackageImpl
-            .init();
+        .init();
 
     /**
-     * The meta object id for the '
-     * {@link org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl
+     * The meta object id for the
+     * '{@link org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl
      * <em>Simu Lizar Configuration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @see org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl
@@ -123,11 +123,12 @@ public interface SimulizartooladapterPackage extends EPackage {
      * @generated
      * @ordered
      */
-    int SIMU_LIZAR_CONFIGURATION_FEATURE_COUNT = AbstractsimulationPackage.ABSTRACT_SIMULATION_CONFIGURATION_FEATURE_COUNT + 0;
+    int SIMU_LIZAR_CONFIGURATION_FEATURE_COUNT = AbstractsimulationPackage.ABSTRACT_SIMULATION_CONFIGURATION_FEATURE_COUNT
+            + 0;
 
     /**
-     * Returns the meta object for class '
-     * {@link org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.SimuLizarConfiguration
+     * Returns the meta object for class
+     * '{@link org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.SimuLizarConfiguration
      * <em>Simu Lizar Configuration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the meta object for class '<em>Simu Lizar Configuration</em>'.
@@ -159,8 +160,8 @@ public interface SimulizartooladapterPackage extends EPackage {
      */
     interface Literals {
         /**
-         * The meta object literal for the '
-         * {@link org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl
+         * The meta object literal for the
+         * '{@link org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl
          * <em>Simu Lizar Configuration</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
          *
          * @see org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.impl.SimuLizarConfigurationImpl

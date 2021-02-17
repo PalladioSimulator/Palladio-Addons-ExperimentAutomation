@@ -25,7 +25,7 @@ public class SimucomtooladapterFactoryImpl extends EFactoryImpl implements Simuc
     public static SimucomtooladapterFactory init() {
         try {
             final SimucomtooladapterFactory theSimucomtooladapterFactory = (SimucomtooladapterFactory) EPackage.Registry.INSTANCE
-                    .getEFactory(SimucomtooladapterPackage.eNS_URI);
+                .getEFactory(SimucomtooladapterPackage.eNS_URI);
             if (theSimucomtooladapterFactory != null) {
                 return theSimucomtooladapterFactory;
             }

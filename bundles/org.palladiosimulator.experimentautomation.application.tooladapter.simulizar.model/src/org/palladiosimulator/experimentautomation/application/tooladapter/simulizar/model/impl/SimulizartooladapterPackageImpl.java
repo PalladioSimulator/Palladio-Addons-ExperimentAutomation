@@ -4,13 +4,28 @@ package org.palladiosimulator.experimentautomation.application.tooladapter.simul
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.palladiosimulator.edp2.models.ExperimentData.ExperimentDataPackage;
+import org.palladiosimulator.edp2.models.Repository.RepositoryPackage;
+import org.palladiosimulator.edp2.models.measuringpoint.MeasuringpointPackage;
 import org.palladiosimulator.experimentautomation.abstractsimulation.AbstractsimulationPackage;
 import org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.SimuLizarConfiguration;
 import org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.SimulizartooladapterFactory;
 import org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.SimulizartooladapterPackage;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 import org.palladiosimulator.experimentautomation.variation.VariationPackage;
+import org.palladiosimulator.metricspec.MetricSpecPackage;
+import org.palladiosimulator.monitorrepository.MonitorRepositoryPackage;
+import org.palladiosimulator.pcm.PcmPackage;
+import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
+import org.scaledl.usageevolution.UsageevolutionPackage;
+
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
+import tools.descartes.dlim.DlimPackage;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!-- end-user-doc -->
@@ -67,20 +82,35 @@ public class SimulizartooladapterPackageImpl extends EPackageImpl implements Sim
     public static SimulizartooladapterPackage init() {
         if (isInited) {
             return (SimulizartooladapterPackage) EPackage.Registry.INSTANCE
-                    .getEPackage(SimulizartooladapterPackage.eNS_URI);
+                .getEPackage(SimulizartooladapterPackage.eNS_URI);
         }
 
         // Obtain or create and register package
-        final SimulizartooladapterPackageImpl theSimulizartooladapterPackage = (SimulizartooladapterPackageImpl) (EPackage.Registry.INSTANCE
-                .get(eNS_URI) instanceof SimulizartooladapterPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI)
-                        : new SimulizartooladapterPackageImpl());
+        final Object registeredSimulizartooladapterPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+        final SimulizartooladapterPackageImpl theSimulizartooladapterPackage = registeredSimulizartooladapterPackage instanceof SimulizartooladapterPackageImpl
+                ? (SimulizartooladapterPackageImpl) registeredSimulizartooladapterPackage
+                : new SimulizartooladapterPackageImpl();
 
         isInited = true;
 
         // Initialize simple dependencies
+        ExperimentDataPackage.eINSTANCE.eClass();
+        RepositoryPackage.eINSTANCE.eClass();
+        MeasuringpointPackage.eINSTANCE.eClass();
         VariationPackage.eINSTANCE.eClass();
         ExperimentsPackage.eINSTANCE.eClass();
         AbstractsimulationPackage.eINSTANCE.eClass();
+        IdentifierPackage.eINSTANCE.eClass();
+        MetricSpecPackage.eINSTANCE.eClass();
+        PcmPackage.eINSTANCE.eClass();
+        MonitorRepositoryPackage.eINSTANCE.eClass();
+        ProbfunctionPackage.eINSTANCE.eClass();
+        StoexPackage.eINSTANCE.eClass();
+        UnitsPackage.eINSTANCE.eClass();
+        ServicelevelObjectivePackage.eINSTANCE.eClass();
+        UsageevolutionPackage.eINSTANCE.eClass();
+        DlimPackage.eINSTANCE.eClass();
+        EcorePackage.eINSTANCE.eClass();
 
         // Create package meta-data objects
         theSimulizartooladapterPackage.createPackageContents();
@@ -165,15 +195,15 @@ public class SimulizartooladapterPackageImpl extends EPackageImpl implements Sim
 
         // Obtain other dependent packages
         final AbstractsimulationPackage theAbstractsimulationPackage = (AbstractsimulationPackage) EPackage.Registry.INSTANCE
-                .getEPackage(AbstractsimulationPackage.eNS_URI);
+            .getEPackage(AbstractsimulationPackage.eNS_URI);
 
         // Create type parameters
 
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        this.simuLizarConfigurationEClass.getESuperTypes().add(
-                theAbstractsimulationPackage.getAbstractSimulationConfiguration());
+        this.simuLizarConfigurationEClass.getESuperTypes()
+            .add(theAbstractsimulationPackage.getAbstractSimulationConfiguration());
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.simuLizarConfigurationEClass, SimuLizarConfiguration.class, "SimuLizarConfiguration",

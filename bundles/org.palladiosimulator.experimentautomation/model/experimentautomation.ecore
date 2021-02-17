@@ -203,7 +203,7 @@
           lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="StopCondition" abstract="true"/>
-    <eClassifiers xsi:type="ecore:EEnum" name="ExportOption" instanceTypeName="ExportOption">
+    <eClassifiers xsi:type="ecore:EEnum" name="ExportOption">
       <eLiterals name="EDP2"/>
       <eLiterals name="CSV" value="1"/>
     </eClassifiers>
