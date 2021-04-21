@@ -177,14 +177,14 @@ Workflow {
 	}
 
 		component = EcoreGenerator {
-		generateEdit = false
+		generateEdit = true
 		generateEditor = false
 		genModel = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model/model/simucomtooladapter.genmodel"
 		srcPath = "platform:/resource/org.palladiosimulator.experimentautomation/src-gen"
 	}
 
 		component = EcoreGenerator {
-		generateEdit = false
+		generateEdit = true
 		generateEditor = false
 		genModel = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model/model/simulizartooladapter.genmodel"
 		srcPath = "platform:/resource/org.palladiosimulator.experimentautomation/src-gen"
