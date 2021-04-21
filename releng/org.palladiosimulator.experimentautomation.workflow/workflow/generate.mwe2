@@ -18,13 +18,9 @@ Workflow {
 			to = "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.ecore"
 		}
 		uriMap = {
-			from = "platform:/plugin/org.palladiosimulator.experimentautomation/model/ExperimentAutomation.genmodel"
-			to = "platform:/resource/org.palladiosimulator.experimentautomation/model/ExperimentAutomation.genmodel"
+			from = "platform:/plugin/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
+			to = "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
 		}
-//		uriMap = {
-//			from = "platform:/plugin/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
-//			to = "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
-//		}
 		uriMap = {
 			from = "platform:/plugin/org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model/model/simucomtooladapter.ecore"
 			to = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model/model/simucomtooladapter.ecore"
@@ -146,7 +142,7 @@ Workflow {
 			to = "platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel"
 		}
 		
-		registerGenModelFile = "platform:/resource/org.palladiosimulator.experimentautomation/model/ExperimentAutomation.genmodel"	
+		registerGenModelFile = "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"	
 		registerGenModelFile = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model/model/simucomtooladapter.genmodel"	
 		registerGenModelFile = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model/model/simulizartooladapter.genmodel"	
 
@@ -172,7 +168,7 @@ Workflow {
 	component = EcoreGenerator {
 		generateEdit = true
 		generateEditor = true
-		genModel = "platform:/resource/org.palladiosimulator.experimentautomation/model/ExperimentAutomation.genmodel"
+		genModel = "platform:/resource/org.palladiosimulator.experimentautomation/model/experimentautomation.genmodel"
 		srcPath = "platform:/resource/org.palladiosimulator.experimentautomation/src-gen"
 	}
 
