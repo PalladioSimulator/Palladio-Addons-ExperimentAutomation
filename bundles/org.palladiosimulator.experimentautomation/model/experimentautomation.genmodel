@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.palladiosimulator.experimentautomation/src-gen"
+    editDirectory="/org.palladiosimulator.experimentautomation.edit/src-gen" editorDirectory="/org.palladiosimulator.experimentautomation.editor/src-gen"
+    modelPluginID="org.palladiosimulator.experimentautomation" modelName="Experimentautomation"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testsDirectory="/org.palladiosimulator.experimentautomation.tests/src-gen"
+    importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="5.0"
+    copyrightFields="false" usedGenPackages="platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel#//dlim platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.palladiosimulator.edp2/model/EDP2.genmodel#//models platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec platform:/plugin/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel#//monitorrepository platform:/plugin/org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.genmodel#//servicelevelobjective platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units platform:/plugin/org.scaledl.usageevolution/model/usageevolution.genmodel#//usageevolution"
+    importOrganizing="true">
+  <foreignModel>experimentautomation.ecore</foreignModel>
+  <genPackages prefix="ExperimentAutomation" basePackage="org.palladiosimulator" disposableProviderFactory="true"
+      ecorePackage="experimentautomation.ecore#/">
+    <nestedGenPackages prefix="Variation" disposableProviderFactory="true" ecorePackage="experimentautomation.ecore#//variation">
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//variation/VariationType">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//variation/VariationType/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//variation/VariationType/strategyClass"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//variation/VariationType/variedEntityInterface"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//variation/ValueVariation"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//variation/StructuralVariation"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//variation/VariationRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//variation/VariationRepository/variation"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Experiments" disposableProviderFactory="true" extensibleProviderFactory="true"
+        ecorePackage="experimentautomation.ecore#//experiments">
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/ExperimentRepository">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/ExperimentRepository/experiments"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/Experiment">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/variations"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/modifications"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/id"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/name"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/toolConfiguration"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/stopConditions"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/description"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/experimentDesign"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/responseMeasurement"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Experiment/initialModel"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Experiment/repetitions"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/Variation">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Variation/type"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/Variation/valueProvider"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Variation/minValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Variation/maxValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Variation/maxVariations"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Variation/variedObjectId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/Variation/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//experiments/ValueProvider"/>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//experiments/ToolConfiguration">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ToolConfiguration/name"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//experiments/ExperimentDesign"/>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//experiments/ResponseMeasurement"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/PolynomialValueProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/PolynomialValueProvider/exponent"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/PolynomialValueProvider/factor"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/ExponentialValueProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ExponentialValueProvider/base"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/SetValueProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/SetValueProvider/values"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/PlacketBurmanDesign"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/FullFactorialDesign"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/FractionalFactorialDesign"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/OneFactorAtATime"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/SimulationDurationMeasurement"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/ProfilingMeasurement"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/JMXMeasurement">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/JMXMeasurement/pollingPeriod"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/LinearValueProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/LinearValueProvider/summand"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/LinearValueProvider/factor"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/ObjectModification">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/ObjectModification/type"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ObjectModification/name"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ObjectModification/variedObjectId"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ObjectModification/value"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/InitialModel">
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/usageModel"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/allocation"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/middlewareRepository"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/eventMiddleWareRepository"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/reconfigurationRules"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/monitorRepository"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/serviceLevelObjectives"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/repository"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/system"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/resourceEnvironment"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true"
+            ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/usageEvolution"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/ReconfigurationRulesFolder">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ReconfigurationRulesFolder/folderUri"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/NestedIntervalsDoubleValueProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/NestedIntervalsDoubleValueProvider/minValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/NestedIntervalsDoubleValueProvider/maxValue"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/NestedIntervalsLongValueProvider">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/NestedIntervalsLongValueProvider/minValue"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/NestedIntervalsLongValueProvider/maxValue"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//experiments/Modification"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//experiments/SchedulingPolicy2DelayModification"/>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="Abstractsimulation" disposableProviderFactory="true"
+        ecorePackage="experimentautomation.ecore#//abstractsimulation">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="experimentautomation.ecore#//abstractsimulation/ExportOption">
+        <genEnumLiterals ecoreEnumLiteral="experimentautomation.ecore#//abstractsimulation/ExportOption/EDP2"/>
+        <genEnumLiterals ecoreEnumLiteral="experimentautomation.ecore#//abstractsimulation/ExportOption/CSV"/>
+      </genEnums>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration">
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/stopConditions"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/randomNumberGeneratorSeed"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/simulateLinkingResources"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/simulateFailures"/>
+        <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//abstractsimulation/AbstractSimulationConfiguration/datasource"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed0"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed1"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed2"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed3"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed4"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/RandomNumberGeneratorSeed/seed5"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//abstractsimulation/EDP2Datasource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/EDP2Datasource/id"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//abstractsimulation/MemoryDatasource"/>
+      <genClasses ecoreClass="experimentautomation.ecore#//abstractsimulation/FileDatasource">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/FileDatasource/location"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/FileDatasource/exportOption"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/MeasurementCountStopCondition/measurementCount"/>
+      </genClasses>
+      <genClasses ecoreClass="experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition">
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//abstractsimulation/SimTimeStopCondition/simulationTime"/>
+      </genClasses>
+      <genClasses image="false" ecoreClass="experimentautomation.ecore#//abstractsimulation/StopCondition"/>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

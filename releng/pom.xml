@@ -13,6 +13,7 @@
 	
 	<modules>
 		<module>org.palladiosimulator.experimentautomation.updatesite</module>
+		<module>org.palladiosimulator.experimentautomation.workflow</module>
 	</modules>
 	
 </project>
