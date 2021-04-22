@@ -21,5 +21,11 @@ Workflow {
 		directory = "platform:/resource/org.palladiosimulator.experimentautomation/src-gen"
 		directory = "platform:/resource/org.palladiosimulator.experimentautomation.edit/src-gen"
 		directory = "platform:/resource/org.palladiosimulator.experimentautomation.editor/src-gen"
+		
+		directory = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model/src-gen"
+		directory = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.edit/src-gen"
+
+		directory = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model/src-gen"
+		directory = "platform:/resource/org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.edit/src-gen"
 	}
 }
