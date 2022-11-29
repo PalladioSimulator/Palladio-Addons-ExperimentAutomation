@@ -14,10 +14,4 @@
             genModel="model/simulizartooladapter.genmodel"/>
    </extension>
 
-   <extension point="org.eclipse.emf.ecore.extension_parser">
-      <!-- @generated simulizartooladapter -->
-      <parser
-            type="simulizartooladapter"
-            class="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.util.SimulizartooladapterResourceFactoryImpl"/>
-   </extension>
 </plugin>

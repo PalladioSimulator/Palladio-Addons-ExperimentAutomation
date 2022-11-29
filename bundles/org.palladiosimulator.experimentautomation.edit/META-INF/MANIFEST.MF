@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.palladiosimulator.experimentautomation.edit;singleton:=
 Automatic-Module-Name: org.palladiosimulator.experimentautomation.edit
 Bundle-Version: 5.1.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: org.palladiosimulator.experimentautomation.variation.provider.ExperimentAutomationEditPlugin$Implementation
+Bundle-Activator: org.palladiosimulator.experimentautomation.variation.provider.ExperimentautomationEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
