@@ -13,10 +13,9 @@ package org.palladiosimulator.experimentautomation.variation;
  */
 public interface ValueVariation extends VariationType {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Palladiosimulator.org 2008-2017";
 } // ValueVariation

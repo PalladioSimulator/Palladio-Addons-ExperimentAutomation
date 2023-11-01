@@ -54,8 +54,6 @@ public class SimuLizarToolAdapter implements IToolAdapter {
         // revert the changes of runtime adaptations
         result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID,
                 LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID));
-        result.addJob(
-                new BlackboardAwareJobProxy<>("Run SimuLizar", () -> new StartSimuLizarInterpreterJob(workflowConfig)));
         if (experiment.getInitialModel()
             .getServiceLevelObjectives() != null) {
             result.addJob(new CheckForSLOViolationsJob(result, experiment.getInitialModel()

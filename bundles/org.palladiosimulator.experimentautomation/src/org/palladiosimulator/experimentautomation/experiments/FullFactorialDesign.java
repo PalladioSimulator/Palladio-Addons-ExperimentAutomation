@@ -13,10 +13,9 @@ package org.palladiosimulator.experimentautomation.experiments;
  */
 public interface FullFactorialDesign extends ExperimentDesign {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Palladiosimulator.org 2008-2017";
 } // FullFactorialDesign

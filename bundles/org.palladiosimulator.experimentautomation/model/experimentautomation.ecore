@@ -130,6 +130,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceEnvironment"
           eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceEnvironment"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="usageEvolution" eType="ecore:EClass platform:/plugin/org.scaledl.usageevolution/model/usageevolution.ecore#//UsageEvolution"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scalingDefinitions" eType="ecore:EClass ../../org.palladiosimulator.spd/model/SPD.ecore#//SPD"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="spdSemanticConfiguration"
+          eType="ecore:EClass ../../org.palladiosimulator.spd.semantic/model/semantic.ecore#//Configuration"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRulesFolder">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="folderUri" lowerBound="1"

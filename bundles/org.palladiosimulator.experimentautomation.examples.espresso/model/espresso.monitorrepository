@@ -3,6 +3,7 @@
   <monitors id="_HbTkYNV9EeSaPsLvWUqTbQ" entityName="Response Times - Usage Scenario">
     <measurementSpecifications id="_a5IPANV9EeSaPsLvWUqTbQ">
       <metricDescription xsi:type="metricspec:NumericalBaseMetricDescription" href="pathmap://METRIC_SPEC_MODELS/models/commonMetrics.metricspec#_6rYmYs7nEeOX_4BzImuHbA"/>
+      <processingType xsi:type="monitorrepository:FeedThrough" id="_MSwuoHdnEe6NaaK_fXnu0Q"/>
     </measurementSpecifications>
     <measuringPoint xsi:type="pcmmeasuringpoint:UsageScenarioMeasuringPoint" href="espresso.measuringpoint#//@measuringPoints.0"/>
   </monitors>
