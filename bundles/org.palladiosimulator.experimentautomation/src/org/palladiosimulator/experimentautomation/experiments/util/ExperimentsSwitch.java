@@ -26,6 +26,7 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
@@ -285,6 +286,15 @@ public class ExperimentsSwitch<T> extends Switch<T> {
 			T result = caseSchedulingPolicy2DelayModification(schedulingPolicy2DelayModification);
 			if (result == null)
 				result = caseModification(schedulingPolicy2DelayModification);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ExperimentsPackage.SET_LONG_VALUE_PROVIDER: {
+			SetLongValueProvider setLongValueProvider = (SetLongValueProvider) theEObject;
+			T result = caseSetLongValueProvider(setLongValueProvider);
+			if (result == null)
+				result = caseValueProvider(setLongValueProvider);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -622,6 +632,21 @@ public class ExperimentsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSchedulingPolicy2DelayModification(SchedulingPolicy2DelayModification object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Set Long Value Provider</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Set Long Value Provider</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSetLongValueProvider(SetLongValueProvider object) {
 		return null;
 	}
 

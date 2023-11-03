@@ -8,7 +8,9 @@ import org.palladiosimulator.pcm.allocation.Allocation;
 import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
+import org.palladiosimulator.semanticspd.Configuration;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
+import org.palladiosimulator.spd.SPD;
 import org.scaledl.usageevolution.UsageEvolution;
 
 /**
@@ -341,12 +343,12 @@ public interface InitialModel extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Scaling Definitions</em>' reference.
-	 * @see #setScalingDefinitions(org.palladiosimulator.spd.SPD)
+	 * @see #setScalingDefinitions(SPD)
 	 * @see org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage#getInitialModel_ScalingDefinitions()
 	 * @model
 	 * @generated
 	 */
-	org.palladiosimulator.spd.SPD getScalingDefinitions();
+	SPD getScalingDefinitions();
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions <em>Scaling Definitions</em>}' reference.
@@ -356,7 +358,7 @@ public interface InitialModel extends CDOObject {
 	 * @see #getScalingDefinitions()
 	 * @generated
 	 */
-	void setScalingDefinitions(org.palladiosimulator.spd.SPD value);
+	void setScalingDefinitions(SPD value);
 
 	/**
 	 * Returns the value of the '<em><b>Spd Semantic Configuration</b></em>' reference.
@@ -367,12 +369,12 @@ public interface InitialModel extends CDOObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Spd Semantic Configuration</em>' reference.
-	 * @see #setSpdSemanticConfiguration(org.palladiosimulator.semanticspd.Configuration)
+	 * @see #setSpdSemanticConfiguration(Configuration)
 	 * @see org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage#getInitialModel_SpdSemanticConfiguration()
 	 * @model
 	 * @generated
 	 */
-	org.palladiosimulator.semanticspd.Configuration getSpdSemanticConfiguration();
+	Configuration getSpdSemanticConfiguration();
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration <em>Spd Semantic Configuration</em>}' reference.
@@ -382,6 +384,6 @@ public interface InitialModel extends CDOObject {
 	 * @see #getSpdSemanticConfiguration()
 	 * @generated
 	 */
-	void setSpdSemanticConfiguration(org.palladiosimulator.semanticspd.Configuration value);
+	void setSpdSemanticConfiguration(Configuration value);
 
 } // InitialModel

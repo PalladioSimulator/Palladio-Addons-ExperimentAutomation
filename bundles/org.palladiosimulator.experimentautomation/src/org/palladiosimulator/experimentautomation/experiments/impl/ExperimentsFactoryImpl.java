@@ -26,6 +26,7 @@ import org.palladiosimulator.experimentautomation.experiments.PolynomialValuePro
 import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
@@ -116,6 +117,8 @@ public class ExperimentsFactoryImpl extends EFactoryImpl implements ExperimentsF
 			return createNestedIntervalsLongValueProvider();
 		case ExperimentsPackage.SCHEDULING_POLICY2_DELAY_MODIFICATION:
 			return createSchedulingPolicy2DelayModification();
+		case ExperimentsPackage.SET_LONG_VALUE_PROVIDER:
+			return createSetLongValueProvider();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -319,6 +322,17 @@ public class ExperimentsFactoryImpl extends EFactoryImpl implements ExperimentsF
 	public SchedulingPolicy2DelayModification createSchedulingPolicy2DelayModification() {
 		SchedulingPolicy2DelayModificationImpl schedulingPolicy2DelayModification = new SchedulingPolicy2DelayModificationImpl();
 		return schedulingPolicy2DelayModification;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public SetLongValueProvider createSetLongValueProvider() {
+		SetLongValueProviderImpl setLongValueProvider = new SetLongValueProviderImpl();
+		return setLongValueProvider;
 	}
 
 	/**

@@ -162,6 +162,9 @@
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="experimentautomation.ecore#//experiments/Modification"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//experiments/SchedulingPolicy2DelayModification"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//experiments/SetLongValueProvider">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/SetLongValueProvider/values"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Abstractsimulation"
         basePackage="org.palladiosimulator.experimentautomation" resource="XML" disposableProviderFactory="true"

@@ -34,6 +34,7 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
@@ -49,7 +50,9 @@ import org.palladiosimulator.pcm.repository.RepositoryPackage;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
 import org.palladiosimulator.pcm.system.SystemPackage;
 import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
+import org.palladiosimulator.semanticspd.SemanticspdPackage;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
+import org.palladiosimulator.spd.SpdPackage;
 import org.scaledl.usageevolution.UsageevolutionPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
@@ -221,6 +224,13 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 	private EClass schedulingPolicy2DelayModificationEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass setLongValueProviderEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -278,8 +288,8 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 		MonitorRepositoryPackage.eINSTANCE.eClass();
 		PcmPackage.eINSTANCE.eClass();
 		ProbfunctionPackage.eINSTANCE.eClass();
-		org.palladiosimulator.spd.SpdPackage.eINSTANCE.eClass();
-		org.palladiosimulator.semanticspd.SemanticspdPackage.eINSTANCE.eClass();
+		SpdPackage.eINSTANCE.eClass();
+		SemanticspdPackage.eINSTANCE.eClass();
 		ServicelevelObjectivePackage.eINSTANCE.eClass();
 		StoexPackage.eINSTANCE.eClass();
 		UnitsPackage.eINSTANCE.eClass();
@@ -982,6 +992,26 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSetLongValueProvider() {
+		return setLongValueProviderEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSetLongValueProvider_Values() {
+		return (EAttribute) setLongValueProviderEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1106,6 +1136,9 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 		modificationEClass = createEClass(MODIFICATION);
 
 		schedulingPolicy2DelayModificationEClass = createEClass(SCHEDULING_POLICY2_DELAY_MODIFICATION);
+
+		setLongValueProviderEClass = createEClass(SET_LONG_VALUE_PROVIDER);
+		createEAttribute(setLongValueProviderEClass, SET_LONG_VALUE_PROVIDER__VALUES);
 	}
 
 	/**
@@ -1150,10 +1183,9 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 				.getEPackage(ResourceenvironmentPackage.eNS_URI);
 		UsageevolutionPackage theUsageevolutionPackage = (UsageevolutionPackage) EPackage.Registry.INSTANCE
 				.getEPackage(UsageevolutionPackage.eNS_URI);
-		org.palladiosimulator.spd.SpdPackage theSpdPackage = (org.palladiosimulator.spd.SpdPackage) EPackage.Registry.INSTANCE
-				.getEPackage(org.palladiosimulator.spd.SpdPackage.eNS_URI);
-		org.palladiosimulator.semanticspd.SemanticspdPackage theSemanticspdPackage = (org.palladiosimulator.semanticspd.SemanticspdPackage) EPackage.Registry.INSTANCE
-				.getEPackage(org.palladiosimulator.semanticspd.SemanticspdPackage.eNS_URI);
+		SpdPackage theSpdPackage = (SpdPackage) EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
+		SemanticspdPackage theSemanticspdPackage = (SemanticspdPackage) EPackage.Registry.INSTANCE
+				.getEPackage(SemanticspdPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1173,6 +1205,7 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 		nestedIntervalsDoubleValueProviderEClass.getESuperTypes().add(this.getValueProvider());
 		nestedIntervalsLongValueProviderEClass.getESuperTypes().add(this.getValueProvider());
 		schedulingPolicy2DelayModificationEClass.getESuperTypes().add(this.getModification());
+		setLongValueProviderEClass.getESuperTypes().add(this.getValueProvider());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(experimentRepositoryEClass, ExperimentRepository.class, "ExperimentRepository", !IS_ABSTRACT,
@@ -1396,6 +1429,12 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 
 		initEClass(schedulingPolicy2DelayModificationEClass, SchedulingPolicy2DelayModification.class,
 				"SchedulingPolicy2DelayModification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(setLongValueProviderEClass, SetLongValueProvider.class, "SetLongValueProvider", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSetLongValueProvider_Values(), ecorePackage.getEString(), "values", null, 1, 1,
+				SetLongValueProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.palladiosimulator.analyzer.slingshot.workflow.SimulationLauncher;
 import org.palladiosimulator.analyzer.slingshot.workflow.SimulationWorkflowConfiguration;
 import org.palladiosimulator.analyzer.slingshot.workflow.WorkflowConfigurationModule;
-import org.palladiosimulator.analyzer.slingshot.workflow.jobs.SimulationRootJob;
+import org.palladiosimulator.analyzer.slingshot.workflow.jobs.SimulationJob;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
 import org.palladiosimulator.experimentautomation.application.jobs.CheckForSLOViolationsJob;
 import org.palladiosimulator.experimentautomation.application.jobs.LogExperimentInformationJob;
@@ -21,6 +21,7 @@ import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 //%import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
 //import org.palladiosimulator.simulizar.runconfig.SimuLizarWorkflowConfiguration;
 //import org.palladiosimulator.simulizar.runconfig.SimuLizarWorkflowConfiguration;
+import org.palladiosimulator.pcm.usagemodel.ClosedWorkload;
 
 import de.uka.ipd.sdq.simucomframework.SimuComConfig;
 import de.uka.ipd.sdq.workflow.jobs.BlackboardAwareJobProxy;
@@ -57,7 +58,7 @@ public class SlingshotToolAdapter implements IToolAdapter {
 //        result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID,
 //                LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID));
         result.addJob(
-                new BlackboardAwareJobProxy<>("Run Slingshot", () -> new SimulationRootJob(workflowCnfg,null)));
+                new BlackboardAwareJobProxy<>("Run Slingshot", () -> new SimulationJob(simuComConfig)));
         if (experiment.getInitialModel()
             .getServiceLevelObjectives() != null) {
             result.addJob(new CheckForSLOViolationsJob(result, experiment.getInitialModel()
@@ -70,6 +71,7 @@ public class SlingshotToolAdapter implements IToolAdapter {
 	private SimulationWorkflowConfiguration createSlingshotWorkflowConfig(SimuComConfig simuComConfig,
 			InitialModel initialModel) {
 			SimulationWorkflowConfiguration cnfSlingshot = new SimulationWorkflowConfiguration(simuComConfig);
+			
 			cnfSlingshot.setUsageModelFile(initialModel.getUsageModel().eResource().getURI().toString());
 			List<String> allocFiles = List.of(initialModel.getAllocation().eResource().getURI().toString());
 			cnfSlingshot.setAllocationFiles(allocFiles);

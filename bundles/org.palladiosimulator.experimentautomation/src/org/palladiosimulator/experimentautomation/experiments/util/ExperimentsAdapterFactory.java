@@ -27,6 +27,7 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
@@ -213,6 +214,11 @@ public class ExperimentsAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseSchedulingPolicy2DelayModification(SchedulingPolicy2DelayModification object) {
 			return createSchedulingPolicy2DelayModificationAdapter();
+		}
+
+		@Override
+		public Adapter caseSetLongValueProvider(SetLongValueProvider object) {
+			return createSetLongValueProviderAdapter();
 		}
 
 		@Override
@@ -555,6 +561,20 @@ public class ExperimentsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSchedulingPolicy2DelayModificationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider <em>Set Long Value Provider</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider
+	 * @generated
+	 */
+	public Adapter createSetLongValueProviderAdapter() {
 		return null;
 	}
 

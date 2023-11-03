@@ -546,6 +546,29 @@ public class ExperimentsItemProviderAdapterFactory extends ExperimentsAdapterFac
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SetLongValueProviderItemProvider setLongValueProviderItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSetLongValueProviderAdapter() {
+		if (setLongValueProviderItemProvider == null) {
+			setLongValueProviderItemProvider = new SetLongValueProviderItemProvider(this);
+		}
+
+		return setLongValueProviderItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -712,6 +735,8 @@ public class ExperimentsItemProviderAdapterFactory extends ExperimentsAdapterFac
 			nestedIntervalsLongValueProviderItemProvider.dispose();
 		if (schedulingPolicy2DelayModificationItemProvider != null)
 			schedulingPolicy2DelayModificationItemProvider.dispose();
+		if (setLongValueProviderItemProvider != null)
+			setLongValueProviderItemProvider.dispose();
 	}
 
 }

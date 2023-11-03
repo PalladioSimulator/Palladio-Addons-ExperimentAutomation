@@ -206,6 +206,15 @@ public interface ExperimentsFactory extends EFactory {
 	SchedulingPolicy2DelayModification createSchedulingPolicy2DelayModification();
 
 	/**
+	 * Returns a new object of class '<em>Set Long Value Provider</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Set Long Value Provider</em>'.
+	 * @generated
+	 */
+	SetLongValueProvider createSetLongValueProvider();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the package supported by this factory.

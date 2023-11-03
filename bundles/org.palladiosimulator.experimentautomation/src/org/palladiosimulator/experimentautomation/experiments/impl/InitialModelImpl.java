@@ -12,7 +12,9 @@ import org.palladiosimulator.pcm.allocation.Allocation;
 import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
+import org.palladiosimulator.semanticspd.Configuration;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
+import org.palladiosimulator.spd.SPD;
 import org.scaledl.usageevolution.UsageEvolution;
 
 /**
@@ -398,8 +400,8 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 	 * @generated
 	 */
 	@Override
-	public org.palladiosimulator.spd.SPD getScalingDefinitions() {
-		return (org.palladiosimulator.spd.SPD) eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
+	public SPD getScalingDefinitions() {
+		return (SPD) eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
 				ExperimentsPackage.Literals.INITIAL_MODEL__SCALING_DEFINITIONS, true, true);
 	}
 
@@ -408,8 +410,8 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.palladiosimulator.spd.SPD basicGetScalingDefinitions() {
-		return (org.palladiosimulator.spd.SPD) eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
+	public SPD basicGetScalingDefinitions() {
+		return (SPD) eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
 				ExperimentsPackage.Literals.INITIAL_MODEL__SCALING_DEFINITIONS, false, true);
 	}
 
@@ -419,7 +421,7 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 	 * @generated
 	 */
 	@Override
-	public void setScalingDefinitions(org.palladiosimulator.spd.SPD newScalingDefinitions) {
+	public void setScalingDefinitions(SPD newScalingDefinitions) {
 		eDynamicSet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
 				ExperimentsPackage.Literals.INITIAL_MODEL__SCALING_DEFINITIONS, newScalingDefinitions);
 	}
@@ -430,9 +432,8 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 	 * @generated
 	 */
 	@Override
-	public org.palladiosimulator.semanticspd.Configuration getSpdSemanticConfiguration() {
-		return (org.palladiosimulator.semanticspd.Configuration) eDynamicGet(
-				ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
+	public Configuration getSpdSemanticConfiguration() {
+		return (Configuration) eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
 				ExperimentsPackage.Literals.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION, true, true);
 	}
 
@@ -441,9 +442,8 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public org.palladiosimulator.semanticspd.Configuration basicGetSpdSemanticConfiguration() {
-		return (org.palladiosimulator.semanticspd.Configuration) eDynamicGet(
-				ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
+	public Configuration basicGetSpdSemanticConfiguration() {
+		return (Configuration) eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
 				ExperimentsPackage.Literals.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION, false, true);
 	}
 
@@ -453,8 +453,7 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 	 * @generated
 	 */
 	@Override
-	public void setSpdSemanticConfiguration(
-			org.palladiosimulator.semanticspd.Configuration newSpdSemanticConfiguration) {
+	public void setSpdSemanticConfiguration(Configuration newSpdSemanticConfiguration) {
 		eDynamicSet(ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
 				ExperimentsPackage.Literals.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION, newSpdSemanticConfiguration);
 	}
@@ -563,10 +562,10 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 			setUsageEvolution((UsageEvolution) newValue);
 			return;
 		case ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS:
-			setScalingDefinitions((org.palladiosimulator.spd.SPD) newValue);
+			setScalingDefinitions((SPD) newValue);
 			return;
 		case ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION:
-			setSpdSemanticConfiguration((org.palladiosimulator.semanticspd.Configuration) newValue);
+			setSpdSemanticConfiguration((Configuration) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -613,10 +612,10 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 			setUsageEvolution((UsageEvolution) null);
 			return;
 		case ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS:
-			setScalingDefinitions((org.palladiosimulator.spd.SPD) null);
+			setScalingDefinitions((SPD) null);
 			return;
 		case ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION:
-			setSpdSemanticConfiguration((org.palladiosimulator.semanticspd.Configuration) null);
+			setSpdSemanticConfiguration((Configuration) null);
 			return;
 		}
 		super.eUnset(featureID);

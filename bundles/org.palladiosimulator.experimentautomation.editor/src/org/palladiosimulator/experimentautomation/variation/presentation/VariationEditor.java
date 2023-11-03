@@ -145,7 +145,17 @@ import org.palladiosimulator.pcm.seff.seff_reliability.provider.SeffReliabilityI
 import org.palladiosimulator.pcm.subsystem.provider.SubsystemItemProviderAdapterFactory;
 import org.palladiosimulator.pcm.system.provider.SystemItemProviderAdapterFactory;
 import org.palladiosimulator.pcm.usagemodel.provider.UsagemodelItemProviderAdapterFactory;
+import org.palladiosimulator.semanticspd.provider.SemanticspdItemProviderAdapterFactory;
 import org.palladiosimulator.servicelevelobjective.provider.ServicelevelObjectiveItemProviderAdapterFactory;
+import org.palladiosimulator.spd.adjustments.provider.AdjustmentsItemProviderAdapterFactory;
+import org.palladiosimulator.spd.constraints.policy.provider.PolicyItemProviderAdapterFactory;
+import org.palladiosimulator.spd.constraints.provider.ConstraintsItemProviderAdapterFactory;
+import org.palladiosimulator.spd.constraints.target.provider.TargetItemProviderAdapterFactory;
+import org.palladiosimulator.spd.provider.SpdItemProviderAdapterFactory;
+import org.palladiosimulator.spd.targets.provider.TargetsItemProviderAdapterFactory;
+import org.palladiosimulator.spd.triggers.expectations.provider.ExpectationsItemProviderAdapterFactory;
+import org.palladiosimulator.spd.triggers.provider.TriggersItemProviderAdapterFactory;
+import org.palladiosimulator.spd.triggers.stimuli.provider.StimuliItemProviderAdapterFactory;
 import org.scaledl.usageevolution.provider.UsageevolutionItemProviderAdapterFactory;
 
 import de.uka.ipd.sdq.identifier.provider.IdentifierItemProviderAdapterFactory;
@@ -708,25 +718,16 @@ public class VariationEditor extends MultiPageEditorPart
 		adapterFactory.addAdapterFactory(new AllocationItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new SubsystemItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ProbfunctionItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new org.palladiosimulator.spd.provider.SpdItemProviderAdapterFactory());
-		adapterFactory
-				.addAdapterFactory(new org.palladiosimulator.spd.targets.provider.TargetsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.adjustments.provider.AdjustmentsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.constraints.provider.ConstraintsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.constraints.policy.provider.PolicyItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.constraints.target.provider.TargetItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.triggers.provider.TriggersItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.triggers.stimuli.provider.StimuliItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.spd.triggers.expectations.provider.ExpectationsItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(
-				new org.palladiosimulator.semanticspd.provider.SemanticspdItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SpdItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TargetsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new AdjustmentsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ConstraintsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new PolicyItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TargetItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new TriggersItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new StimuliItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ExpectationsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new SemanticspdItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ServicelevelObjectiveItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new StoexItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UnitsItemProviderAdapterFactory());

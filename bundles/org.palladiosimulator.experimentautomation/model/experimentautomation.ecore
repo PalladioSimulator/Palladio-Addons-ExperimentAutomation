@@ -155,6 +155,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="Modification" abstract="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="SchedulingPolicy2DelayModification"
         eSuperTypes="#//experiments/Modification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SetLongValueProvider" eSuperTypes="#//experiments/ValueProvider">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="abstractsimulation" nsURI="http://palladiosimulator.org/ExperimentAutomation/AbstractSimulation/1.0"
       nsPrefix="ExperimentAutomation.Experiments.AbstractSimulation">

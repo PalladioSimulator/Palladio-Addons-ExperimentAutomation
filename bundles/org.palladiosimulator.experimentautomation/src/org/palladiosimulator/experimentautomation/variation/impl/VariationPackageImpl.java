@@ -24,7 +24,9 @@ import org.palladiosimulator.experimentautomation.variation.VariationType;
 import org.palladiosimulator.metricspec.MetricSpecPackage;
 import org.palladiosimulator.monitorrepository.MonitorRepositoryPackage;
 import org.palladiosimulator.pcm.PcmPackage;
+import org.palladiosimulator.semanticspd.SemanticspdPackage;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
+import org.palladiosimulator.spd.SpdPackage;
 import org.scaledl.usageevolution.UsageevolutionPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
@@ -127,8 +129,8 @@ public class VariationPackageImpl extends EPackageImpl implements VariationPacka
 		MonitorRepositoryPackage.eINSTANCE.eClass();
 		PcmPackage.eINSTANCE.eClass();
 		ProbfunctionPackage.eINSTANCE.eClass();
-		org.palladiosimulator.spd.SpdPackage.eINSTANCE.eClass();
-		org.palladiosimulator.semanticspd.SemanticspdPackage.eINSTANCE.eClass();
+		SpdPackage.eINSTANCE.eClass();
+		SemanticspdPackage.eINSTANCE.eClass();
 		ServicelevelObjectivePackage.eINSTANCE.eClass();
 		StoexPackage.eINSTANCE.eClass();
 		UnitsPackage.eINSTANCE.eClass();
