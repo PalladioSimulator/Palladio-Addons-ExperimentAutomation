@@ -55,6 +55,8 @@ public class LoadModelsIntoBlackboardJob extends SequentialBlackboardInteracting
             pcmModels.add(this.initialModel.getEventMiddleWareRepository());
         }
 
+        pcmModels.add(this.initialModel.getScalingDefinitions());
+        pcmModels.add(this.initialModel.getSpdSemanticConfiguration());
         pcmModels.add(this.initialModel.getUsageEvolution());
         pcmModels.add(this.initialModel.getMonitorRepository());
 
