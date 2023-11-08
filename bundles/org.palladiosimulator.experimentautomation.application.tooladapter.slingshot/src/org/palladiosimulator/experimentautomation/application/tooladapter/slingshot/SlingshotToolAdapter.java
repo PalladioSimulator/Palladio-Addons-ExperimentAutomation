@@ -3,12 +3,8 @@ package org.palladiosimulator.experimentautomation.application.tooladapter.sling
 import java.util.List;
 import java.util.Map;
 
-import org.palladiosimulator.analyzer.slingshot.workflow.SimulationLauncher;
-import org.palladiosimulator.analyzer.slingshot.workflow.SimulationWorkflowConfiguration;
-import org.palladiosimulator.analyzer.slingshot.workflow.WorkflowConfigurationModule;
 import org.palladiosimulator.analyzer.slingshot.workflow.jobs.SimulationJob;
 import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
-import org.palladiosimulator.analyzer.workflow.jobs.LoadModelIntoBlackboardJob;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
 import org.palladiosimulator.experimentautomation.application.jobs.CheckForSLOViolationsJob;
 import org.palladiosimulator.experimentautomation.application.jobs.CopyPartitionJob;
@@ -19,7 +15,6 @@ import org.palladiosimulator.experimentautomation.application.tooladapter.abstra
 import org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.SlingshotConfiguration;
 import org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.SlingshottooladapterPackage;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
-import org.palladiosimulator.experimentautomation.experiments.InitialModel;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 //%import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
 
