@@ -7,7 +7,7 @@
     codeFormatting="true" testsDirectory="/org.palladiosimulator.experimentautomation.tests/src"
     importerID="org.eclipse.emf.importer.ecore" featureDelegation="Dynamic" complianceLevel="7.0"
     testsPluginID="org.palladiosimulator.experimentautomation.tests" runtimeVersion="2.12"
-    language="de" usedGenPackages="platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel#//dlim platform:/plugin/org.palladiosimulator.edp2/model/EDP2.genmodel#//models platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec platform:/plugin/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel#//monitorrepository platform:/plugin/org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction platform:/plugin/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.genmodel#//servicelevelobjective platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units platform:/plugin/org.scaledl.usageevolution/model/usageevolution.genmodel#//usageevolution platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    language="de" usedGenPackages="platform:/plugin/tools.descartes.dlim.generator/src/tools/descartes/dlim/model/dlim.genmodel#//dlim platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore platform:/plugin/org.palladiosimulator.edp2/model/EDP2.genmodel#//models platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier platform:/plugin/org.palladiosimulator.metricspec/model/metricspec.genmodel#//metricspec platform:/plugin/org.palladiosimulator.monitorrepository/model/monitorrepository.genmodel#//monitorrepository platform:/plugin/org.palladiosimulator.pcm/model/pcm.genmodel#//pcm platform:/plugin/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction ../../org.palladiosimulator.spd/model/SPD.genmodel#//spd ../../org.palladiosimulator.spd.semantic/model/semantic.genmodel#//semanticspd platform:/plugin/org.palladiosimulator.servicelevelobjective/model/servicelevelobjective.genmodel#//servicelevelobjective platform:/plugin/de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex platform:/plugin/de.uka.ipd.sdq.units/model/Units.genmodel#//units platform:/plugin/org.scaledl.usageevolution/model/usageevolution.genmodel#//usageevolution"
     importOrganizing="true" cleanup="true">
   <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
     <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
@@ -144,6 +144,10 @@
             propertySortChoices="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/resourceEnvironment"/>
         <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
             propertySortChoices="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/usageEvolution"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/scalingDefinitions"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference experimentautomation.ecore#//experiments/InitialModel/spdSemanticConfiguration"/>
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//experiments/ReconfigurationRulesFolder">
         <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/ReconfigurationRulesFolder/folderUri"/>
@@ -158,6 +162,9 @@
       </genClasses>
       <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="experimentautomation.ecore#//experiments/Modification"/>
       <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//experiments/SchedulingPolicy2DelayModification"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="experimentautomation.ecore#//experiments/SetLongValueProvider">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute experimentautomation.ecore#//experiments/SetLongValueProvider/values"/>
+      </genClasses>
     </nestedGenPackages>
     <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="Abstractsimulation"
         basePackage="org.palladiosimulator.experimentautomation" resource="XML" disposableProviderFactory="true"

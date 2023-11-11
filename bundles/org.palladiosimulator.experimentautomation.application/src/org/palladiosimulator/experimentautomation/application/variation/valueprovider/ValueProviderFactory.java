@@ -6,6 +6,7 @@ import org.palladiosimulator.experimentautomation.experiments.LinearValueProvide
 import org.palladiosimulator.experimentautomation.experiments.NestedIntervalsDoubleValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.NestedIntervalsLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.PolynomialValueProvider;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.ValueProvider;
 
@@ -36,6 +37,9 @@ public class ValueProviderFactory {
         if (ExperimentsPackage.eINSTANCE.getNestedIntervalsLongValueProvider().isInstance(specification)) {
             final NestedIntervalsLongValueProvider p = (NestedIntervalsLongValueProvider) specification;
             return new NestedIntervalsLongValueProviderStrategy(p);
+        }	else if (ExperimentsPackage.eINSTANCE.getSetLongValueProvider().isInstance(specification)) {
+            final SetLongValueProvider p = (SetLongValueProvider) specification;
+            return new SetLongValueProviderStrategy(p);
         }
         throw new RuntimeException("Could not find a long value provider strategy for "
                 + specification.eClass().getName());

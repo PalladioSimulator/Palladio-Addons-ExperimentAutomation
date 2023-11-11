@@ -51,7 +51,7 @@ public class RunExperimentAutomationJob extends AbstractExtendableJob<MDSDBlackb
             this.add(new PreparePCMBlackboardPartitionJob());
         }
         for (final Experiment experiment : configuration.getExperiments()) {
-            this.add(new PrepareBlackboardJob());
+//            this.add(new PrepareBlackboardJob());
 
             this.add(new LoadModelsIntoBlackboardJob(experiment.getInitialModel(), configuration.isLoadModels()));
 
@@ -61,8 +61,8 @@ public class RunExperimentAutomationJob extends AbstractExtendableJob<MDSDBlackb
             // WORKFLOW_ID_BEFORE_EXPERIMENT_RUN
             handleJobExtensions(WORKFLOW_ID_BEFORE_EXPERIMENT_RUN, configuration);
 
-            this.add(new CopyPartitionJob(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID,
-                    LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID));
+//            this.add(new CopyPartitionJob(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID,
+//                    LoadSimuLizarModelsIntoBlackboardJob.PCM_MODELS_ANALYZED_PARTITION_ID));
 
             this.add(new RunExperimentForEachToolJob(experiment));
         }

@@ -14,30 +14,27 @@ import org.palladiosimulator.experimentautomation.variation.VariationPackage;
  */
 public class StructuralVariationImpl extends VariationTypeImpl implements StructuralVariation {
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public static final String copyright = "Palladiosimulator.org 2008-2017";
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final String copyright = "Palladiosimulator.org 2008-2017";
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected StructuralVariationImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected StructuralVariationImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return VariationPackage.Literals.STRUCTURAL_VARIATION;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return VariationPackage.Literals.STRUCTURAL_VARIATION;
+	}
 
 } // StructuralVariationImpl

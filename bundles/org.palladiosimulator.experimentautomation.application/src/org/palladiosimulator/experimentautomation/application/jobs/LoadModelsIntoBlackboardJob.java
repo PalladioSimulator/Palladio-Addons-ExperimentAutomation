@@ -7,6 +7,7 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
+import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
 import org.palladiosimulator.analyzer.workflow.jobs.LoadPCMModelsIntoBlackboardJob;
 import org.palladiosimulator.experimentautomation.experiments.InitialModel;
 
@@ -55,14 +56,16 @@ public class LoadModelsIntoBlackboardJob extends SequentialBlackboardInteracting
             pcmModels.add(this.initialModel.getEventMiddleWareRepository());
         }
 
+        pcmModels.add(this.initialModel.getScalingDefinitions());
+        pcmModels.add(this.initialModel.getSpdSemanticConfiguration());
         pcmModels.add(this.initialModel.getUsageEvolution());
         pcmModels.add(this.initialModel.getMonitorRepository());
 
         // load the PCM model into an original initial PCM model partition
-        loadIntoBlackboard(PCM_MODELS_ORIGINAL_PARTITION_ID, pcmModels);
+//        loadIntoBlackboard(PCM_MODELS_ORIGINAL_PARTITION_ID, pcmModels);
 
         // load the PCM model into the standard partition
-        loadIntoBlackboard(LoadPCMModelsIntoBlackboardJob.PCM_MODELS_PARTITION_ID, pcmModels);
+        loadIntoBlackboard(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID, pcmModels);
     }
 
     private void loadIntoBlackboard(final String partitionId, final List<EObject> eObjects) {
