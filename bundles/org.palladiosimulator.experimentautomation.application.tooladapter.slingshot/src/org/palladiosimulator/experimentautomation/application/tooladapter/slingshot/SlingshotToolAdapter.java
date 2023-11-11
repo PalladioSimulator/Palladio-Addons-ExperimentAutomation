@@ -8,7 +8,9 @@ import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
 import org.palladiosimulator.experimentautomation.application.jobs.CheckForSLOViolationsJob;
 import org.palladiosimulator.experimentautomation.application.jobs.CopyPartitionJob;
+import org.palladiosimulator.experimentautomation.application.jobs.LoadModelsIntoBlackboardJob;
 import org.palladiosimulator.experimentautomation.application.jobs.LogExperimentInformationJob;
+import org.palladiosimulator.experimentautomation.application.jobs.RemovePartitionJob;
 import org.palladiosimulator.experimentautomation.application.tooladapter.IToolAdapter;
 import org.palladiosimulator.experimentautomation.application.tooladapter.RunAnalysisJob;
 import org.palladiosimulator.experimentautomation.application.tooladapter.abstractsimulation.AbstractSimulationConfigFactory;
@@ -50,8 +52,8 @@ public class SlingshotToolAdapter implements IToolAdapter {
 
         // Save the state of the varied model before starting the simulation in order to be able to
         // revert the changes of runtime adaptations
-        result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID,
-        		ConstantsContainer.DEFAULT_TEMPORARY_DATA_LOCATION));
+//        result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID,
+//        		ConstantsContainer.DEFAULT_TEMPORARY_DATA_LOCATION));
 
         result.addJob(
                 new BlackboardAwareJobProxy<>("Run Slingshot", () -> new SimulationJob(simuComConfig)));
@@ -62,24 +64,14 @@ public class SlingshotToolAdapter implements IToolAdapter {
                     simuComConfig.getVariationId()));
         }
         // restore the state
-        result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_TEMPORARY_DATA_LOCATION,
-                ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
+        result.addJob(new RemovePartitionJob(ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
+        result.addJob(new LoadModelsIntoBlackboardJob(experiment.getInitialModel(),true));
+//        result.addJob(new CopyPartitionJob(ConstantsContainer.DEFAULT_TEMPORARY_DATA_LOCATION,
+//                ConstantsContainer.DEFAULT_PCM_INSTANCE_PARTITION_ID));
 
         return result;
 	}
 
-//	private SimulationWorkflowConfiguration createSlingshotWorkflowConfig(SimuComConfig simuComConfig,
-//			InitialModel initialModel) {
-//			SimulationWorkflowConfiguration cnfSlingshot = new SimulationWorkflowConfiguration(simuComConfig);
-//			
-//			cnfSlingshot.setUsageModelFile(initialModel.getUsageModel().eResource().getURI().toString());
-//			List<String> allocFiles = List.of(initialModel.getAllocation().eResource().getURI().toString());
-//			cnfSlingshot.setAllocationFiles(allocFiles);
-//			cnfSlingshot.addOtherModelFile(initialModel.getMonitorRepository().eResource().getURI().toString());
-//			cnfSlingshot.addOtherModelFile(initialModel.getScalingDefinitions().eResource().getURI().toString());
-//			cnfSlingshot.addOtherModelFile(initialModel.getSpdSemanticConfiguration().eResource().getURI().toString());
-//			return cnfSlingshot;
-//	}
 
 	@Override
 	public boolean hasSupportFor(ToolConfiguration toolConfiguration) {
