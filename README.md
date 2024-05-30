@@ -44,7 +44,8 @@ Use the GitHub repository to check out all plug-ins ("org.palladiosimulator.expe
 1. Choose the newly created Eclipse launch configuration
 1. Select "Run as application" and choose "org.palladiosimulator.experimentautomation.application"
 1. Switch to the "Arguments" tab
-1. In the field "Program arguments", provide an additional argument as shown in this example: `-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog D:\models\my.experiments`
-1. This argument is the path to your configuration model (.experiments extension).
+1. In the field "Program arguments", provide an additional argument as shown in this example:
+   `-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog D:\models\my.experiments`
+    * This argument is the path to your configuration model (.experiments extension).
 1. Hit Run and lean back
 1. Once the experiments are finished, you will find all data in the recorder (e.g., EDP2 or SensorFramework) you configured
