@@ -14,8 +14,8 @@ import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentRepository;
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
 import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowConfigurationBuilder;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
 
 public class ExperimentAutomationLaunchConfigurationBasedConfigBuilder extends AbstractWorkflowConfigurationBuilder {
 
@@ -32,9 +32,9 @@ public class ExperimentAutomationLaunchConfigurationBasedConfigBuilder extends A
 
         final String experimentsURI = hasAttribute(ExperimentAutomationConfigurationTab.EXPERIMENT_AUTOMATION)
 
-        ? getStringAttribute(ExperimentAutomationConfigurationTab.EXPERIMENT_AUTOMATION)
+                ? getStringAttribute(ExperimentAutomationConfigurationTab.EXPERIMENT_AUTOMATION)
 
-        : ExperimentAutomationConfigurationTab.DEFAULT_EXPERIMENTS;
+                : ExperimentAutomationConfigurationTab.DEFAULT_EXPERIMENTS;
 
         config.setExperiments(getExperimentRepository(experimentsURI).getExperiments());
         config.setAttributes(this.properties);
@@ -44,13 +44,16 @@ public class ExperimentAutomationLaunchConfigurationBasedConfigBuilder extends A
         final URI experimentsURI = URI.createURI(experimentsURIString);
         final ResourceSet resourceSet = new ResourceSetImpl();
         final Resource resource = resourceSet.getResource(experimentsURI, true);
-        final EObject eObject = resource.getContents().get(0);
+        final EObject eObject = resource.getContents()
+            .get(0);
 
-        if (ExperimentsPackage.eINSTANCE.getExperimentRepository().isInstance(eObject)) {
+        if (ExperimentsPackage.eINSTANCE.getExperimentRepository()
+            .isInstance(eObject)) {
             return (ExperimentRepository) eObject;
         } else {
             throw new RuntimeException("The root element of the loaded resource is not of the expected type "
-                    + ExperimentsPackage.eINSTANCE.getExperimentRepository().getName());
+                    + ExperimentsPackage.eINSTANCE.getExperimentRepository()
+                        .getName());
         }
     }
 
