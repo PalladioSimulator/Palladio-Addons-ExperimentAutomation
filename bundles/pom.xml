@@ -16,8 +16,10 @@
 		<module>org.palladiosimulator.experimentautomation.application</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simucom</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model</module>
+		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model.edit</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model</module>
+		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.edit</module>
 		<module>org.palladiosimulator.experimentautomation.edit</module>
 		<module>org.palladiosimulator.experimentautomation.editor</module>
 		<module>org.palladiosimulator.experimentautomation.examples.espresso</module>
