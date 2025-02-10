@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.measure.Measure;
-import javax.measure.quantity.Dimensionless;
-import javax.measure.quantity.Duration;
-import javax.measure.unit.SI;
+import jakarta.measure.Measure;
+import jakarta.measure.quantity.Dimensionless;
+import jakarta.measure.quantity.Duration;
+import jakarta.measure.unit.SI;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.palladiosimulator.edp2.models.measuringpoint.MeasuringPointRepository;
