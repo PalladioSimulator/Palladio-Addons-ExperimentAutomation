@@ -6,7 +6,7 @@ import java.util.Map;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
 
 import de.uka.ipd.sdq.workflow.extension.ExtendableJobConfiguration;
-import de.uka.ipd.sdq.workflow.launchconfig.AbstractWorkflowBasedRunConfiguration;
+import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
 
 public class ExperimentAutomationConfiguration extends AbstractWorkflowBasedRunConfiguration
         implements ExtendableJobConfiguration {
