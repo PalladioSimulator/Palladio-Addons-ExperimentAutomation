@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Level;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.ILaunchConfiguration;
 import org.palladiosimulator.experimentautomation.application.config.ExperimentAutomationConfiguration;
@@ -11,15 +12,26 @@ import org.palladiosimulator.experimentautomation.application.jobs.RunExperiment
 
 import de.uka.ipd.sdq.codegen.simucontroller.debug.IDebugListener;
 import de.uka.ipd.sdq.codegen.simucontroller.debug.SimulationDebugListener;
+import de.uka.ipd.sdq.workflow.BlackboardBasedWorkflow;
 import de.uka.ipd.sdq.workflow.WorkflowExceptionHandler;
 import de.uka.ipd.sdq.workflow.jobs.IJob;
 import de.uka.ipd.sdq.workflow.launchconfig.core.configbuilder.AbstractWorkflowConfigurationBuilder;
 import de.uka.ipd.sdq.workflow.logging.console.LoggerAppenderStruct;
 import de.uka.ipd.sdq.workflow.mdsd.AbstractWorkflowBasedMDSDLaunchConfigurationDelegate;
+import de.uka.ipd.sdq.workflow.mdsd.blackboard.MDSDBlackboard;
+import de.uka.ipd.sdq.workflow.ui.UIBasedWorkflow;
 import de.uka.ipd.sdq.workflow.ui.UIBasedWorkflowExceptionHandler;
 
 public class ExperimentAutomationWorkflowLauncher
         extends AbstractWorkflowBasedMDSDLaunchConfigurationDelegate<ExperimentAutomationConfiguration> {
+
+    @Override
+    protected BlackboardBasedWorkflow<MDSDBlackboard> createWorkflow(
+            final ExperimentAutomationConfiguration workflowConfiguration, final IProgressMonitor monitor,
+            final ILaunch launch) throws CoreException {
+        return new UIBasedWorkflow<>(this.createWorkflowJob(workflowConfiguration, launch), monitor,
+                this.createExceptionHandler(workflowConfiguration.isInteractive()), this.createBlackboard());
+    }
 
     @Override
     protected WorkflowExceptionHandler createExceptionHandler(boolean interactive) {
