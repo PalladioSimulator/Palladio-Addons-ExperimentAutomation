@@ -15,7 +15,7 @@ import org.palladiosimulator.experimentautomation.experiments.ExperimentReposito
 import org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage;
 
 import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowBasedRunConfiguration;
-import de.uka.ipd.sdq.workflow.launchconfig.core.AbstractWorkflowConfigurationBuilder;
+import de.uka.ipd.sdq.workflow.launchconfig.core.configbuilder.AbstractWorkflowConfigurationBuilder;
 
 public class ExperimentAutomationLaunchConfigurationBasedConfigBuilder extends AbstractWorkflowConfigurationBuilder {
 
