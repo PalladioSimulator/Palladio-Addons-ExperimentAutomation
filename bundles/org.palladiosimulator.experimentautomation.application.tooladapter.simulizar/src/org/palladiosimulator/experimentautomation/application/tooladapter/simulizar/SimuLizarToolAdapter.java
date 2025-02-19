@@ -21,7 +21,7 @@ import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
 import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
 import org.palladiosimulator.simulizar.runconfig.SimuLizarWorkflowConfiguration;
 
-import de.uka.ipd.sdq.simucomframework.SimuComConfig;
+import de.uka.ipd.sdq.simucomframework.core.SimuComConfig;
 import de.uka.ipd.sdq.workflow.jobs.BlackboardAwareJobProxy;
 
 /**
