@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.palladiosimulator.analyzer.workflow.jobs.LoadPCMModelsIntoBlackboardJob;
+import org.palladiosimulator.analyzer.workflow.core.jobs.LoadPCMModelsIntoBlackboardJob;
 import org.palladiosimulator.experimentautomation.application.VariationFactorTuple;
 import org.palladiosimulator.experimentautomation.application.utils.EcoreHelper;
 import org.palladiosimulator.experimentautomation.application.variation.IVariationStrategy;

@@ -1,7 +1,7 @@
 package org.palladiosimulator.experimentautomation.application.jobs;
 
-import org.palladiosimulator.analyzer.workflow.jobs.LoadPCMModelsIntoBlackboardJob;
-import org.palladiosimulator.analyzer.workflow.jobs.PreparePCMBlackboardPartitionJob;
+import org.palladiosimulator.analyzer.workflow.core.jobs.LoadPCMModelsIntoBlackboardJob;
+import org.palladiosimulator.analyzer.workflow.core.jobs.PreparePCMBlackboardPartitionJob;
 import org.palladiosimulator.experimentautomation.application.config.ExperimentAutomationConfiguration;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
