@@ -7,7 +7,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
+import org.palladiosimulator.analyzer.workflow.core.blackboard.PCMResourceSetPartition;
 import org.palladiosimulator.commons.emfutils.EMFCopyHelper;
 
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;

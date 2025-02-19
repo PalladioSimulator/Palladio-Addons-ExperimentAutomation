@@ -1,7 +1,7 @@
 package org.palladiosimulator.experimentautomation.application.jobs;
 
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.palladiosimulator.analyzer.workflow.blackboard.PCMResourceSetPartition;
+import org.palladiosimulator.analyzer.workflow.core.blackboard.PCMResourceSetPartition;
 import org.palladiosimulator.simulizar.launcher.jobs.LoadSimuLizarModelsIntoBlackboardJob;
 
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
