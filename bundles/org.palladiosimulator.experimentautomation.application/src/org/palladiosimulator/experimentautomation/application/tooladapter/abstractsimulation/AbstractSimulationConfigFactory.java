@@ -19,7 +19,7 @@ import org.palladiosimulator.experimentautomation.experiments.Experiment;
 import org.palladiosimulator.recorderframework.edp2.config.EDP2RecorderConfigurationFactory;
 
 import de.uka.ipd.sdq.simucomframework.SimuComConfig;
-import de.uka.ipd.sdq.simulation.AbstractSimulationConfig;
+import de.uka.ipd.sdq.simulation.core.AbstractSimulationConfig;
 
 /**
  * This class allows to create the properties of an {@link AbstractSimulationConfig} run
