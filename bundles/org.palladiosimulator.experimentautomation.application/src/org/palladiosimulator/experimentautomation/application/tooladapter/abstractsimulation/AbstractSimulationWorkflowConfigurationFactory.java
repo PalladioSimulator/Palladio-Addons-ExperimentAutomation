@@ -1,9 +1,9 @@
 package org.palladiosimulator.experimentautomation.application.tooladapter.abstractsimulation;
 
-import org.palladiosimulator.analyzer.workflow.ConstantsContainer;
-import org.palladiosimulator.analyzer.workflow.configurations.AbstractCodeGenerationWorkflowRunConfiguration.CodeGenerationAdvice;
+import org.palladiosimulator.analyzer.workflow.core.ConstantsContainer;
+import org.palladiosimulator.analyzer.workflow.core.configurations.AbstractCodeGenerationWorkflowRunConfiguration.CodeGenerationAdvice;
 
-import de.uka.ipd.sdq.codegen.simucontroller.runconfig.AbstractSimulationWorkflowConfiguration;
+import de.uka.ipd.sdq.codegen.simucontroller.core.runconfig.AbstractSimulationWorkflowConfiguration;
 
 /**
  * @author Sebastian Lehrig
