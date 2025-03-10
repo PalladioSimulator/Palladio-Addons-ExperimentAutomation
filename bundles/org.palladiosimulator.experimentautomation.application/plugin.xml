@@ -40,12 +40,5 @@
                id="org.palladiosimulator.experimentautomation.application.launchConfigurationTypeImage">
          </launchConfigurationTypeImage>
       </extension>
-      <extension
-            point="org.eclipse.ui.elementFactories">
-         <factory
-               class="org.palladiosimulator.experimentautomation.application.filters.SLOFilterInputFactory"
-               id="org.palladiosimulator.experimentautomation.application.filters.SLOFilterInputFactory">
-         </factory>
-      </extension>
    
 </plugin>
