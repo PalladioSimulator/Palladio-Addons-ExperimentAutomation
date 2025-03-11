@@ -13,7 +13,7 @@ Require-Bundle: de.uka.ipd.sdq.simucomframework;bundle-version="2.0.0",
  org.palladiosimulator.simulizar;bundle-version="2.0.3",
  org.palladiosimulator.edp2.datastream;bundle-version="1.0.0",
  org.palladiosimulator.recorderframework;bundle-version="2.0.1",
- org.palladiosimulator.servicelevelobjective.edp2;bundle-version="1.0.1",
+ org.palladiosimulator.servicelevelobjective.edp2.core;bundle-version="5.2.1",
  org.palladiosimulator.edp2.repository.local;bundle-version="1.0.0",
  org.palladiosimulator.edp2.batchexport
 Bundle-RequiredExecutionEnvironment: JavaSE-17
