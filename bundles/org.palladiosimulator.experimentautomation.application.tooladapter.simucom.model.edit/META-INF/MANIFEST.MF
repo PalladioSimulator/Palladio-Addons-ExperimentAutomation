@@ -35,8 +35,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.servicelevelobjective.edit;visibility:=reexport,
  org.scaledl.usageevolution;visibility:=reexport,
  org.scaledl.usageevolution.edit;visibility:=reexport,
- tools.descartes.dlim;visibility:=reexport,
- tools.descartes.dlim.edit;visibility:=reexport,
+ tools.descartes.dlim;bundle-version="0.17.0";visibility:=reexport,
+ tools.descartes.dlim.edit;bundle-version="0.17.0";visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
