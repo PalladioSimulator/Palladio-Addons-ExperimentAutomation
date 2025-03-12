@@ -28,10 +28,10 @@ import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
-import org.palladiosimulator.recorderframework.AbstractRecorder;
 import org.palladiosimulator.recorderframework.config.AbstractRecorderConfiguration;
-import org.palladiosimulator.recorderframework.config.IRecorderConfiguration;
 import org.palladiosimulator.recorderframework.config.IRecorderConfigurationFactory;
+import org.palladiosimulator.recorderframework.core.AbstractRecorder;
+import org.palladiosimulator.recorderframework.core.config.IRecorderConfiguration;
 import org.palladiosimulator.recorderframework.edp2.EDP2RawRecorder;
 import org.palladiosimulator.recorderframework.edp2.config.EDP2ReportRecorderConfigurationFactory;
 
@@ -56,7 +56,7 @@ public class AddDynamicVariationJob extends SequentialBlackboardInteractingJob<M
 
     /** Default repository where measuring points are attached to. */
     private static final MeasuringPointRepository MEASURING_POINT_REPOSITORY = MEASURING_POINT_FACTORY
-            .createMeasuringPointRepository();
+        .createMeasuringPointRepository();
 
     private RunAnalysisJob runAnalysisJob;
 
@@ -77,19 +77,21 @@ public class AddDynamicVariationJob extends SequentialBlackboardInteractingJob<M
 
     private Map<VariationFactorTuple, AbstractNestedIntervalsValueProviderStrategy> computeNestedIntervalsValueProviders() {
         final Map<VariationFactorTuple, AbstractNestedIntervalsValueProviderStrategy> result;
-        result = new HashMap<VariationFactorTuple, AbstractNestedIntervalsValueProviderStrategy>();
+        result = new HashMap<>();
 
         for (final VariationFactorTuple variationFactorTuple : this.variationFactorTuples) {
             try {
                 final IValueProviderStrategy<Long> valueProvider = ValueProviderFactory
-                        .createLongValueProvider(variationFactorTuple.getVariation().getValueProvider());
+                    .createLongValueProvider(variationFactorTuple.getVariation()
+                        .getValueProvider());
                 if (valueProvider instanceof NestedIntervalsLongValueProviderStrategy) {
                     final AbstractNestedIntervalsValueProviderStrategy nestedInterval = (NestedIntervalsLongValueProviderStrategy) valueProvider;
                     result.put(variationFactorTuple, nestedInterval);
                 }
             } catch (RuntimeException e) {
                 final IValueProviderStrategy<Double> valueProvider = ValueProviderFactory
-                        .createDoubleValueProvider(variationFactorTuple.getVariation().getValueProvider());
+                    .createDoubleValueProvider(variationFactorTuple.getVariation()
+                        .getValueProvider());
                 if (valueProvider instanceof NestedIntervalsDoubleValueProviderStrategy) {
                     final AbstractNestedIntervalsValueProviderStrategy nestedInterval = (NestedIntervalsDoubleValueProviderStrategy) valueProvider;
                     result.put(variationFactorTuple, nestedInterval);
@@ -108,7 +110,7 @@ public class AddDynamicVariationJob extends SequentialBlackboardInteractingJob<M
         if (this.tuples2nestedIntervals.size() > 0) {
             for (final VariationFactorTuple variationFactorTuple : this.tuples2nestedIntervals.keySet()) {
                 final AbstractNestedIntervalsValueProviderStrategy nestedInterval = this.tuples2nestedIntervals
-                        .get(variationFactorTuple);
+                    .get(variationFactorTuple);
                 if (this.runAnalysisJob.sloWasViolated()) {
                     if (nestedInterval instanceof NestedIntervalsDoubleValueProviderStrategy) {
                         nestedInterval.setMax((Double) nestedInterval.valueAtPosition(0) - EPSILON);
@@ -129,26 +131,27 @@ public class AddDynamicVariationJob extends SequentialBlackboardInteractingJob<M
 
                     // Measurement
                     final Measure<Double, Duration> pointInTimeMeasure = Measure.valueOf(0d, SI.SECOND);
-                    final List<MeasuringValue> result = new ArrayList<MeasuringValue>(2);
-                    result.add(new BasicMeasurement<Double, Duration>(pointInTimeMeasure,
+                    final List<MeasuringValue> result = new ArrayList<>(2);
+                    result.add(new BasicMeasurement<>(pointInTimeMeasure,
                             MetricDescriptionConstants.POINT_IN_TIME_METRIC));
 
                     MeasuringValue resultMeasurement;
                     if (nestedInterval instanceof NestedIntervalsDoubleValueProviderStrategy) {
-                        final Measure<Double, Duration> capacityMeasure = Measure.valueOf(
-                                (Double) nestedInterval.valueAtPosition(0), SI.SECOND);
-                        result.add(new BasicMeasurement<Double, Duration>(capacityMeasure,
+                        final Measure<Double, Duration> capacityMeasure = Measure
+                            .valueOf((Double) nestedInterval.valueAtPosition(0), SI.SECOND);
+                        result.add(new BasicMeasurement<>(capacityMeasure,
                                 MetricDescriptionConstants.INTER_ARRIVAL_TIME_CAPACITY));
                         resultMeasurement = new TupleMeasurement(result,
                                 MetricDescriptionConstants.INTER_ARRIVAL_TIME_CAPACITY_TUPLE);
                         recorderConfigurationMap.put(AbstractRecorderConfiguration.RECORDER_ACCEPTED_METRIC,
                                 MetricDescriptionConstants.INTER_ARRIVAL_TIME_CAPACITY_TUPLE);
                     } else if (nestedInterval instanceof NestedIntervalsLongValueProviderStrategy) {
-                        final Measure<Long, Dimensionless> capacityMeasure = Measure.valueOf(
-                                (Long) nestedInterval.valueAtPosition(0), Dimensionless.UNIT);
-                        result.add(new BasicMeasurement<Long, Dimensionless>(capacityMeasure,
+                        final Measure<Long, Dimensionless> capacityMeasure = Measure
+                            .valueOf((Long) nestedInterval.valueAtPosition(0), Dimensionless.UNIT);
+                        result.add(new BasicMeasurement<>(capacityMeasure,
                                 MetricDescriptionConstants.USER_CAPACITY));
-                        resultMeasurement = new TupleMeasurement(result, MetricDescriptionConstants.USER_CAPACITY_TUPLE);
+                        resultMeasurement = new TupleMeasurement(result,
+                                MetricDescriptionConstants.USER_CAPACITY_TUPLE);
                         recorderConfigurationMap.put(AbstractRecorderConfiguration.RECORDER_ACCEPTED_METRIC,
                                 MetricDescriptionConstants.USER_CAPACITY_TUPLE);
                     } else {
@@ -161,9 +164,10 @@ public class AddDynamicVariationJob extends SequentialBlackboardInteractingJob<M
 
                     // Measuring Point
                     final StringMeasuringPoint capacityMeasuringPoint = MEASURING_POINT_FACTORY
-                            .createStringMeasuringPoint();
+                        .createStringMeasuringPoint();
                     capacityMeasuringPoint.setMeasuringPoint("System Capacity");
-                    MEASURING_POINT_REPOSITORY.getMeasuringPoints().add(capacityMeasuringPoint);
+                    MEASURING_POINT_REPOSITORY.getMeasuringPoints()
+                        .add(capacityMeasuringPoint);
                     capacityMeasuringPoint.setMeasuringPointRepository(MEASURING_POINT_REPOSITORY);
 
                     recorderConfigurationMap.put(AbstractRecorderConfiguration.MEASURING_POINT, capacityMeasuringPoint);
@@ -172,7 +176,7 @@ public class AddDynamicVariationJob extends SequentialBlackboardInteractingJob<M
                     final IRecorderConfigurationFactory edp2ConfigFactory = new EDP2ReportRecorderConfigurationFactory();
                     edp2ConfigFactory.initialize(recorderConfigurationMap);
                     final IRecorderConfiguration recorderConfiguration = edp2ConfigFactory
-                            .createRecorderConfiguration(recorderConfigurationMap);
+                        .createRecorderConfiguration(recorderConfigurationMap);
                     final AbstractRecorder reportRecorder = new EDP2RawRecorder();
 
                     // Write data
