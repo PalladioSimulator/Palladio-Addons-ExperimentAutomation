@@ -28,10 +28,10 @@ import org.palladiosimulator.measurementframework.BasicMeasurement;
 import org.palladiosimulator.measurementframework.MeasuringValue;
 import org.palladiosimulator.measurementframework.TupleMeasurement;
 import org.palladiosimulator.metricspec.constants.MetricDescriptionConstants;
-import org.palladiosimulator.recorderframework.config.AbstractRecorderConfiguration;
-import org.palladiosimulator.recorderframework.config.IRecorderConfigurationFactory;
 import org.palladiosimulator.recorderframework.core.AbstractRecorder;
+import org.palladiosimulator.recorderframework.core.config.AbstractRecorderConfiguration;
 import org.palladiosimulator.recorderframework.core.config.IRecorderConfiguration;
+import org.palladiosimulator.recorderframework.core.config.IRecorderConfigurationFactory;
 import org.palladiosimulator.recorderframework.edp2.EDP2RawRecorder;
 import org.palladiosimulator.recorderframework.edp2.config.EDP2ReportRecorderConfigurationFactory;
 
