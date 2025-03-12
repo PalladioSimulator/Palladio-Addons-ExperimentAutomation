@@ -30,7 +30,6 @@
       <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.pcm.edp2.measuringpoint.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.edp2.dao" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="tools.descartes.dlim.generator" version="0.14.10" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.experimentautomation" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit" version="2.10.0" match="greaterOrEqual"/>
       <import plugin="de.uka.ipd.sdq.identifier.edit" version="2.1.0" match="greaterOrEqual"/>
@@ -44,7 +43,8 @@
       <import plugin="org.scaledl.usageevolution.edit"/>
       <import plugin="org.eclipse.emf.ecore.edit"/>
       <import plugin="org.eclipse.uml2.common.edit" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="tools.descartes.dlim.generator.edit" version="0.14.10" match="greaterOrEqual"/>
+      <import plugin="tools.descartes.dlim.edit" version="0.16.2" match="greaterOrEqual"/>
+      <import plugin="tools.descartes.dlim.generator" version="0.16.2" match="greaterOrEqual"/>
       <import plugin="org.eclipse.core.resources" version="3.9.0" match="greaterOrEqual"/>
       <import plugin="org.palladiosimulator.experimentautomation.edit" version="1.0.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.edit.ui" version="2.10.0" match="greaterOrEqual"/>

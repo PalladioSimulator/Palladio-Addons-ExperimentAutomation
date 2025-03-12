@@ -24,6 +24,5 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.stoex;visibility:=reexport,
  de.uka.ipd.sdq.units;visibility:=reexport,
  org.palladiosimulator.servicelevelobjective;visibility:=reexport,
- org.scaledl.usageevolution;visibility:=reexport,
- tools.descartes.dlim.generator;visibility:=reexport
+ org.scaledl.usageevolution;visibility:=reexport
 Bundle-ActivationPolicy: lazy
