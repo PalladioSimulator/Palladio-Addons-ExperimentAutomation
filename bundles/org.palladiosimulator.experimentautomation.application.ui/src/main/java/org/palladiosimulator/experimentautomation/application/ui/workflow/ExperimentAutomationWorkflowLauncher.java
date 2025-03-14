@@ -11,7 +11,7 @@ import org.eclipse.debug.core.ILaunchConfiguration;
 import org.palladiosimulator.experimentautomation.application.config.ExperimentAutomationConfiguration;
 import org.palladiosimulator.experimentautomation.application.jobs.RunExperimentAutomationJob;
 
-import de.uka.ipd.sdq.codegen.simucontroller.debug.IDebugListener;
+import de.uka.ipd.sdq.codegen.simucontroller.core.debug.IDebugListener;
 import de.uka.ipd.sdq.codegen.simucontroller.debug.SimulationDebugListener;
 import de.uka.ipd.sdq.workflow.BlackboardBasedWorkflow;
 import de.uka.ipd.sdq.workflow.WorkflowExceptionHandler;
