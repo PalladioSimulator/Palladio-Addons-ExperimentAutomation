@@ -1,4 +1,5 @@
-package org.palladiosimulator.experimentautomation.application.workflow;
+/** */
+package org.palladiosimulator.experimentautomation.application.ui.workflow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public class ExperimentAutomationTabGroup extends ExtendableTabGroup {
      */
     @Override
     public void createTabs(final ILaunchConfigurationDialog dialog, final String mode) {
-        final List<ILaunchConfigurationTab> tabs = new ArrayList<ILaunchConfigurationTab>();
+        final List<ILaunchConfigurationTab> tabs = new ArrayList<>();
 
         tabs.add(new ExperimentAutomationConfigurationTab());
         tabs.addAll(createExtensionTabs(dialog, mode, WORKFLOW_ID_EXPERIMENT_AUTOMATION_TABS));

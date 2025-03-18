@@ -1,4 +1,4 @@
-package org.palladiosimulator.experimentautomation.application.workflow;
+package org.palladiosimulator.experimentautomation.application.ui.workflow;
 
 import java.util.ArrayList;
 

@@ -4,24 +4,21 @@ Bundle-Name: Application
 Bundle-SymbolicName: org.palladiosimulator.experimentautomation.application;singleton:=true
 Bundle-Version: 5.2.1.qualifier
 Bundle-Activator: org.palladiosimulator.experimentautomation.application.Activator
-Require-Bundle: de.uka.ipd.sdq.simucomframework;bundle-version="2.0.0",
+Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
+ de.uka.ipd.sdq.simucomframework;bundle-version="2.0.0",
  de.uka.ipd.sdq.codegen.simucontroller;bundle-version="1.0.0",
- org.palladiosimulator.analyzer.workflow;bundle-version="1.0.0",
+ org.palladiosimulator.analyzer.workflow.core;bundle-version="1.0.0",
  de.uka.ipd.sdq.simucomframework.simucomstatus;bundle-version="1.0.0",
  org.palladiosimulator.experimentautomation;bundle-version="1.0.0",
  org.palladiosimulator.recorderframework.edp2;bundle-version="2.0.2",
- org.palladiosimulator.edp2.dao;bundle-version="1.0.0",
- org.palladiosimulator.edp2.util;bundle-version="1.0.0",
- org.palladiosimulator.commons;bundle-version="1.0.0",
  org.palladiosimulator.simulizar;bundle-version="2.0.3",
  org.palladiosimulator.edp2.datastream;bundle-version="1.0.0",
- org.palladiosimulator.measurementframework;bundle-version="1.0.0",
- org.jscience,
- org.palladiosimulator.recorderframework;bundle-version="2.0.1",
- org.palladiosimulator.simulizar.reconfiguration.storydiagram,
- org.palladiosimulator.servicelevelobjective.edp2;bundle-version="1.0.1",
+ org.palladiosimulator.recorderframework.core;bundle-version="2.0.1",
+ org.palladiosimulator.servicelevelobjective.edp2.core;bundle-version="5.2.1",
  org.palladiosimulator.edp2.repository.local;bundle-version="1.0.0",
- org.palladiosimulator.edp2.batchexport
+ org.palladiosimulator.edp2.batchexport,
+ de.uka.ipd.sdq.workflow.mdsd.blackboard;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow.launchconfig.core;bundle-version="5.2.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.palladiosimulator.experimentautomation.application,
  org.palladiosimulator.experimentautomation.application.config,
