@@ -6,7 +6,7 @@ Bundle-Version: 5.2.1.qualifier
 Bundle-Activator: org.palladiosimulator.experimentautomation.application.Activator
 Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
  de.uka.ipd.sdq.simucomframework.core;bundle-version="2.0.0",
- de.uka.ipd.sdq.codegen.simucontroller;bundle-version="1.0.0",
+ de.uka.ipd.sdq.codegen.simucontroller.core;bundle-version="1.0.0",
  org.palladiosimulator.analyzer.workflow.core;bundle-version="1.0.0",
  de.uka.ipd.sdq.simucomframework.simucomstatus;bundle-version="1.0.0",
  org.palladiosimulator.experimentautomation;bundle-version="1.0.0",
@@ -19,7 +19,8 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
  org.palladiosimulator.edp2.batchexport,
  de.uka.ipd.sdq.workflow.mdsd.blackboard;bundle-version="5.2.1",
  de.uka.ipd.sdq.workflow.launchconfig.core;bundle-version="5.2.1",
- de.uka.ipd.sdq.simulation.core;bundle-version="5.2.1"
+ de.uka.ipd.sdq.simulation.core;bundle-version="5.2.1",
+ de.uka.ipd.sdq.workflow.mdsd.core;bundle-version="5.2.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.palladiosimulator.experimentautomation.application,
  org.palladiosimulator.experimentautomation.application.config,
