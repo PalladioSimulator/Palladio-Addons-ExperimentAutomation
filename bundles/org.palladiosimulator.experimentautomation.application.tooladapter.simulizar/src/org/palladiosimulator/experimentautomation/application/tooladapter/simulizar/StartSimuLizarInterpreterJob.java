@@ -2,8 +2,8 @@ package org.palladiosimulator.experimentautomation.application.tooladapter.simul
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.palladiosimulator.simulizar.SimuLizarPlatform;
+import org.palladiosimulator.simulizar.core.runconfig.SimuLizarWorkflowConfiguration;
 import org.palladiosimulator.simulizar.di.modules.stateless.mdsd.MDSDBlackboardProvidingModule;
-import org.palladiosimulator.simulizar.runconfig.SimuLizarWorkflowConfiguration;
 
 import de.uka.ipd.sdq.workflow.jobs.AbstractBlackboardInteractingJob;
 import de.uka.ipd.sdq.workflow.jobs.CleanupFailedException;
