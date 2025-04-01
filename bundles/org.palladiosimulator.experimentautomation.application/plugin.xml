@@ -15,37 +15,5 @@
          </run>
       </application>
    </extension>
-      <extension
-            point="org.eclipse.debug.core.launchConfigurationTypes">
-         <launchConfigurationType
-               delegate="org.palladiosimulator.experimentautomation.application.workflow.ExperimentAutomationWorkflowLauncher"
-               id="org.palladiosimulator.experimentautomation.application.launchConfigurationType"
-               modes="run, debug"
-               name="Experiment Automation">
-         </launchConfigurationType>
-      </extension>
-      <extension
-            point="org.eclipse.debug.ui.launchConfigurationTabGroups">
-         <launchConfigurationTabGroup
-               class="org.palladiosimulator.experimentautomation.application.workflow.ExperimentAutomationTabGroup"
-               id="org.palladiosimulator.experimentautomation.application.launchConfigurationTabGroup"
-               type="org.palladiosimulator.experimentautomation.application.launchConfigurationType">
-         </launchConfigurationTabGroup>
-      </extension>
-      <extension
-            point="org.eclipse.debug.ui.launchConfigurationTypeImages">
-         <launchConfigurationTypeImage
-               configTypeID="org.palladiosimulator.experimentautomation.application.launchConfigurationType"
-               icon="icon/app_experiment_automation.png"
-               id="org.palladiosimulator.experimentautomation.application.launchConfigurationTypeImage">
-         </launchConfigurationTypeImage>
-      </extension>
-      <extension
-            point="org.eclipse.ui.elementFactories">
-         <factory
-               class="org.palladiosimulator.experimentautomation.application.filters.SLOFilterInputFactory"
-               id="org.palladiosimulator.experimentautomation.application.filters.SLOFilterInputFactory">
-         </factory>
-      </extension>
    
 </plugin>
