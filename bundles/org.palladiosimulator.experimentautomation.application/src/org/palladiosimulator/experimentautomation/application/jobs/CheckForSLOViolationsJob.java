@@ -25,8 +25,8 @@ import org.palladiosimulator.metricspec.MetricDescription;
 import org.palladiosimulator.metricspec.MetricSetDescription;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjective;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
-import org.palladiosimulator.servicelevelobjective.edp2.filters.SLOViolationEDP2DatasourceFilter;
-import org.palladiosimulator.servicelevelobjective.edp2.filters.SLOViolationEDP2DatasourceFilterConfiguration;
+import org.palladiosimulator.servicelevelobjective.edp2.core.filters.SLOViolationEDP2DatasourceFilter;
+import org.palladiosimulator.servicelevelobjective.edp2.core.filters.SLOViolationEDP2DatasourceFilterConfiguration;
 
 import de.uka.ipd.sdq.workflow.jobs.JobFailedException;
 import de.uka.ipd.sdq.workflow.jobs.SequentialBlackboardInteractingJob;
@@ -107,16 +107,20 @@ public class CheckForSLOViolationsJob extends SequentialBlackboardInteractingJob
      * @return the number of found SLO violations.
      */
     private long computeSloViolations() {
-        final int lastExperiment = this.experimentSetting.getExperimentRuns().size() - 1;
-        final ExperimentRun experimentRun = this.experimentSetting.getExperimentRuns().get(lastExperiment);
+        final int lastExperiment = this.experimentSetting.getExperimentRuns()
+            .size() - 1;
+        final ExperimentRun experimentRun = this.experimentSetting.getExperimentRuns()
+            .get(lastExperiment);
 
         long sloViolations = 0L;
         for (final ServiceLevelObjective serviceLevelObjective : this.serviceLevelObjectives
-                .getServicelevelobjectives()) {
+            .getServicelevelobjectives()) {
             final Measurement measurement = findMeasurement(experimentRun.getMeasurement(), serviceLevelObjective);
-            final RawMeasurements rawMeasurements = measurement.getMeasurementRanges().get(0).getRawMeasurements();
+            final RawMeasurements rawMeasurements = measurement.getMeasurementRanges()
+                .get(0)
+                .getRawMeasurements();
 
-            final Map<String, Object> properties = new HashMap<String, Object>(1);
+            final Map<String, Object> properties = new HashMap<>(1);
             properties.put(SLOViolationEDP2DatasourceFilterConfiguration.SLO_KEY, serviceLevelObjective);
 
             final IDataSource dataSource = new Edp2DataTupleDataSource(rawMeasurements);
@@ -156,12 +160,17 @@ public class CheckForSLOViolationsJob extends SequentialBlackboardInteractingJob
     private Measurement findMeasurement(final List<Measurement> measurementList,
             final ServiceLevelObjective serviceLevelObjective) {
         for (final Measurement measurement : measurementList) {
-            if (containsMetric(measurement.getMeasuringType().getMetric(),
-                    serviceLevelObjective.getMeasurementSpecification().getMetricDescription())) {
-                final String measureMeasuringPoint = measurement.getMeasuringType().getMeasuringPoint()
-                        .getStringRepresentation();
-                final String sloMeasuringPoint = serviceLevelObjective.getMeasurementSpecification().getMonitor()
-                        .getMeasuringPoint().getStringRepresentation();
+            if (containsMetric(measurement.getMeasuringType()
+                .getMetric(),
+                    serviceLevelObjective.getMeasurementSpecification()
+                        .getMetricDescription())) {
+                final String measureMeasuringPoint = measurement.getMeasuringType()
+                    .getMeasuringPoint()
+                    .getStringRepresentation();
+                final String sloMeasuringPoint = serviceLevelObjective.getMeasurementSpecification()
+                    .getMonitor()
+                    .getMeasuringPoint()
+                    .getStringRepresentation();
 
                 // TODO Comparing the name of Measuring points is not the best solution (as the name
                 // is generally not unique). I see three options, all requiring some architectural
@@ -185,7 +194,8 @@ public class CheckForSLOViolationsJob extends SequentialBlackboardInteractingJob
     }
 
     private boolean containsMetric(final MetricDescription metric, final MetricDescription metricToCheckFor) {
-        if (metric == metricToCheckFor || metric.getId().equals(metricToCheckFor.getId())) {
+        if (metric == metricToCheckFor || metric.getId()
+            .equals(metricToCheckFor.getId())) {
             return true;
         }
 
@@ -213,7 +223,8 @@ public class CheckForSLOViolationsJob extends SequentialBlackboardInteractingJob
      */
     private ExperimentGroup getExperimentGroup(final Repository repository, final String purpose) {
         for (final ExperimentGroup experimentGroup : repository.getExperimentGroups()) {
-            if (experimentGroup.getPurpose().equals(purpose)) {
+            if (experimentGroup.getPurpose()
+                .equals(purpose)) {
                 return experimentGroup;
             }
         }
@@ -234,7 +245,8 @@ public class CheckForSLOViolationsJob extends SequentialBlackboardInteractingJob
     private ExperimentSetting getExperimentSetting(final ExperimentGroup experimentGroup,
             final String experimentSettingDescription) {
         for (final ExperimentSetting expSetting : experimentGroup.getExperimentSettings()) {
-            if (expSetting.getDescription().equals(experimentSettingDescription)) {
+            if (expSetting.getDescription()
+                .equals(experimentSettingDescription)) {
                 return expSetting;
             }
         }
