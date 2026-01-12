@@ -20,7 +20,7 @@
       <extension
             point="org.eclipse.debug.core.launchConfigurationTypes">
          <launchConfigurationType
-               delegate="org.palladiosimulator.experimentautomation.application.workflow.ExperimentAutomationWorkflowLauncher"
+               delegate="org.palladiosimulator.experimentautomation.application.ui.workflow.ExperimentAutomationWorkflowLauncher"
                id="org.palladiosimulator.experimentautomation.application.launchConfigurationType"
                modes="run, debug"
                name="Experiment Automation">
