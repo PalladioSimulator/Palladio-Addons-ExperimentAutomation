@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.palladiosimulator.experimentautomation.application.ui
 Bundle-SymbolicName: org.palladiosimulator.experimentautomation.application.ui;singleton:=true
-Bundle-Version: 6.0.0.qualifier
+Bundle-Version: 5.2.2
 Require-Bundle: org.eclipse.debug.ui;bundle-version="3.17.100",
  org.eclipse.swt;bundle-version="3.123.0",
  org.eclipse.emf.ecore;bundle-version="2.33.0",
