@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.experimentautomation.editor;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.experimentautomation.editor
-Bundle-Version: 5.2.2
+Bundle-Version: 6.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.experimentautomation.variation.presentation.ExperimentAutomationEditorPlugin$Implementation
 Bundle-Vendor: %providerName
@@ -14,19 +14,19 @@ Export-Package: org.palladiosimulator.experimentautomation.abstractsimulation.pr
  org.palladiosimulator.experimentautomation.variation.presentation
 Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
  org.eclipse.core.resources;bundle-version="3.9.0";visibility:=reexport,
- org.palladiosimulator.experimentautomation.edit;bundle-version="1.0.0";visibility:=reexport,
+ org.palladiosimulator.experimentautomation.edit;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;bundle-version="2.12.0";visibility:=reexport,
  org.eclipse.emf.edit.ui;bundle-version="2.12.0";visibility:=reexport,
  org.eclipse.ui.ide;bundle-version="3.10.0";visibility:=reexport,
- org.palladiosimulator.edp2.edit;bundle-version="1.0.0";visibility:=reexport,
- de.uka.ipd.sdq.identifier.edit;bundle-version="2.1.0";visibility:=reexport,
- org.palladiosimulator.metricspec.edit;bundle-version="1.0.0";visibility:=reexport,
- org.palladiosimulator.pcm.edit;bundle-version="3.6.0";visibility:=reexport,
- org.palladiosimulator.monitorrepository.edit;bundle-version="2.0.0";visibility:=reexport,
- de.uka.ipd.sdq.probfunction.edit;bundle-version="2.1.0";visibility:=reexport,
+ org.palladiosimulator.edp2.edit;visibility:=reexport,
+ de.uka.ipd.sdq.identifier.edit;visibility:=reexport,
+ org.palladiosimulator.metricspec.edit;visibility:=reexport,
+ org.palladiosimulator.pcm.edit;visibility:=reexport,
+ org.palladiosimulator.monitorrepository.edit;visibility:=reexport,
+ de.uka.ipd.sdq.probfunction.edit;visibility:=reexport,
  org.palladiosimulator.servicelevelobjective.edit;visibility:=reexport,
- de.uka.ipd.sdq.stoex.edit;bundle-version="2.2.0";visibility:=reexport,
- de.uka.ipd.sdq.units.edit;bundle-version="2.1.0";visibility:=reexport,
+ de.uka.ipd.sdq.stoex.edit;visibility:=reexport,
+ de.uka.ipd.sdq.units.edit;visibility:=reexport,
  org.scaledl.usageevolution.edit;visibility:=reexport,
  org.eclipse.emf.ecore.edit;visibility:=reexport,
  tools.descartes.dlim.edit;bundle-version="0.17.0";visibility:=reexport

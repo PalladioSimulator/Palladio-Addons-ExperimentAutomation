@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.experimentautomation.application.feature"
       label="Experiment Automation Application Feature"
-      version="5.2.2"
+      version="6.0.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
@@ -12,23 +12,23 @@
    </description>
 
    <requires>
-      <import plugin="de.uka.ipd.sdq.simucomframework" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.codegen.simucontroller" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.analyzer.workflow" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.simucomframework.simucomstatus" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.dao" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.util" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.commons" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uka.ipd.sdq.simucomframework"/>
+      <import plugin="de.uka.ipd.sdq.codegen.simucontroller"/>
+      <import plugin="org.palladiosimulator.analyzer.workflow"/>
+      <import plugin="de.uka.ipd.sdq.simucomframework.simucomstatus"/>
+      <import plugin="org.palladiosimulator.experimentautomation"/>
+      <import plugin="org.palladiosimulator.edp2.dao"/>
+      <import plugin="org.palladiosimulator.edp2.util"/>
+      <import plugin="org.palladiosimulator.commons"/>
       <import plugin="org.jscience"/>
-      <import plugin="org.palladiosimulator.recorderframework" version="2.0.1" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.recorderframework"/>
       <import plugin="org.palladiosimulator.simulizar.reconfiguration.storydiagram"/>
-      <import plugin="org.palladiosimulator.servicelevelobjective.edp2" version="1.0.1" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.recorderframework.edp2" version="2.0.2" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.simulizar" version="2.0.3" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.datastream" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.measurementframework" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.repository.local" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.servicelevelobjective.edp2"/>
+      <import plugin="org.palladiosimulator.recorderframework.edp2"/>
+      <import plugin="org.palladiosimulator.simulizar"/>
+      <import plugin="org.palladiosimulator.edp2.datastream"/>
+      <import plugin="org.palladiosimulator.measurementframework"/>
+      <import plugin="org.palladiosimulator.edp2.repository.local"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.palladiosimulator.branding"/>
    </requires>

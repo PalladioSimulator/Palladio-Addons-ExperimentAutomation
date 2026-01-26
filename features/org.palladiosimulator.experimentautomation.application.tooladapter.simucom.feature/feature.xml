@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.feature"
       label="Experiment Automation SimuCom Feature"
-      version="5.2.2"
+      version="6.0.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
@@ -12,26 +12,26 @@
    </description>
 
    <requires>
-      <import plugin="de.uka.ipd.sdq.simulation" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.simucomframework" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.codegen.simucontroller" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation.application" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model" version="5.1.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.util" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2.dao" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.analyzer.workflow" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uka.ipd.sdq.simulation"/>
+      <import plugin="de.uka.ipd.sdq.simucomframework"/>
+      <import plugin="de.uka.ipd.sdq.codegen.simucontroller"/>
+      <import plugin="org.palladiosimulator.experimentautomation"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.model"/>
+      <import plugin="org.palladiosimulator.edp2.util"/>
+      <import plugin="org.palladiosimulator.edp2.dao"/>
+      <import plugin="org.palladiosimulator.analyzer.workflow"/>
       <import plugin="org.eclipse.core.runtime" version="3.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore" version="2.10.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.emf.ecore.xmi" version="2.10.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.edp2" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.identifier" version="2.1.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.metricspec" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.pcm" version="3.6.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.monitorrepository" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.probfunction" version="2.1.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.stoex" version="2.2.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.units" version="2.1.0" match="greaterOrEqual"/>
+      <import plugin="org.palladiosimulator.edp2"/>
+      <import plugin="de.uka.ipd.sdq.identifier"/>
+      <import plugin="org.palladiosimulator.metricspec"/>
+      <import plugin="org.palladiosimulator.pcm"/>
+      <import plugin="org.palladiosimulator.monitorrepository"/>
+      <import plugin="de.uka.ipd.sdq.probfunction"/>
+      <import plugin="de.uka.ipd.sdq.stoex"/>
+      <import plugin="de.uka.ipd.sdq.units"/>
       <import plugin="org.palladiosimulator.recorderframework"/>
       <import plugin="org.palladiosimulator.servicelevelobjective"/>
       <import plugin="org.scaledl.usageevolution"/>

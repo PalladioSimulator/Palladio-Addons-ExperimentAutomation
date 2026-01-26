@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.palladiosimulator.experimentautomation;singleton:=true
 Automatic-Module-Name: org.palladiosimulator.experimentautomation
-Bundle-Version: 5.2.2
+Bundle-Version: 6.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
@@ -21,18 +21,18 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.10.0",
  org.eclipse.emf.ecore;bundle-version="2.12.0";visibility:=reexport,
  org.eclipse.emf.cdo;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;bundle-version="2.12.0";visibility:=reexport,
- de.uka.ipd.sdq.identifier;bundle-version="2.1.0";visibility:=reexport,
- org.palladiosimulator.metricspec;bundle-version="1.0.0";visibility:=reexport,
- org.palladiosimulator.pcm;bundle-version="4.1.0";visibility:=reexport,
- org.palladiosimulator.monitorrepository;bundle-version="2.0.0";visibility:=reexport,
- de.uka.ipd.sdq.probfunction;bundle-version="2.1.0";visibility:=reexport,
+ de.uka.ipd.sdq.identifier;visibility:=reexport,
+ org.palladiosimulator.metricspec;visibility:=reexport,
+ org.palladiosimulator.pcm;visibility:=reexport,
+ org.palladiosimulator.monitorrepository;visibility:=reexport,
+ de.uka.ipd.sdq.probfunction;visibility:=reexport,
  org.palladiosimulator.servicelevelobjective;visibility:=reexport,
- de.uka.ipd.sdq.stoex;bundle-version="2.2.0";visibility:=reexport,
- de.uka.ipd.sdq.units;bundle-version="2.1.0";visibility:=reexport,
+ de.uka.ipd.sdq.stoex;visibility:=reexport,
+ de.uka.ipd.sdq.units;visibility:=reexport,
  org.scaledl.usageevolution;visibility:=reexport,
- org.palladiosimulator.edp2;bundle-version="2.0.0";visibility:=reexport,
- org.palladiosimulator.edp2.edit;bundle-version="1.0.0",
- org.palladiosimulator.pcm.edp2.measuringpoint;bundle-version="1.0.0",
- org.palladiosimulator.pcm.edp2.measuringpoint.edit;bundle-version="1.0.0",
- org.palladiosimulator.edp2.dao;bundle-version="1.0.0"
+ org.palladiosimulator.edp2;visibility:=reexport,
+ org.palladiosimulator.edp2.edit,
+ org.palladiosimulator.pcm.edp2.measuringpoint,
+ org.palladiosimulator.pcm.edp2.measuringpoint.edit,
+ org.palladiosimulator.edp2.dao
 Bundle-ActivationPolicy: lazy

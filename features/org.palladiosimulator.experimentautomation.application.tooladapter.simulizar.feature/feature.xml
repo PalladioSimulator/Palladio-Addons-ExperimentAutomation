@@ -2,7 +2,7 @@
 <feature
       id="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.feature"
       label="Experiment Automation SimuLizar Feature"
-      version="5.2.2"
+      version="6.0.0.qualifier"
       plugin="org.palladiosimulator.branding"
       license-feature="org.palladiosimulator.license"
       license-feature-version="1.0.0">
@@ -22,16 +22,16 @@
       <import plugin="de.uka.ipd.sdq.probfunction"/>
       <import plugin="de.uka.ipd.sdq.stoex"/>
       <import plugin="de.uka.ipd.sdq.units"/>
-      <import plugin="de.uka.ipd.sdq.workflow.mdsd" version="2.1.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model" version="5.1.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.workflow" version="2.1.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.experimentautomation.application" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.simulation" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.simucomframework" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="de.uka.ipd.sdq.codegen.simucontroller" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.simulizar" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.palladiosimulator.analyzer.workflow" version="1.0.0" match="greaterOrEqual"/>
+      <import plugin="de.uka.ipd.sdq.workflow.mdsd"/>
+      <import plugin="org.palladiosimulator.experimentautomation"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model"/>
+      <import plugin="de.uka.ipd.sdq.workflow"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application"/>
+      <import plugin="de.uka.ipd.sdq.simulation"/>
+      <import plugin="de.uka.ipd.sdq.simucomframework"/>
+      <import plugin="de.uka.ipd.sdq.codegen.simucontroller"/>
+      <import plugin="org.palladiosimulator.simulizar"/>
+      <import plugin="org.palladiosimulator.analyzer.workflow"/>
       <import plugin="org.palladiosimulator.pcm"/>
       <import plugin="org.palladiosimulator.servicelevelobjective"/>
       <import plugin="org.scaledl.usageevolution"/>

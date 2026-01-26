@@ -2,17 +2,17 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.palladiosimulator.experimentautomation.application.ui
 Bundle-SymbolicName: org.palladiosimulator.experimentautomation.application.ui;singleton:=true
-Bundle-Version: 5.2.2
+Bundle-Version: 6.0.0.qualifier
 Require-Bundle: org.eclipse.debug.ui;bundle-version="3.17.100",
  org.eclipse.swt;bundle-version="3.123.0",
  org.eclipse.emf.ecore;bundle-version="2.33.0",
- de.uka.ipd.sdq.workflow.launchconfig;bundle-version="5.2.2",
- org.palladiosimulator.analyzer.workflow;bundle-version="5.2.2",
- de.uka.ipd.sdq.workflow.mdsd.blackboard;bundle-version="5.2.2",
- de.uka.ipd.sdq.workflow.mdsd.core;bundle-version="5.2.2",
- de.uka.ipd.sdq.codegen.simucontroller;bundle-version="5.2.2",
- org.palladiosimulator.experimentautomation;bundle-version="5.2.2",
- org.palladiosimulator.experimentautomation.application;bundle-version="5.2.2"
+ de.uka.ipd.sdq.workflow.launchconfig,
+ org.palladiosimulator.analyzer.workflow,
+ de.uka.ipd.sdq.workflow.mdsd.blackboard,
+ de.uka.ipd.sdq.workflow.mdsd.core,
+ de.uka.ipd.sdq.codegen.simucontroller,
+ org.palladiosimulator.experimentautomation,
+ org.palladiosimulator.experimentautomation.application
 Bundle-RequiredExecutionEnvironment: JavaSE-17
 Bundle-ActivationPolicy: lazy
 
