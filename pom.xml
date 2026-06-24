@@ -15,7 +15,22 @@
 	
 	<properties>
 		<targetPlatform.relativePath>releng/org.palladiosimulator.experimentautomation.targetplatform/tp.target</targetPlatform.relativePath>
+		<tycho.version>4.0.13</tycho.version>
 	</properties>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>target-platform-configuration</artifactId>
+					<configuration>
+						<executionEnvironment>JavaSE-17</executionEnvironment>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 	
 	<modules>
 		<module>bundles</module>
