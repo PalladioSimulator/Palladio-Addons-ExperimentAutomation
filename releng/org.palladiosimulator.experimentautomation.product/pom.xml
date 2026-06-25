@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.palladiosimulator.experimentautomation</groupId>
+		<artifactId>parent</artifactId>
+		<version>6.0.0-SNAPSHOT</version>
+		<relativePath>../../pom.xml</relativePath>
+	</parent>
+	<artifactId>org.palladiosimulator.experimentautomation.product</artifactId>
+	<packaging>eclipse-repository</packaging>
+
+	<repositories>
+		<repository>
+			<id>local-updatesite</id>
+			<layout>p2</layout>
+			<url>file://${project.basedir}/../org.palladiosimulator.experimentautomation.updatesite/target/repository</url>
+		</repository>
+		<repository>
+			<id>eclipse-2023-03</id>
+			<layout>p2</layout>
+			<url>https://download.eclipse.org/releases/2023-03/</url>
+		</repository>
+		<repository>
+			<id>abstractsimengine</id>
+			<layout>p2</layout>
+			<url>https://updatesite.palladio-simulator.com/palladio-simulation-abstractsimengine/nightly/</url>
+		</repository>
+		<repository>
+			<id>thirdparty-wrapper</id>
+			<layout>p2</layout>
+			<url>https://updatesite.palladio-simulator.com/palladio-thirdparty-wrapper/nightly/</url>
+		</repository>
+		<repository>
+			<id>thirdparty-library</id>
+			<layout>p2</layout>
+			<url>https://updatesite.palladio-simulator.com/palladio-thirdparty-library/nightly/</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-director-plugin</artifactId>
+				<version>${tycho.version}</version>
+				<executions>
+					<execution>
+						<id>materialize-products</id>
+						<goals>
+							<goal>materialize-products</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>archive-products</id>
+						<goals>
+							<goal>archive-products</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<products>
+						<product>
+							<id>ExperimentAutomation</id>
+							<rootFolder>experiment-automation</rootFolder>
+						</product>
+					</products>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
