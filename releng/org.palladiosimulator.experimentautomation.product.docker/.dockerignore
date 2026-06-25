@@ -1,0 +1,2 @@
+# Ignore everything – we use git clone inside the container
+*
