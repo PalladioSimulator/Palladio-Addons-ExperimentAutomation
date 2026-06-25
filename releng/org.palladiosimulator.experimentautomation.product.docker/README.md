@@ -5,7 +5,7 @@ Dieses Image baut **Palladio Experiment Automation** als standalone Eclipse-RCP-
 Zwei Repositories werden aus dem Quellcode gebaut, da die benötigten Fixes noch nicht in den nightly p2-Repos liegen:
 
 - [Palladio-Addon-ArchitecturalTemplates](https://github.com/PalladioSimulator/Palladio-Addon-ArchitecturalTemplates) – UI-Constants-Fix und Tycho-Bump
-- [Palladio-Addons-ExperimentAutomation](https://github.com/PalladioSimulator/Palladio-Addons-ExperimentAutomation) – Product-Module und Tycho-Bump (Branch `product-module`)
+- [Palladio-Addons-ExperimentAutomation](https://github.com/PalladioSimulator/Palladio-Addons-ExperimentAutomation) – Product-Module, Tycho-Bump und drei kritische Bugfixes (Branch `product-module`)
 
 ## Voraussetzungen
 
@@ -18,6 +18,8 @@ docker run --privileged --rm tonistiigi/binfmt --install amd64
 
 ## Bauen
 
+Build-Kontext ist das Repository-Root:
+
 ```bash
 docker build \
   --platform linux/amd64 \
@@ -26,8 +28,7 @@ docker build \
   .
 ```
 
-Der Build dauert ca. 6–8 Minuten (kein Maven-Cache, Download aller Abhängigkeiten).  
-Der AT-Build kann mit `--build-arg MAVEN_VERSION=<version>` auf eine andere Maven-Version umgestellt werden.
+Der Build dauert ca. 6–8 Minuten (kein Maven-Cache, Download aller Abhängigkeiten).
 
 ## Ausführen
 
@@ -45,7 +46,7 @@ docker run --rm --platform linux/amd64 \
   /experiments/Experiments/SimpleVariation.experiments
 ```
 
-- `/experiments` – beliebiger Mount-Point; das Experiment-File und seine Modelle müssen hier liegen  
+- `/experiments` – beliebiger Mount-Point; das Experiment-File und seine Modelle müssen hier liegen
 - `/data` – Eclipse-Workspace (Logs, Ergebnisse); wird automatisch erstellt
 
 Exit-Code `0` bedeutet erfolgreiche Durchführung. Bei Fehlern:
@@ -56,7 +57,7 @@ cat /pfad/zu/workspace-data/.metadata/.log
 
 ### Console-Log aktivieren
 
-Standardmäßig wird nur das Nötigste auf der Konsole ausgegeben (EDP2-/log4j-Warnungen).  
+Standardmäßig wird nur das Nötigste auf der Konsole ausgegeben (EDP2-/log4j-Warnungen).
 Mit der Umgebungsvariable `EA_CONSOLE_LOG=true` wird das vollständige Eclipse-Log ausgegeben:
 
 ```bash
@@ -99,6 +100,10 @@ Das Workspace-Verzeichnis unter `/data` enthält `.metadata/.log` mit detaillier
   2. `ea-builder` – ExperimentAutomation + Product-Build
   3. `runtime` – Runtime-Image mit GTK3, Xvfb und dem Product-Tarball
 - **SSJ-Simulation-Engine** (`ca.umontreal.iro.simul.ssj`) ist im Product enthalten
+- **Kritische Bugfixes** auf dem `product-module` Branch:
+  - `caseSetValueProvider`-Handler für `SetValueProvider` (fehlte vollständig, Simulation wurde nie gestartet)
+  - `MemoryDatasource`/`FileDatasource`-Reparatur bei leerer/stale ID
+  - Long-Erkennung für `SetValueProvider`-Werte (`ClosedWorkloadVariation` erwartet Long)
 
 ## Bekannte Probleme
 
@@ -106,3 +111,4 @@ Das Workspace-Verzeichnis unter `/data` enthält `.metadata/.log` mit detaillier
 - **Kein Internet = kein Build**: p2-Repos, GitHub, Maven Central werden benötigt
 - **QEMU-Emulation**: Auf ARM ~2× langsamer als native AMD64
 - **AT-Branches müssen konfliktfrei sein**: Die beiden gemergten Branches (`bump-tycho-to-4.0.13`, `fix/extract-ui-constants-to-separate-class`) überschneiden sich derzeit nicht
+- **log4j-Logging**: Keine Appender konfiguriert – Logs erscheinen nur im Workspace-Log (`/data/.metadata/.log`)

@@ -50,21 +50,23 @@ The product is **not** part of the regular reactor build
 
 ### Via native launcher (macOS example)
 
+Use `-application` (not `-product`) to run headlessly:
+
 ```bash
 ./target/products/ExperimentAutomation/macosx/cocoa/aarch64/experiment-automation.app/Contents/MacOS/eclipse \
-  -product org.palladiosimulator.experimentautomation.product \
+  -application org.palladiosimulator.experimentautomation.application \
   -data /tmp/ea-workspace \
+  -consoleLog \
   /path/to/your/experiment.experiments
 ```
 
-Use a fresh (or empty) `-data` directory each time to avoid workspace lock
-conflicts.
+The `-consoleLog` flag is optional and enables Eclipse log output on stderr.
 
 ### Via `java -jar`
 
 ```bash
 java -jar target/products/ExperimentAutomation/macosx/cocoa/aarch64/experiment-automation.app/Contents/Eclipse/plugins/org.eclipse.equinox.launcher_*.jar \
-  -product org.palladiosimulator.experimentautomation.product \
+  -application org.palladiosimulator.experimentautomation.application \
   -data /tmp/ea-workspace \
   /path/to/your/experiment.experiments
 ```
@@ -76,7 +78,7 @@ The espresso example ships experiment models in the
 
 ```bash
 /path/to/eclipse \
-  -product org.palladiosimulator.experimentautomation.product \
+  -application org.palladiosimulator.experimentautomation.application \
   -data /tmp/ea-workspace \
   /path/to/repo/bundles/org.palladiosimulator.experimentautomation.examples.espresso/model/Experiments/SimpleVariation.experiments
 ```
@@ -85,13 +87,15 @@ The espresso example ships experiment models in the
 
 | Argument | Description |
 |---|---|
-| `-product <id>` | Product ID (`org.palladiosimulator.experimentautomation.product`) |
+| `-application <id>` | Application ID (`org.palladiosimulator.experimentautomation.application`) |
 | `-data <dir>` | Eclipse workspace directory (required; arbitrary temp dir is fine) |
+| `-consoleLog` | Print Eclipse log to stderr (optional) |
 | `<file.experiments>` | Path to the experiment repository model (`.experiments` extension) |
 
 ### Known Issues
 
-- **Henshin interpreter**: warning about missing
-  `org.eclipse.emf.henshin.interpreter` (non-fatal, from SimuLizar
-  reconfiguration).
-- **Logging**: log4j warnings about missing appenders are harmless.
+- **log4j warnings**: missing appenders – harmless, does not affect execution.
+  Simulation progress can be checked in `workspace/.metadata/.log`.
+- **Product not found warning**: `Product org.palladiosimulator.experimentautomation.product
+  could not be found.` is cosmetic when using `-application` – the headless
+  application works correctly despite this message.

@@ -56,18 +56,35 @@ from the target platform.
 - **Build**: verified – all 5 platform archives produced (~175 MB each)
 - **SSJ engine**: included and resolved (no more NPE in engine init)
 - **Headless run**: verified via macOS aarch64 product – exit code 0
-- **Example**: `SimpleVariation.experiments` works (from espresso examples)
+- **Example**: `SimpleVariation.experiments` runs through all 4 SetValueProvider
+  variants (1, 3, 4, 5 users) with MemoryDatasource
+
+## Critical fixes on `product-module` branch
+
+- **`caseSetValueProvider`** in `ComputeVariantsAndAddExperimentJob` – the
+  original code had no handler for `SetValueProvider`; `doSwitch` returned null
+  → no variants created → simulation never ran. Fixed by adding a
+  `caseSetValueProvider` that parses values directly (`isAllIntegers`/`getToken`
+  helpers) and uses `Long` or `Double` depending on the actual token format.
+- **Stale datasource ID** in `EDP2DatasourceFactory` – when an experiment file
+  has a pre-existing (stale) datasource UUID, `getRepositoryFromUUID()` returned
+  null for the current JVM session. Fixed by falling through to create a fresh
+  repository when the UUID lookup fails.
+- **`FileDatasource` `/data` fallback** – `FileDatasource` with `location="/data"`
+  fails when `/data` does not exist (permission denied). The example reverts to
+  `MemoryDatasource` which works correctly after the stale-ID fix.
 
 ## Known issues
 
-- **Henshin interpreter**: warning about missing
-  `org.eclipse.emf.henshin.interpreter` (non-fatal, from SimuLizar
-  reconfiguration).
 - **log4j warnings**: missing appenders – harmless, does not affect execution.
+  Simulation progresses can be found in `workspace/.metadata/.log`.
+- **Product not found warning**: cosmetic when using `-application` flag.
 
 ## Related
 
 - `releng/org.palladiosimulator.experimentautomation.updatesite/` –
   produces the p2 repository that this product consumes
+- `releng/org.palladiosimulator.experimentautomation.docker/` –
+  Docker build wrapping this product
 - `releng/org.palladiosimulator.experimentautomation.targetplatform/` –
   Eclipse target definition resolving upstream Palladio repos
