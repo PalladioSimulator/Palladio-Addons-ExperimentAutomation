@@ -15,5 +15,13 @@
          </run>
       </application>
    </extension>
-   
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="org.palladiosimulator.experimentautomation.application"
+            name="Palladio Experiment Automation">
+      </product>
+   </extension>
+    
 </plugin>

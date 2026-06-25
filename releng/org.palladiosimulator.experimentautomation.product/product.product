@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+<product name="Palladio Experiment Automation" uid="ExperimentAutomation"
+         id="org.palladiosimulator.experimentautomation.product"
+         application="org.palladiosimulator.experimentautomation.application"
+         version="6.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <features>
+      <feature id="org.palladiosimulator.pcm.feature"/>
+      <feature id="org.palladiosimulator.thirdpartywrapper.feature"/>
+      <feature id="ca.umontreal.iro.ssj.feature"/>
+      <feature id="de.uka.ipd.sdq.simulation.abstractsimengine.feature"/>
+      <feature id="org.palladiosimulator.simulation.abstractsimengine.ssj.feature"/>
+      <feature id="org.palladiosimulator.experimentautomation.application.feature"/>
+      <feature id="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.feature"/>
+      <feature id="org.palladiosimulator.experimentautomation.application.tooladapter.simucom.feature"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2"/>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0"/>
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2"/>
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2"/>
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1"/>
+      <property name="osgi.instance.area.default" value="@user.home/workspace"/>
+   </configurations>
+
+</product>
