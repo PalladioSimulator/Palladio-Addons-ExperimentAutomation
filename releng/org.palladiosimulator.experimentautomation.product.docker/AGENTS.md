@@ -56,7 +56,7 @@ a Linux amd64 Docker container. Two GitHub repos are built from source:
 | Arg | Default | Description |
 |---|---|---|
 | `EA_BRANCH` | `product-module` | Branch of ExperimentAutomation to build |
-| `MAVEN_VERSION` | `3.9.9` | Apache Maven version |
+| `MAVEN_VERSION` | `3.9.16` | Apache Maven version |
 
 ## Build & extract
 
@@ -69,9 +69,9 @@ docker build \
   -f releng/org.palladiosimulator.experimentautomation.product.docker/Dockerfile \
   .
 
-# Output
-ls -lh target/docker-product/
-# → ExperimentAutomation-linux.gtk.x86_64.tar.gz
+# Output (note nested "product/" directory due to COPY --from)
+ls -lh target/docker-product/product/
+# → ExperimentAutomation-linux.gtk.x86_64.tar.gz  (~170 MB)
 ```
 
 On macOS (Apple Silicon), install QEMU binfmt support first:
@@ -104,7 +104,7 @@ The Docker build has network access to:
 ## Known issues
 
 - **First build is slow**: Maven downloads all dependencies from scratch
-  (no local cache). Expect 30+ minutes.
+  (no local cache). Expect ~8 minutes for AT + ~6 minutes for EA.
 - **QEMU emulation on ARM**: building `--platform linux/amd64` on Apple
   Silicon requires QEMU binfmt and is ~2× slower than native.
 - **No Maven cache volume**: each build starts from scratch. Add
@@ -113,3 +113,12 @@ The Docker build has network access to:
   GitHub, Maven Central).
 - **AT merge must be conflict-free**: the two AT branches must not touch
   the same files. Currently they are disjoint.
+
+## Status (2026-06-25)
+
+- **Build verified**: Docker build on macOS (Apple Silicon, QEMU emulated
+  linux/amd64) completed successfully.
+- **Timing**: ~6.5 min total (AT: 4.5 min, EA: 4.5 min + 2 min product)
+- **Output**: `ExperimentAutomation-linux.gtk.x86_64.tar.gz` (~168 MB)
+- **Contents verified**: SSJ engine (`ca.umontreal.iro.simul.ssj` +
+  `abstractsimengine.ssj`) bundled in the product.

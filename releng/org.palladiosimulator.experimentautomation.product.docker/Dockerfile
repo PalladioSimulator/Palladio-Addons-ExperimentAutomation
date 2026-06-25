@@ -6,7 +6,7 @@
 # =============================================================================
 FROM eclipse-temurin:21-jdk-jammy AS at-builder
 
-ARG MAVEN_VERSION=3.9.9
+ARG MAVEN_VERSION=3.9.16
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl git ca-certificates \
 	&& rm -rf /var/lib/apt/lists/*
@@ -17,9 +17,13 @@ RUN curl -fsSL https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/
 
 WORKDIR /build
 
-# Clone AT, merge both PR branches (Tycho bump + UI constants fix)
-RUN git clone --depth 1 https://github.com/PalladioSimulator/Palladio-Addon-ArchitecturalTemplates.git at \
+# Clone AT, merge both PR branches (Tycho bump + UI constants fix).
+# Full clone (not shallow) needed so git merge can find the common ancestor.
+# Set identity for merge commit (doesn't leave the container).
+RUN git clone https://github.com/PalladioSimulator/Palladio-Addon-ArchitecturalTemplates.git at \
 	&& cd at \
+	&& git config user.email "builder@docker" \
+	&& git config user.name "Docker Builder" \
 	&& git fetch origin bump-tycho-to-4.0.13 fix/extract-ui-constants-to-separate-class \
 	&& git checkout bump-tycho-to-4.0.13 \
 	&& git merge --no-edit origin/fix/extract-ui-constants-to-separate-class
@@ -36,7 +40,7 @@ RUN mkdir -p /build/at-repo && \
 # =============================================================================
 FROM eclipse-temurin:21-jdk-jammy AS ea-builder
 
-ARG MAVEN_VERSION=3.9.9
+ARG MAVEN_VERSION=3.9.16
 ARG EA_BRANCH=product-module
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl git ca-certificates \
