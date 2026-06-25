@@ -133,17 +133,22 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
 
                 @Override
                 public Void caseSetValueProvider(final SetValueProvider object) {
-                    final IValueProviderStrategy<Double> valueProvider = ValueProviderFactory
-                            .createDoubleValueProvider(object);
+                    final boolean allIntegers = isAllIntegers(object.getValues());
 
                     int iteration = 0;
                     while (iteration < variation.getMaxVariations()) {
-                        final Double factorLevel = valueProvider.valueAtPosition(iteration);
-                        if (factorLevel == -1.0) {
+                        final String token = getToken(object.getValues(), iteration);
+                        if (token == null) {
                             break;
                         }
 
-                        variationFactorTuples.add(new VariationFactorTuple<Double>(variation, factorLevel));
+                        if (allIntegers) {
+                            variationFactorTuples
+                                    .add(new VariationFactorTuple<Long>(variation, Long.parseLong(token)));
+                        } else {
+                            variationFactorTuples
+                                    .add(new VariationFactorTuple<Double>(variation, Double.parseDouble(token)));
+                        }
                         ComputeVariantsAndAddExperimentJob.this.computeVariantsAndAddJob(experiment,
                                 simulationConfiguration, copy, variationFactorTuples);
                         variationFactorTuples.remove(variationFactorTuples.size() - 1);
@@ -155,5 +160,34 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
 
             }.doSwitch(variation.getValueProvider());
         }
+    }
+
+    private static boolean isAllIntegers(final String values) {
+        if (values == null || values.isEmpty()) {
+            return true;
+        }
+        for (final String token : values.split(",")) {
+            final String trimmed = token.trim();
+            if (trimmed.contains(".") || trimmed.contains("e") || trimmed.contains("E")) {
+                return false;
+            }
+            try {
+                Long.parseLong(trimmed);
+            } catch (final NumberFormatException e) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static String getToken(final String values, final int position) {
+        if (values == null || values.isEmpty()) {
+            return null;
+        }
+        final String[] tokens = values.split(",");
+        if (position >= tokens.length) {
+            return null;
+        }
+        return tokens[position].trim();
     }
 }
