@@ -8,6 +8,7 @@ import org.palladiosimulator.experimentautomation.application.VariationFactorTup
 import org.palladiosimulator.experimentautomation.application.variation.valueprovider.IValueProviderStrategy;
 import org.palladiosimulator.experimentautomation.application.variation.valueprovider.ValueProviderFactory;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
+import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
 import org.palladiosimulator.experimentautomation.experiments.util.ExperimentsSwitch;
 
@@ -124,6 +125,28 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
                                     simulationConfiguration, copy, variationFactorTuples);
                             variationFactorTuples.remove(variationFactorTuples.size() - 1);
                         }
+
+                        iteration++;
+                    }
+                    return null;
+                };
+
+                @Override
+                public Void caseSetValueProvider(final SetValueProvider object) {
+                    final IValueProviderStrategy<Double> valueProvider = ValueProviderFactory
+                            .createDoubleValueProvider(object);
+
+                    int iteration = 0;
+                    while (iteration < variation.getMaxVariations()) {
+                        final Double factorLevel = valueProvider.valueAtPosition(iteration);
+                        if (factorLevel == -1.0) {
+                            break;
+                        }
+
+                        variationFactorTuples.add(new VariationFactorTuple<Double>(variation, factorLevel));
+                        ComputeVariantsAndAddExperimentJob.this.computeVariantsAndAddJob(experiment,
+                                simulationConfiguration, copy, variationFactorTuples);
+                        variationFactorTuples.remove(variationFactorTuples.size() - 1);
 
                         iteration++;
                     }

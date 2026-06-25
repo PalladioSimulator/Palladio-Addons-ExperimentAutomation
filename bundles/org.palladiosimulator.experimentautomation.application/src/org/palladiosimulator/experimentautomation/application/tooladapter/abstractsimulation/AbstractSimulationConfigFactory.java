@@ -166,6 +166,9 @@ public class AbstractSimulationConfigFactory {
 
     private static String getPersistenceRecorder(final EDP2Datasource datasource) {
         final Repository repository = EDP2DatasourceFactory.createOrOpenDatasource(datasource);
+        if (repository == null) {
+            throw new RuntimeException("EDP2DatasourceFactory returned null for datasource: " + datasource);
+        }
         return repository.getId();
     }
 
