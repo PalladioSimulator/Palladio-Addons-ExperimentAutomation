@@ -42,6 +42,7 @@ FROM eclipse-temurin:21-jdk-jammy AS ea-builder
 
 ARG MAVEN_VERSION=3.9.16
 ARG EA_BRANCH=product-module
+ARG CACHEBUST=1
 
 RUN apt-get update && apt-get install -y --no-install-recommends curl git ca-certificates \
 	&& rm -rf /var/lib/apt/lists/*
@@ -53,6 +54,9 @@ RUN curl -fsSL https://dlcdn.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries/
 COPY --from=at-builder /build/at-repo /build/at-repo
 
 WORKDIR /build
+
+# CACHEBUST forces a fresh git clone (change value to rebuild)
+RUN echo "cachebuster=${CACHEBUST}"
 
 RUN git clone --depth 1 --branch ${EA_BRANCH} \
 	https://github.com/PalladioSimulator/Palladio-Addons-ExperimentAutomation.git ea
@@ -91,7 +95,11 @@ COPY --from=ea-builder \
 
 RUN mkdir -p ${PRODUCT_ROOT} && \
 	tar xzf /tmp/product.tar.gz -C ${PRODUCT_ROOT} --strip-components=1 && \
-	rm /tmp/product.tar.gz
+	rm /tmp/product.tar.gz && \
+	# Remove eclipse.product from config.ini to suppress
+	# "Product could not be found" (Eclipse has no product extension
+	# registered at runtime; the app runs fine via -application).
+	sed -i '/^eclipse.product=/d' ${PRODUCT_ROOT}/configuration/config.ini
 
 # Entrypoint script starts Xvfb, runs Eclipse, propagates exit code.
 COPY releng/org.palladiosimulator.experimentautomation.product.docker/docker-entrypoint.sh /usr/local/bin/

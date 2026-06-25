@@ -9,7 +9,7 @@
 set -e
 
 XVFB_DISPLAY=:99
-ECLIPSE_ARGS="-nosplash -product org.palladiosimulator.experimentautomation.application.product -data /data"
+ECLIPSE_ARGS="-nosplash -application org.palladiosimulator.experimentautomation.application -data /data"
 
 if [ "${EA_CONSOLE_LOG}" = "true" ]; then
     ECLIPSE_ARGS="${ECLIPSE_ARGS} -consoleLog"
