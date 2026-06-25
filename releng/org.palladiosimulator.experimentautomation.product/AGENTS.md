@@ -60,15 +60,10 @@ from the target platform.
 
 ## Known issues
 
-- **PCM pathmap** (`pathmap://PCM_MODELS/`) may not resolve at runtime;
-  the product boots and runs but model loading can fail.  Same issue as
-  in PCM.app headless runs.
 - **Henshin interpreter**: warning about missing
   `org.eclipse.emf.henshin.interpreter` (non-fatal, from SimuLizar
   reconfiguration).
 - **log4j warnings**: missing appenders – harmless, does not affect execution.
-- **Product branding**: "Product could not be found" message when using
-  `-application` directly – harmless.
 
 ## Related
 

@@ -52,7 +52,7 @@ The product is **not** part of the regular reactor build
 
 ```bash
 ./target/products/ExperimentAutomation/macosx/cocoa/aarch64/experiment-automation.app/Contents/MacOS/eclipse \
-  -application org.palladiosimulator.experimentautomation.application \
+  -product org.palladiosimulator.experimentautomation.product \
   -data /tmp/ea-workspace \
   /path/to/your/experiment.experiments
 ```
@@ -64,7 +64,7 @@ conflicts.
 
 ```bash
 java -jar target/products/ExperimentAutomation/macosx/cocoa/aarch64/experiment-automation.app/Contents/Eclipse/plugins/org.eclipse.equinox.launcher_*.jar \
-  -application org.palladiosimulator.experimentautomation.application \
+  -product org.palladiosimulator.experimentautomation.product \
   -data /tmp/ea-workspace \
   /path/to/your/experiment.experiments
 ```
@@ -76,7 +76,7 @@ The espresso example ships experiment models in the
 
 ```bash
 /path/to/eclipse \
-  -application org.palladiosimulator.experimentautomation.application \
+  -product org.palladiosimulator.experimentautomation.product \
   -data /tmp/ea-workspace \
   /path/to/repo/bundles/org.palladiosimulator.experimentautomation.examples.espresso/model/Experiments/SimpleVariation.experiments
 ```
@@ -85,17 +85,13 @@ The espresso example ships experiment models in the
 
 | Argument | Description |
 |---|---|
+| `-product <id>` | Product ID (`org.palladiosimulator.experimentautomation.product`) |
 | `-data <dir>` | Eclipse workspace directory (required; arbitrary temp dir is fine) |
 | `<file.experiments>` | Path to the experiment repository model (`.experiments` extension) |
 
 ### Known Issues
 
-- **PCM pathmap resolution**: `pathmap://PCM_MODELS/` URIs may fail if the
-  PCM model bundle is not fully initialised.  This is a pre-existing issue
-  that also affects PCM.app headless runs.
 - **Henshin interpreter**: warning about missing
   `org.eclipse.emf.henshin.interpreter` (non-fatal, from SimuLizar
   reconfiguration).
 - **Logging**: log4j warnings about missing appenders are harmless.
-- **Product branding**: the message "Product could not be found" on startup
-  is harmless when using `-application` directly.
