@@ -72,9 +72,36 @@ RUN mvn clean package -DskipTests -q
 RUN mvn clean verify -f releng/org.palladiosimulator.experimentautomation.product/pom.xml -q
 
 # =============================================================================
-# Stage 3: Extract product archive (Linux x86_64)
+# Stage 3: Runtime image – product installed + ready to execute
 # =============================================================================
-FROM scratch AS artifact
+FROM eclipse-temurin:21-jre-jammy AS runtime
+
+ARG PRODUCT_ROOT=/opt/experiment-automation
+
+# Install GTK3 + Xvfb so SWT can load in headless containers.
+# The product includes UI bundles (Xtext, Eclipse IDE) that cascade into
+# SWT/Display initialization even for CLI-only workflows.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+	libgtk-3-0 libglib2.0-0 xvfb \
+	&& rm -rf /var/lib/apt/lists/*
+
 COPY --from=ea-builder \
 	/build/ea/releng/org.palladiosimulator.experimentautomation.product/target/products/ExperimentAutomation-linux.gtk.x86_64.tar.gz \
-	/product/
+	/tmp/product.tar.gz
+
+RUN mkdir -p ${PRODUCT_ROOT} && \
+	tar xzf /tmp/product.tar.gz -C ${PRODUCT_ROOT} --strip-components=1 && \
+	rm /tmp/product.tar.gz
+
+# Entrypoint script starts Xvfb, runs Eclipse, propagates exit code.
+COPY releng/org.palladiosimulator.experimentautomation.product.docker/docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
+# Workspace data directory – mount a volume here to persist results / logs.
+#   docker run -v /host/path:/data ...
+VOLUME /data
+
+# Console log output. Set to "true" to enable Eclipse -consoleLog.
+ENV EA_CONSOLE_LOG=
+
+ENTRYPOINT ["docker-entrypoint.sh"]

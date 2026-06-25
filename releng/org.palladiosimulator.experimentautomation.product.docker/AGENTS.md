@@ -47,8 +47,10 @@ a Linux amd64 Docker container. Two GitHub repos are built from source:
 ## Key files
 
 - `Dockerfile` – 3-stage multi-repo build
+- `docker-entrypoint.sh` – starts Xvfb (SWT/GTK headless), runs Eclipse, propagates exit code; uses `/data` as workspace, `EA_CONSOLE_LOG` env var
 - `pom.xml` – Maven module (pom-packaging, not built by Tycho)
 - `.dockerignore` – ignores everything (we use git clone)
+- `README.md` – Build- und Run-Anleitung (deutsch)
 - `AGENTS.md` – this file
 
 ## Build arguments
@@ -114,11 +116,49 @@ The Docker build has network access to:
 - **AT merge must be conflict-free**: the two AT branches must not touch
   the same files. Currently they are disjoint.
 
+## Usage
+
+```bash
+# Run a headless experiment with workspace persistence
+docker run --rm --platform linux/amd64 \
+  -v /host/path/to/experiments:/experiments:ro \
+  -v /host/path/to/data:/data \
+  experiment-automation:latest \
+  /experiments/my-experiment.experiments
+```
+
+- `/data` – Eclipse-Workspace (Logs, Ergebnisse); via `-v` persistierbar
+- `EA_CONSOLE_LOG=true` – aktiviert `-consoleLog` (Eclipse-Log auf stderr)
+
+The `.experiments` file and any referenced models must be mounted so that
+relative paths inside the experiment file resolve correctly. Example with
+the included espresso model:
+
+```bash
+docker run --rm --platform linux/amd64 \
+  -v /path/to/espresso/model:/experiments:ro \
+  -v /tmp/ea-data:/data \
+  experiment-automation:latest \
+  /experiments/Experiments/SimpleVariation.experiments
+```
+
+Exit code 0 means the simulation completed successfully. See
+`/data/.metadata/.log` for details on errors.
+
+## Runtime dependencies
+
+- **Xvfb** (virtual framebuffer) — the product includes UI bundles (Xtext,
+  Eclipse IDE) that cascade into SWT/GTK initialisation even in headless
+  mode. Xvfb satisfies those dependencies.
+- **libgtk-3-0** — required by SWT.
+
 ## Status (2026-06-25)
 
 - **Build verified**: Docker build on macOS (Apple Silicon, QEMU emulated
   linux/amd64) completed successfully.
-- **Timing**: ~6.5 min total (AT: 4.5 min, EA: 4.5 min + 2 min product)
+- **Runtime verified**: headless experiment runs with exit code 0.
 - **Output**: `ExperimentAutomation-linux.gtk.x86_64.tar.gz` (~168 MB)
 - **Contents verified**: SSJ engine (`ca.umontreal.iro.simul.ssj` +
   `abstractsimengine.ssj`) bundled in the product.
+- **Configuration**: Workspace unter `/data` (bind-mount), Console-Log via
+  `EA_CONSOLE_LOG=true`.
