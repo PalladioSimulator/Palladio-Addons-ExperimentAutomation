@@ -13,6 +13,6 @@ Require-Bundle: org.eclipse.debug.ui;bundle-version="3.17.100",
  de.uka.ipd.sdq.codegen.simucontroller,
  org.palladiosimulator.experimentautomation,
  org.palladiosimulator.experimentautomation.application
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Bundle-ActivationPolicy: lazy
 
