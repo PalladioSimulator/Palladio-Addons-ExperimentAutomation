@@ -21,7 +21,7 @@ Require-Bundle: org.apache.log4j;bundle-version="1.2.19",
  de.uka.ipd.sdq.workflow.launchconfig.core,
  de.uka.ipd.sdq.simulation.core,
  de.uka.ipd.sdq.workflow.mdsd.core
-Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-RequiredExecutionEnvironment: JavaSE-21
 Export-Package: org.palladiosimulator.experimentautomation.application,
  org.palladiosimulator.experimentautomation.application.config,
  org.palladiosimulator.experimentautomation.application.jobs,
