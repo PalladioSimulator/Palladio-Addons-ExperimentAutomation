@@ -1,0 +1,6 @@
+# Ignore everything – we use git clone inside the container
+# But allow the entrypoint script and Dockerfile (needed when
+# building with this directory as build context)
+*
+!/docker-entrypoint.sh
+!/Dockerfile

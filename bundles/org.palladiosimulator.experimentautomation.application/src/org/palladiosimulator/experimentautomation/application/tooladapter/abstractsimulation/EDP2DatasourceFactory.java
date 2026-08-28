@@ -22,7 +22,10 @@ public class EDP2DatasourceFactory {
      */
     public static Repository createOrOpenDatasource(final EDP2Datasource datasource) {
         if (datasource.getId() != null) {
-            return RepositoryManager.getRepositoryFromUUID(datasource.getId());
+            final Repository existing = RepositoryManager.getRepositoryFromUUID(datasource.getId());
+            if (existing != null) {
+                return existing;
+            }
         }
 
         final Repository repository;

@@ -8,6 +8,7 @@ import org.palladiosimulator.experimentautomation.application.VariationFactorTup
 import org.palladiosimulator.experimentautomation.application.variation.valueprovider.IValueProviderStrategy;
 import org.palladiosimulator.experimentautomation.application.variation.valueprovider.ValueProviderFactory;
 import org.palladiosimulator.experimentautomation.experiments.Experiment;
+import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
 import org.palladiosimulator.experimentautomation.experiments.util.ExperimentsSwitch;
 
@@ -130,7 +131,63 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
                     return null;
                 };
 
+                @Override
+                public Void caseSetValueProvider(final SetValueProvider object) {
+                    final boolean allIntegers = isAllIntegers(object.getValues());
+
+                    int iteration = 0;
+                    while (iteration < variation.getMaxVariations()) {
+                        final String token = getToken(object.getValues(), iteration);
+                        if (token == null) {
+                            break;
+                        }
+
+                        if (allIntegers) {
+                            variationFactorTuples
+                                    .add(new VariationFactorTuple<Long>(variation, Long.parseLong(token)));
+                        } else {
+                            variationFactorTuples
+                                    .add(new VariationFactorTuple<Double>(variation, Double.parseDouble(token)));
+                        }
+                        ComputeVariantsAndAddExperimentJob.this.computeVariantsAndAddJob(experiment,
+                                simulationConfiguration, copy, variationFactorTuples);
+                        variationFactorTuples.remove(variationFactorTuples.size() - 1);
+
+                        iteration++;
+                    }
+                    return null;
+                };
+
             }.doSwitch(variation.getValueProvider());
         }
+    }
+
+    private static boolean isAllIntegers(final String values) {
+        if (values == null || values.isEmpty()) {
+            return true;
+        }
+        for (final String token : values.split(",")) {
+            final String trimmed = token.trim();
+            if (trimmed.contains(".") || trimmed.contains("e") || trimmed.contains("E")) {
+                return false;
+            }
+            try {
+                Long.parseLong(trimmed);
+            } catch (final NumberFormatException e) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static String getToken(final String values, final int position) {
+        if (values == null || values.isEmpty()) {
+            return null;
+        }
+        final String[] tokens = values.split(",");
+        if (position >= tokens.length) {
+            return null;
+        }
+        return tokens[position].trim();
     }
 }
