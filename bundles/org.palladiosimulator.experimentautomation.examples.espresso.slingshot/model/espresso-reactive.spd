@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<spd:SPD xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adjustments="http://palladiosimulator.org/ScalingPolicyDefinition/Adjustments/1.0" xmlns:expectations="http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/Expectations/1.0" xmlns:policy="http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Policy/1.0" xmlns:spd="http://palladiosimulator.org/ScalingPolicyDefinition/1.0" xmlns:stimuli="http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/Stimuli/1.0" xmlns:target="http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Target/1.0" xmlns:targets="http://palladiosimulator.org/ScalingPolicyDefinition/Targets/1.0" xmlns:triggers="http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/1.0" id="_espressoSpd0001" entityName="EspressoReactiveSPD">
+  <scalingPolicies xsi:type="spd:ScalingPolicy" id="_espressoOutScale0001" entityName="reactiveOutScaling" active="true" targetGroup="_espressoTg0001">
+    <policyConstraints xsi:type="policy:CooldownConstraint" id="_espressoCooldown0001" cooldownTime="5.0"/>
+    <adjustmentType xsi:type="adjustments:StepAdjustment" stepValue="1"/>
+    <scalingTrigger xsi:type="triggers:SimpleFireOnValue" id="_espressoTrigOut0001" relationalOperator="GreaterThanOrEqualTo">
+      <stimulus xsi:type="stimuli:OperationResponseTime"/>
+      <expectedValue xsi:type="expectations:ExpectedTime" value="0.5"/>
+    </scalingTrigger>
+  </scalingPolicies>
+  <scalingPolicies xsi:type="spd:ScalingPolicy" id="_espressoInScale0001" entityName="reactiveInScaling" active="true" targetGroup="_espressoTg0001">
+    <policyConstraints xsi:type="policy:CooldownConstraint" id="_espressoCooldown0002" cooldownTime="5.0"/>
+    <adjustmentType xsi:type="adjustments:StepAdjustment" stepValue="-1"/>
+    <scalingTrigger xsi:type="triggers:SimpleFireOnValue" id="_espressoTrigIn0001" relationalOperator="LessThanOrEqualTo">
+      <stimulus xsi:type="stimuli:OperationResponseTime"/>
+      <expectedValue xsi:type="expectations:ExpectedTime" value="0.1"/>
+    </scalingTrigger>
+  </scalingPolicies>
+  <targetGroups xsi:type="targets:ElasticInfrastructure" id="_espressoTg0001" entityName="AppServerGroup">
+    <targetConstraints xsi:type="target:TargetGroupSizeConstraint" id="_espressoTgSize0001" minSize="1" maxSize="5"/>
+    <unit href="default.resourceenvironment#_GAeeUCpXEeKNWc2UWjbmuw"/>
+  </targetGroups>
+</spd:SPD>

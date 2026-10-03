@@ -27,6 +27,7 @@
 		<module>org.palladiosimulator.experimentautomation.edit</module>
 		<module>org.palladiosimulator.experimentautomation.editor</module>
 		<module>org.palladiosimulator.experimentautomation.examples.espresso</module>
+		<module>org.palladiosimulator.experimentautomation.examples.espresso.slingshot</module>
 	</modules>
 	
 </project>

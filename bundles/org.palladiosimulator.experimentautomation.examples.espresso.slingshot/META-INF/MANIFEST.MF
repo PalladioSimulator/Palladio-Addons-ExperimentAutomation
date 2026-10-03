@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Experiment Automation - Espresso Slingshot Example
+Bundle-SymbolicName: org.palladiosimulator.experimentautomation.examples.espresso.slingshot
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: palladiosimulator.org
+Automatic-Module-Name: org.palladiosimulator.experimentautomation.examples.espresso.slingshot

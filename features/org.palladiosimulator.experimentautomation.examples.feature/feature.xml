@@ -13,10 +13,18 @@
    
    <requires>
       <import plugin="org.palladiosimulator.branding"/>
+      <import feature="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature" version="0.0.0"/>
+      <import feature="org.palladiosimulator.spd.feature" version="0.0.0"/>
    </requires>
 
    <plugin
          id="org.palladiosimulator.experimentautomation.examples.espresso"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.palladiosimulator.experimentautomation.examples.espresso.slingshot"
          download-size="0"
          install-size="0"
          version="0.0.0"/>
