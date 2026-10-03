@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Slingshot Experiment Automation Adapter
+Bundle-SymbolicName: org.palladiosimulator.experimentautomation.application.tooladapter.slingshot;singleton:=true
+Bundle-Version: 6.0.0.qualifier
+Bundle-Vendor: palladiosimulator.org
+Automatic-Module-Name: org.palladiosimulator.experimentautomation.application.tooladapter.slingshot
+Bundle-RequiredExecutionEnvironment: JavaSE-21
+Require-Bundle: de.uka.ipd.sdq.workflow.mdsd,
+ org.palladiosimulator.experimentautomation,
+ org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model,
+ de.uka.ipd.sdq.workflow,
+ org.palladiosimulator.experimentautomation.application,
+ de.uka.ipd.sdq.simulation,
+ de.uka.ipd.sdq.simucomframework,
+ de.uka.ipd.sdq.codegen.simucontroller,
+ org.palladiosimulator.analyzer.workflow,
+ org.palladiosimulator.analyzer.slingshot.workflow,
+ org.palladiosimulator.analyzer.slingshot.core

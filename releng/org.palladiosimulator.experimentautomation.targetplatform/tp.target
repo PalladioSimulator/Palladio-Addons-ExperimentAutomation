@@ -2,6 +2,11 @@
 <?pde version="3.8"?><target name="org.palladiosimulator.experimentautomation Target Platform" sequenceNumber="2">
 	<locations>
 		<location type="Target" uri="mvn:org.palladiosimulator:palladio-target-platforms:6.0.1:target:palladio-2025-12"/>
+		<!-- Slingshot needs org.reactivestreams; same Orbit drop as Analyzer-Slingshot TP. -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="org.reactivestreams" version="0.0.0"/>
+			<repository location="https://download.eclipse.org/tools/orbit/downloads/2023-03/"/>
+		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="de.uka.ipd.sdq.identifier.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-core-commons/nightly/"/>
@@ -76,7 +81,13 @@
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="de.uka.ipd.sdq.simulation.abstractsimengine.feature.feature.group" version="0.0.0"/>
+			<unit id="org.palladiosimulator.simulation.abstractsimengine.ssj.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-simulation-abstractsimengine/nightly/"/>
+		</location>
+		<!-- Slingshot requires ca.umontreal.iro.simul.ssj (same as Analyzer-Slingshot TPs). -->
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="ca.umontreal.iro.ssj.feature.feature.group" version="3.3.1"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-build-updatesite/releases/latest/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="org.palladiosimulator.reliability.feature.feature.group" version="0.0.0"/>
@@ -103,6 +114,14 @@
 			<unit id="org.palladiosimulator.simulizar.feature.feature.group" version="0.0.0"/>
 			<unit id="org.palladiosimulator.simulizar.reconfiguration.storydiagram.feature.feature.group" version="0.0.0"/>
 			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-simulizar/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="org.palladiosimulator.analyzer.slingshot.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-analyzer-slingshot/nightly/"/>
+		</location>
+		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
+			<unit id="org.palladiosimulator.spd.feature.feature.group" version="0.0.0"/>
+			<repository location="https://updatesite.palladio-simulator.com/palladio-addons-spd-metamodel/nightly/"/>
 		</location>
 		<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit">
 			<unit id="org.palladiosimulator.mdsdprofiles.feature.feature.group" version="0.0.0"/>

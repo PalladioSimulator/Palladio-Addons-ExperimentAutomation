@@ -851,13 +851,31 @@ public interface ExperimentsPackage extends EPackage {
     int INITIAL_MODEL__USAGE_EVOLUTION = 10;
 
     /**
+     * The feature id for the '<em><b>Scaling Definitions</b></em>' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int INITIAL_MODEL__SCALING_DEFINITIONS = 11;
+
+    /**
+     * The feature id for the '<em><b>Spd Semantic Configuration</b></em>' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION = 12;
+
+    /**
      * The number of structural features of the '<em>Initial Model</em>' class. <!-- begin-user-doc
      * --> <!-- end-user-doc -->
      *
      * @generated
      * @ordered
      */
-    int INITIAL_MODEL_FEATURE_COUNT = 11;
+    int INITIAL_MODEL_FEATURE_COUNT = 13;
 
     /**
      * The meta object id for the
@@ -986,6 +1004,35 @@ public interface ExperimentsPackage extends EPackage {
      * @ordered
      */
     int SCHEDULING_POLICY2_DELAY_MODIFICATION_FEATURE_COUNT = MODIFICATION_FEATURE_COUNT + 0;
+
+    /**
+     * The meta object id for the '{@link org.palladiosimulator.experimentautomation.experiments.impl.SetLongValueProviderImpl
+     * <em>Set Long Value Provider</em>}' class.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see org.palladiosimulator.experimentautomation.experiments.impl.SetLongValueProviderImpl
+     * @see org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsPackageImpl#getSetLongValueProvider()
+     * @generated
+     */
+    int SET_LONG_VALUE_PROVIDER = 25;
+
+    /**
+     * The feature id for the '<em><b>Values</b></em>' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int SET_LONG_VALUE_PROVIDER__VALUES = VALUE_PROVIDER_FEATURE_COUNT + 0;
+
+    /**
+     * The number of structural features of the '<em>Set Long Value Provider</em>' class.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     * @ordered
+     */
+    int SET_LONG_VALUE_PROVIDER_FEATURE_COUNT = VALUE_PROVIDER_FEATURE_COUNT + 1;
 
     /**
      * Returns the meta object for class
@@ -1712,6 +1759,30 @@ public interface ExperimentsPackage extends EPackage {
     EReference getInitialModel_UsageEvolution();
 
     /**
+     * Returns the meta object for the reference
+     * '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions
+     * <em>Scaling Definitions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Scaling Definitions</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions()
+     * @see #getInitialModel()
+     * @generated
+     */
+    EReference getInitialModel_ScalingDefinitions();
+
+    /**
+     * Returns the meta object for the reference
+     * '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration
+     * <em>Spd Semantic Configuration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Spd Semantic Configuration</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration()
+     * @see #getInitialModel()
+     * @generated
+     */
+    EReference getInitialModel_SpdSemanticConfiguration();
+
+    /**
      * Returns the meta object for class
      * '{@link org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder
      * <em>Reconfiguration Rules Folder</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1828,6 +1899,29 @@ public interface ExperimentsPackage extends EPackage {
      * @generated
      */
     EClass getSchedulingPolicy2DelayModification();
+
+    /**
+     * Returns the meta object for class
+     * '{@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider
+     * <em>Set Long Value Provider</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Set Long Value Provider</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider
+     * @generated
+     */
+    EClass getSetLongValueProvider();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider#getValues
+     * <em>Values</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Values</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider#getValues()
+     * @see #getSetLongValueProvider()
+     * @generated
+     */
+    EAttribute getSetLongValueProvider_Values();
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
@@ -2412,6 +2506,20 @@ public interface ExperimentsPackage extends EPackage {
         EReference INITIAL_MODEL__USAGE_EVOLUTION = eINSTANCE.getInitialModel_UsageEvolution();
 
         /**
+         * The meta object literal for the '<em><b>Scaling Definitions</b></em>' reference feature.
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * @generated
+         */
+        EReference INITIAL_MODEL__SCALING_DEFINITIONS = eINSTANCE.getInitialModel_ScalingDefinitions();
+
+        /**
+         * The meta object literal for the '<em><b>Spd Semantic Configuration</b></em>' reference feature.
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * @generated
+         */
+        EReference INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION = eINSTANCE.getInitialModel_SpdSemanticConfiguration();
+
+        /**
          * The meta object literal for the '
          * {@link org.palladiosimulator.experimentautomation.experiments.impl.ReconfigurationRulesFolderImpl
          * <em>Reconfiguration Rules Folder</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
@@ -2513,6 +2621,23 @@ public interface ExperimentsPackage extends EPackage {
          * @generated
          */
         EClass SCHEDULING_POLICY2_DELAY_MODIFICATION = eINSTANCE.getSchedulingPolicy2DelayModification();
+
+        /**
+         * The meta object literal for the '{@link org.palladiosimulator.experimentautomation.experiments.impl.SetLongValueProviderImpl
+         * <em>Set Long Value Provider</em>}' class.
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * @see org.palladiosimulator.experimentautomation.experiments.impl.SetLongValueProviderImpl
+         * @see org.palladiosimulator.experimentautomation.experiments.impl.ExperimentsPackageImpl#getSetLongValueProvider()
+         * @generated
+         */
+        EClass SET_LONG_VALUE_PROVIDER = eINSTANCE.getSetLongValueProvider();
+
+        /**
+         * The meta object literal for the '<em><b>Values</b></em>' attribute feature.
+         * <!-- begin-user-doc --> <!-- end-user-doc -->
+         * @generated
+         */
+        EAttribute SET_LONG_VALUE_PROVIDER__VALUES = eINSTANCE.getSetLongValueProvider_Values();
 
     }
 

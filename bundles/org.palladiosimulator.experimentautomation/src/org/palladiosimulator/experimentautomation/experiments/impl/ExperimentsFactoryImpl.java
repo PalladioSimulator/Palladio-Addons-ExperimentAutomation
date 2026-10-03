@@ -26,6 +26,7 @@ import org.palladiosimulator.experimentautomation.experiments.PolynomialValuePro
 import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.Variation;
@@ -91,6 +92,8 @@ public class ExperimentsFactoryImpl extends EFactoryImpl implements ExperimentsF
             return this.createExponentialValueProvider();
         case ExperimentsPackage.SET_VALUE_PROVIDER:
             return this.createSetValueProvider();
+        case ExperimentsPackage.SET_LONG_VALUE_PROVIDER:
+            return this.createSetLongValueProvider();
         case ExperimentsPackage.PLACKET_BURMAN_DESIGN:
             return this.createPlacketBurmanDesign();
         case ExperimentsPackage.FULL_FACTORIAL_DESIGN:
@@ -188,6 +191,16 @@ public class ExperimentsFactoryImpl extends EFactoryImpl implements ExperimentsF
     public SetValueProvider createSetValueProvider() {
         final SetValueProviderImpl setValueProvider = new SetValueProviderImpl();
         return setValueProvider;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SetLongValueProvider createSetLongValueProvider() {
+        final SetLongValueProviderImpl setLongValueProvider = new SetLongValueProviderImpl();
+        return setLongValueProvider;
     }
 
     /**

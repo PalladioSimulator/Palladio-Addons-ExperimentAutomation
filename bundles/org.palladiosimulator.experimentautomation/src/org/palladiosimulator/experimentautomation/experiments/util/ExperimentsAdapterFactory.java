@@ -27,6 +27,7 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
@@ -141,6 +142,11 @@ public class ExperimentsAdapterFactory extends AdapterFactoryImpl {
         @Override
         public Adapter caseSetValueProvider(final SetValueProvider object) {
             return ExperimentsAdapterFactory.this.createSetValueProviderAdapter();
+        }
+
+        @Override
+        public Adapter caseSetLongValueProvider(final SetLongValueProvider object) {
+            return ExperimentsAdapterFactory.this.createSetLongValueProviderAdapter();
         }
 
         @Override
@@ -384,6 +390,17 @@ public class ExperimentsAdapterFactory extends AdapterFactoryImpl {
      * @generated
      */
     public Adapter createSetValueProviderAdapter() {
+        return null;
+    }
+
+    /**
+     * Creates a new adapter for an object of class '{@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider <em>Set Long Value Provider</em>}'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @return the new adapter.
+     * @see org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider
+     * @generated
+     */
+    public Adapter createSetLongValueProviderAdapter() {
         return null;
     }
 

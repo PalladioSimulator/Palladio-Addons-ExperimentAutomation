@@ -13,6 +13,8 @@ import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
+import org.palladiosimulator.semanticspd.Configuration;
+import org.palladiosimulator.spd.SPD;
 import org.scaledl.usageevolution.UsageEvolution;
 
 /**
@@ -442,6 +444,64 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public SPD getScalingDefinitions() {
+        return (SPD) this.eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
+                ExperimentsPackage.Literals.INITIAL_MODEL__SCALING_DEFINITIONS, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    public SPD basicGetScalingDefinitions() {
+        return (SPD) this.eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
+                ExperimentsPackage.Literals.INITIAL_MODEL__SCALING_DEFINITIONS, false, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setScalingDefinitions(final SPD newScalingDefinitions) {
+        this.eDynamicSet(ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS,
+                ExperimentsPackage.Literals.INITIAL_MODEL__SCALING_DEFINITIONS, newScalingDefinitions);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public Configuration getSpdSemanticConfiguration() {
+        return (Configuration) this.eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
+                ExperimentsPackage.Literals.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION, true, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    public Configuration basicGetSpdSemanticConfiguration() {
+        return (Configuration) this.eDynamicGet(ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
+                ExperimentsPackage.Literals.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION, false, true);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public void setSpdSemanticConfiguration(final Configuration newSpdSemanticConfiguration) {
+        this.eDynamicSet(ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION,
+                ExperimentsPackage.Literals.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION, newSpdSemanticConfiguration);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
@@ -548,6 +608,12 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
         case ExperimentsPackage.INITIAL_MODEL__USAGE_EVOLUTION:
             this.setUsageEvolution((UsageEvolution) newValue);
             return;
+        case ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS:
+            this.setScalingDefinitions((SPD) newValue);
+            return;
+        case ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION:
+            this.setSpdSemanticConfiguration((Configuration) newValue);
+            return;
         }
         super.eSet(featureID, newValue);
     }
@@ -593,6 +659,12 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
         case ExperimentsPackage.INITIAL_MODEL__USAGE_EVOLUTION:
             this.setUsageEvolution((UsageEvolution) null);
             return;
+        case ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS:
+            this.setScalingDefinitions((SPD) null);
+            return;
+        case ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION:
+            this.setSpdSemanticConfiguration((Configuration) null);
+            return;
         }
         super.eUnset(featureID);
     }
@@ -627,6 +699,10 @@ public class InitialModelImpl extends CDOObjectImpl implements InitialModel {
             return this.basicGetResourceEnvironment() != null;
         case ExperimentsPackage.INITIAL_MODEL__USAGE_EVOLUTION:
             return this.basicGetUsageEvolution() != null;
+        case ExperimentsPackage.INITIAL_MODEL__SCALING_DEFINITIONS:
+            return this.basicGetScalingDefinitions() != null;
+        case ExperimentsPackage.INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION:
+            return this.basicGetSpdSemanticConfiguration() != null;
         }
         return super.eIsSet(featureID);
     }

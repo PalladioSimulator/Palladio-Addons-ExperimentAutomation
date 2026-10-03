@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature"
+      label="Experiment Automation Slingshot Feature"
+      version="6.0.0.qualifier"
+      plugin="org.palladiosimulator.branding"
+      license-feature="org.palladiosimulator.license"
+      license-feature-version="1.0.0">
+
+   <description url="https://sdqweb.ipd.kit.edu/wiki/Palladio_Experiment_Automation">
+      Experiment Automation adapter for Slingshot.
+   </description>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.palladiosimulator.edp2"/>
+      <import plugin="de.uka.ipd.sdq.identifier"/>
+      <import plugin="org.palladiosimulator.metricspec"/>
+      <import plugin="org.palladiosimulator.monitorrepository"/>
+      <import plugin="de.uka.ipd.sdq.probfunction"/>
+      <import plugin="de.uka.ipd.sdq.stoex"/>
+      <import plugin="de.uka.ipd.sdq.units"/>
+      <import plugin="de.uka.ipd.sdq.workflow.mdsd"/>
+      <import plugin="org.palladiosimulator.experimentautomation"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model"/>
+      <import plugin="de.uka.ipd.sdq.workflow"/>
+      <import plugin="org.palladiosimulator.experimentautomation.application"/>
+      <import plugin="de.uka.ipd.sdq.simulation"/>
+      <import plugin="de.uka.ipd.sdq.simucomframework"/>
+      <import plugin="de.uka.ipd.sdq.codegen.simucontroller"/>
+      <import plugin="org.palladiosimulator.analyzer.workflow"/>
+      <import plugin="org.palladiosimulator.analyzer.slingshot.workflow"/>
+      <import plugin="org.palladiosimulator.analyzer.slingshot.core"/>
+      <import plugin="org.palladiosimulator.pcm"/>
+      <import plugin="org.palladiosimulator.servicelevelobjective"/>
+      <import plugin="org.scaledl.usageevolution"/>
+      <import plugin="org.palladiosimulator.branding"/>
+   </requires>
+
+   <plugin
+         id="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.edit"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

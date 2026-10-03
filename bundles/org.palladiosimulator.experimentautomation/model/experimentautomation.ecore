@@ -130,6 +130,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="resourceEnvironment"
           eType="ecore:EClass platform:/plugin/org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceEnvironment"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="usageEvolution" eType="ecore:EClass platform:/plugin/org.scaledl.usageevolution/model/usageevolution.ecore#//UsageEvolution"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scalingDefinitions" eType="ecore:EClass ../../org.palladiosimulator.spd/model/SPD.ecore#//SPD"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="spdSemanticConfiguration"
+          eType="ecore:EClass ../../org.palladiosimulator.spd.semantic/model/semantic.ecore#//Configuration"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ReconfigurationRulesFolder">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="folderUri" lowerBound="1"
@@ -152,6 +155,10 @@
     <eClassifiers xsi:type="ecore:EClass" name="Modification" abstract="true"/>
     <eClassifiers xsi:type="ecore:EClass" name="SchedulingPolicy2DelayModification"
         eSuperTypes="#//experiments/Modification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SetLongValueProvider" eSuperTypes="#//experiments/ValueProvider">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" ordered="false"
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="abstractsimulation" nsURI="http://palladiosimulator.org/ExperimentAutomation/AbstractSimulation/1.0"
       nsPrefix="ExperimentAutomation.Experiments.AbstractSimulation">

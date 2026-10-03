@@ -21,9 +21,13 @@
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.model.edit</module>
+		<module>org.palladiosimulator.experimentautomation.application.tooladapter.slingshot</module>
+		<module>org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model</module>
+		<module>org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.edit</module>
 		<module>org.palladiosimulator.experimentautomation.edit</module>
 		<module>org.palladiosimulator.experimentautomation.editor</module>
 		<module>org.palladiosimulator.experimentautomation.examples.espresso</module>
+		<module>org.palladiosimulator.experimentautomation.examples.espresso.slingshot</module>
 	</modules>
 	
 </project>

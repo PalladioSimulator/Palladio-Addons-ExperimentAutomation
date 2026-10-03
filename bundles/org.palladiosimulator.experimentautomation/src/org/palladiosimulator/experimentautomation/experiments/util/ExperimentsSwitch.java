@@ -26,6 +26,7 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
@@ -331,6 +332,17 @@ public class ExperimentsSwitch<T> extends Switch<T> {
             }
             return result;
         }
+        case ExperimentsPackage.SET_LONG_VALUE_PROVIDER: {
+            final SetLongValueProvider setLongValueProvider = (SetLongValueProvider) theEObject;
+            T result = this.caseSetLongValueProvider(setLongValueProvider);
+            if (result == null) {
+                result = this.caseValueProvider(setLongValueProvider);
+            }
+            if (result == null) {
+                result = this.defaultCase(theEObject);
+            }
+            return result;
+        }
         default:
             return this.defaultCase(theEObject);
         }
@@ -489,6 +501,18 @@ public class ExperimentsSwitch<T> extends Switch<T> {
      * @generated
      */
     public T caseSetValueProvider(final SetValueProvider object) {
+        return null;
+    }
+
+    /**
+     * Returns the result of interpreting the object as an instance of '<em>Set Long Value Provider</em>'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param object the target of the switch.
+     * @return the result of interpreting the object as an instance of '<em>Set Long Value Provider</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseSetLongValueProvider(final SetLongValueProvider object) {
         return null;
     }
 

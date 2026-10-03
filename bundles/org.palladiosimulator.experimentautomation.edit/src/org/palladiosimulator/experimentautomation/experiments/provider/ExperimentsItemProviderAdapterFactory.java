@@ -227,6 +227,13 @@ public class ExperimentsItemProviderAdapterFactory extends ExperimentsAdapterFac
     protected SetValueProviderItemProvider setValueProviderItemProvider;
 
     /**
+     * This keeps track of the one adapter used for all {@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider} instances.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    protected SetLongValueProviderItemProvider setLongValueProviderItemProvider;
+
+    /**
      * This creates an adapter for a
      * {@link org.palladiosimulator.experimentautomation.experiments.SetValueProvider}. <!--
      * begin-user-doc --> <!-- end-user-doc -->
@@ -240,6 +247,22 @@ public class ExperimentsItemProviderAdapterFactory extends ExperimentsAdapterFac
         }
 
         return this.setValueProviderItemProvider;
+    }
+
+    /**
+     * This creates an adapter for a
+     * {@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createSetLongValueProviderAdapter() {
+        if (this.setLongValueProviderItemProvider == null) {
+            this.setLongValueProviderItemProvider = new SetLongValueProviderItemProvider(this);
+        }
+
+        return this.setLongValueProviderItemProvider;
     }
 
     /**
@@ -743,6 +766,12 @@ public class ExperimentsItemProviderAdapterFactory extends ExperimentsAdapterFac
         }
         if (this.setValueProviderItemProvider != null) {
             this.setValueProviderItemProvider.dispose();
+        }
+        if (this.setLongValueProviderItemProvider != null) {
+            this.setLongValueProviderItemProvider.dispose();
+        }
+        if (this.setLongValueProviderItemProvider != null) {
+            this.setLongValueProviderItemProvider.dispose();
         }
         if (this.placketBurmanDesignItemProvider != null) {
             this.placketBurmanDesignItemProvider.dispose();
