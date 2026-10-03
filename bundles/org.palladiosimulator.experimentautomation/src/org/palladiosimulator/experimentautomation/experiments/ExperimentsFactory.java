@@ -82,6 +82,14 @@ public interface ExperimentsFactory extends EFactory {
     SetValueProvider createSetValueProvider();
 
     /**
+     * Returns a new object of class '<em>Set Long Value Provider</em>'.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @return a new object of class '<em>Set Long Value Provider</em>'.
+     * @generated
+     */
+    SetLongValueProvider createSetLongValueProvider();
+
+    /**
      * Returns a new object of class '<em>Placket Burman Design</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
      *

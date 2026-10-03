@@ -268,6 +268,9 @@ public class VariationItemProvider extends ItemProviderAdapter implements IEditi
                 ExperimentsFactory.eINSTANCE.createSetValueProvider()));
 
         newChildDescriptors.add(this.createChildParameter(ExperimentsPackage.Literals.VARIATION__VALUE_PROVIDER,
+                ExperimentsFactory.eINSTANCE.createSetLongValueProvider()));
+
+        newChildDescriptors.add(this.createChildParameter(ExperimentsPackage.Literals.VARIATION__VALUE_PROVIDER,
                 ExperimentsFactory.eINSTANCE.createLinearValueProvider()));
 
         newChildDescriptors.add(this.createChildParameter(ExperimentsPackage.Literals.VARIATION__VALUE_PROVIDER,

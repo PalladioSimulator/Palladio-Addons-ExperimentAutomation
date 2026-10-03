@@ -76,6 +76,33 @@ public class ComputeVariantsAndAddExperimentJob extends SequentialBlackboardInte
             new ExperimentsSwitch<Void>() {
 
                 @Override
+                public Void caseSetLongValueProvider(
+                        final org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider object) {
+                    final IValueProviderStrategy<Long> valueProvider = ValueProviderFactory
+                            .createLongValueProvider(object);
+
+                    long factorLevel = 0;
+                    int iteration = 0;
+                    while (factorLevel <= (long) variation.getMaxValue() && iteration < variation.getMaxVariations()) {
+                        factorLevel = valueProvider.valueAtPosition(iteration);
+                        if (factorLevel == -1) {
+                            break;
+                        }
+
+                        if (factorLevel >= (long) variation.getMinValue()
+                                && factorLevel <= (long) variation.getMaxValue()) {
+                            variationFactorTuples.add(new VariationFactorTuple<Long>(variation, factorLevel));
+                            ComputeVariantsAndAddExperimentJob.this.computeVariantsAndAddJob(experiment,
+                                    simulationConfiguration, copy, variationFactorTuples);
+                            variationFactorTuples.remove(variationFactorTuples.size() - 1);
+                        }
+
+                        iteration++;
+                    }
+                    return null;
+                }
+
+                @Override
                 public Void caseNestedIntervalsLongValueProvider(
                         org.palladiosimulator.experimentautomation.experiments.NestedIntervalsLongValueProvider object) {
                     // obtain long value provider

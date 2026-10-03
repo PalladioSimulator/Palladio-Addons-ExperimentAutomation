@@ -34,6 +34,7 @@ import org.palladiosimulator.experimentautomation.experiments.ProfilingMeasureme
 import org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder;
 import org.palladiosimulator.experimentautomation.experiments.ResponseMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.SchedulingPolicy2DelayModification;
+import org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SetValueProvider;
 import org.palladiosimulator.experimentautomation.experiments.SimulationDurationMeasurement;
 import org.palladiosimulator.experimentautomation.experiments.ToolConfiguration;
@@ -50,6 +51,8 @@ import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
 import org.palladiosimulator.pcm.system.SystemPackage;
 import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
 import org.palladiosimulator.servicelevelobjective.ServicelevelObjectivePackage;
+import org.palladiosimulator.semanticspd.SemanticspdPackage;
+import org.palladiosimulator.spd.SpdPackage;
 import org.scaledl.usageevolution.UsageevolutionPackage;
 
 import de.uka.ipd.sdq.identifier.IdentifierPackage;
@@ -248,6 +251,12 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
     private EClass schedulingPolicy2DelayModificationEClass = null;
 
     /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    private EClass setLongValueProviderEClass = null;
+
+    /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
      * value.
@@ -313,6 +322,8 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
         StoexPackage.eINSTANCE.eClass();
         UnitsPackage.eINSTANCE.eClass();
         UsageevolutionPackage.eINSTANCE.eClass();
+        SpdPackage.eINSTANCE.eClass();
+        SemanticspdPackage.eINSTANCE.eClass();
         EcorePackage.eINSTANCE.eClass();
 
         // Obtain or create and register interdependencies
@@ -1007,6 +1018,24 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getInitialModel_ScalingDefinitions() {
+        return (EReference) this.initialModelEClass.getEStructuralFeatures().get(11);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EReference getInitialModel_SpdSemanticConfiguration() {
+        return (EReference) this.initialModelEClass.getEStructuralFeatures().get(12);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
@@ -1116,6 +1145,25 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
      * @generated
      */
     @Override
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EClass getSetLongValueProvider() {
+        return this.setLongValueProviderEClass;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    @Override
+    public EAttribute getSetLongValueProvider_Values() {
+        return (EAttribute) this.setLongValueProviderEClass.getEStructuralFeatures().get(0);
+    }
+
     public ExperimentsFactory getExperimentsFactory() {
         return (ExperimentsFactory) this.getEFactoryInstance();
     }
@@ -1221,6 +1269,8 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
         this.createEReference(this.initialModelEClass, INITIAL_MODEL__SYSTEM);
         this.createEReference(this.initialModelEClass, INITIAL_MODEL__RESOURCE_ENVIRONMENT);
         this.createEReference(this.initialModelEClass, INITIAL_MODEL__USAGE_EVOLUTION);
+        this.createEReference(this.initialModelEClass, INITIAL_MODEL__SCALING_DEFINITIONS);
+        this.createEReference(this.initialModelEClass, INITIAL_MODEL__SPD_SEMANTIC_CONFIGURATION);
 
         this.reconfigurationRulesFolderEClass = this.createEClass(RECONFIGURATION_RULES_FOLDER);
         this.createEAttribute(this.reconfigurationRulesFolderEClass, RECONFIGURATION_RULES_FOLDER__FOLDER_URI);
@@ -1240,6 +1290,9 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
         this.modificationEClass = this.createEClass(MODIFICATION);
 
         this.schedulingPolicy2DelayModificationEClass = this.createEClass(SCHEDULING_POLICY2_DELAY_MODIFICATION);
+
+        this.setLongValueProviderEClass = this.createEClass(SET_LONG_VALUE_PROVIDER);
+        this.createEAttribute(this.setLongValueProviderEClass, SET_LONG_VALUE_PROVIDER__VALUES);
     }
 
     /**
@@ -1287,6 +1340,9 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
             .getEPackage(ResourceenvironmentPackage.eNS_URI);
         final UsageevolutionPackage theUsageevolutionPackage = (UsageevolutionPackage) EPackage.Registry.INSTANCE
             .getEPackage(UsageevolutionPackage.eNS_URI);
+        final SpdPackage theSpdPackage = (SpdPackage) EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
+        final SemanticspdPackage theSemanticspdPackage = (SemanticspdPackage) EPackage.Registry.INSTANCE
+            .getEPackage(SemanticspdPackage.eNS_URI);
 
         // Create type parameters
 
@@ -1319,6 +1375,8 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
             .add(this.getValueProvider());
         this.schedulingPolicy2DelayModificationEClass.getESuperTypes()
             .add(this.getModification());
+        this.setLongValueProviderEClass.getESuperTypes()
+            .add(this.getValueProvider());
 
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.experimentRepositoryEClass, ExperimentRepository.class, "ExperimentRepository",
@@ -1509,6 +1567,12 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
         this.initEReference(this.getInitialModel_UsageEvolution(), theUsageevolutionPackage.getUsageEvolution(), null,
                 "usageEvolution", null, 0, 1, InitialModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getInitialModel_ScalingDefinitions(), theSpdPackage.getSPD(), null,
+                "scalingDefinitions", null, 0, 1, InitialModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getInitialModel_SpdSemanticConfiguration(), theSemanticspdPackage.getConfiguration(),
+                null, "spdSemanticConfiguration", null, 0, 1, InitialModel.class, !IS_TRANSIENT, !IS_VOLATILE,
+                IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.reconfigurationRulesFolderEClass, ReconfigurationRulesFolder.class,
                 "ReconfigurationRulesFolder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1539,6 +1603,12 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
 
         this.initEClass(this.schedulingPolicy2DelayModificationEClass, SchedulingPolicy2DelayModification.class,
                 "SchedulingPolicy2DelayModification", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+        this.initEClass(this.setLongValueProviderEClass, SetLongValueProvider.class, "SetLongValueProvider", !IS_ABSTRACT,
+                !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEAttribute(this.getSetLongValueProvider_Values(), this.ecorePackage.getEString(), "values", null, 1, 1,
+                SetLongValueProvider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+                !IS_DERIVED, !IS_ORDERED);
 
         // Create resource
         this.createResource(eNS_URI);

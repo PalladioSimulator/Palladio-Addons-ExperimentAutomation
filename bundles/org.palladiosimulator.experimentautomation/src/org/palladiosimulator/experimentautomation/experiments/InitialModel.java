@@ -9,6 +9,8 @@ import org.palladiosimulator.pcm.repository.Repository;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
 import org.palladiosimulator.servicelevelobjective.ServiceLevelObjectiveRepository;
+import org.palladiosimulator.semanticspd.Configuration;
+import org.palladiosimulator.spd.SPD;
 import org.scaledl.usageevolution.UsageEvolution;
 
 /**
@@ -41,6 +43,10 @@ import org.scaledl.usageevolution.UsageEvolution;
  * <em>Resource Environment</em>}</li>
  * <li>{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getUsageEvolution
  * <em>Usage Evolution</em>}</li>
+ * <li>{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions
+ * <em>Scaling Definitions</em>}</li>
+ * <li>{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration
+ * <em>Spd Semantic Configuration</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage#getInitialModel()
@@ -371,5 +377,45 @@ public interface InitialModel extends CDOObject {
      * @generated
      */
     void setUsageEvolution(UsageEvolution value);
+
+    /**
+     * Returns the value of the '<em><b>Scaling Definitions</b></em>' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @return the value of the '<em>Scaling Definitions</em>' reference.
+     * @see #setScalingDefinitions(SPD)
+     * @see org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage#getInitialModel_ScalingDefinitions()
+     * @model
+     * @generated
+     */
+    SPD getScalingDefinitions();
+
+    /**
+     * Sets the value of the '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions <em>Scaling Definitions</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Scaling Definitions</em>' reference.
+     * @see #getScalingDefinitions()
+     * @generated
+     */
+    void setScalingDefinitions(SPD value);
+
+    /**
+     * Returns the value of the '<em><b>Spd Semantic Configuration</b></em>' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @return the value of the '<em>Spd Semantic Configuration</em>' reference.
+     * @see #setSpdSemanticConfiguration(Configuration)
+     * @see org.palladiosimulator.experimentautomation.experiments.ExperimentsPackage#getInitialModel_SpdSemanticConfiguration()
+     * @model
+     * @generated
+     */
+    Configuration getSpdSemanticConfiguration();
+
+    /**
+     * Sets the value of the '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration <em>Spd Semantic Configuration</em>}' reference.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @param value the new value of the '<em>Spd Semantic Configuration</em>' reference.
+     * @see #getSpdSemanticConfiguration()
+     * @generated
+     */
+    void setSpdSemanticConfiguration(Configuration value);
 
 } // InitialModel

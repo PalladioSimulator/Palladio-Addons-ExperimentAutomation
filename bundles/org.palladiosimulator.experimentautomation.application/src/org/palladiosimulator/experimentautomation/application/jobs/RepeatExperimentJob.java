@@ -31,6 +31,8 @@ public class RepeatExperimentJob extends SequentialBlackboardInteractingJob<MDSD
         super(false);
 
         for (int repetition = 1; repetition <= experiment.getRepetitions(); repetition++) {
+            // Re-apply variations each repetition so SPD/runtime resets do not stick.
+            this.add(new VaryJob(variationFactorTuples));
             this.add(new RunExperimentJob(experiment, simulationConfiguration, variationFactorTuples, repetition));
         }
     }
