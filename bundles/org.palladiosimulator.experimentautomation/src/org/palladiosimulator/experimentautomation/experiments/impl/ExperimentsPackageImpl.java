@@ -1145,18 +1145,13 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
      * @generated
      */
     @Override
-
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * @generated
-     */
-    @Override
     public EClass getSetLongValueProvider() {
         return this.setLongValueProviderEClass;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override
@@ -1164,6 +1159,12 @@ public class ExperimentsPackageImpl extends EPackageImpl implements ExperimentsP
         return (EAttribute) this.setLongValueProviderEClass.getEStructuralFeatures().get(0);
     }
 
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public ExperimentsFactory getExperimentsFactory() {
         return (ExperimentsFactory) this.getEFactoryInstance();
     }
