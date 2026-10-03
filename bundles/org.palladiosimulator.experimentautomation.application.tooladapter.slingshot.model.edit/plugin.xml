@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated slingshottooladapter -->
+      <factory
+            uri="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/Slingshot/1.0"
+            class="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.provider.SlingshottooladapterItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.childCreationExtenders">
+      <!-- @generated slingshottooladapter -->
+      <extender
+            uri="http://palladiosimulator.org/ExperimentAutomation/Experiments/1.0"
+            class="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.provider.SlingshottooladapterItemProviderAdapterFactory$ExperimentsChildCreationExtender"/>
+   </extension>
+
+</plugin>

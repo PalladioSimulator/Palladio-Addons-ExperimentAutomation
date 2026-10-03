@@ -30,6 +30,12 @@
 	<feature url="features/org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.feature.source_6.0.0.qualifier.jar" id="org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.feature.source" version="6.0.0.qualifier">
 	   <category name="org.palladiosimulator.addons.source.category"/>
 	</feature>
+	<feature url="features/org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature_6.0.0.qualifier.jar" id="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature" version="6.0.0.qualifier">
+	   <category name="org.palladiosimulator.addons.category"/>
+	</feature>
+	<feature url="features/org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature.source_6.0.0.qualifier.jar" id="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature.source" version="6.0.0.qualifier">
+	   <category name="org.palladiosimulator.addons.source.category"/>
+	</feature>
 	<category-def name="org.palladiosimulator.addons.category" label="Palladio Bench Addons">
 	   <description>
 	      Palladio Bench Addons

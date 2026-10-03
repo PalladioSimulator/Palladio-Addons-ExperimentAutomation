@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated slingshottooladapter -->
+      <package
+            uri="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/Slingshot/1.0"
+            class="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.SlingshottooladapterPackage"
+            genModel="model/slingshottooladapter.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated slingshottooladapter -->
+      <parser
+            type="slingshottooladapter"
+            class="org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.model.util.SlingshottooladapterResourceFactoryImpl"/>
+   </extension>
+
+</plugin>

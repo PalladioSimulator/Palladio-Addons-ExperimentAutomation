@@ -15,6 +15,7 @@
 		<module>org.palladiosimulator.experimentautomation.application.feature</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simucom.feature</module>
 		<module>org.palladiosimulator.experimentautomation.application.tooladapter.simulizar.feature</module>
+		<module>org.palladiosimulator.experimentautomation.application.tooladapter.slingshot.feature</module>
 		<module>org.palladiosimulator.experimentautomation.examples.feature</module>
 		<module>org.palladiosimulator.experimentautomation.feature</module>
 	</modules>

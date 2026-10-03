@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<slingshottooladapter:SlingshotConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:slingshottooladapter="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/Slingshot/1.0"
+    xsi:schemaLocation="http://palladiosimulator.org/ExperimentAutomation/ToolAdapter/Slingshot/1.0 slingshottooladapter.ecore"
+    name="Slingshot Configuration"/>
+<stopConditions
+      xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:MeasurementCountStopCondition"
+      measurementCount="1000"/>
+  <stopConditions
+      xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:SimTimeStopCondition"
+      simulationTime="-1"/>
+  <datasource
+      xsi:type="ExperimentAutomation.Experiments.AbstractSimulation:FileDatasource"
+      location="C:/data/experimentAutomation"/>
+ </slingshottooladapter:SlingshotConfiguration>
+ 
