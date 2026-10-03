@@ -1759,6 +1759,30 @@ public interface ExperimentsPackage extends EPackage {
     EReference getInitialModel_UsageEvolution();
 
     /**
+     * Returns the meta object for the reference
+     * '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions
+     * <em>Scaling Definitions</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Scaling Definitions</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.InitialModel#getScalingDefinitions()
+     * @see #getInitialModel()
+     * @generated
+     */
+    EReference getInitialModel_ScalingDefinitions();
+
+    /**
+     * Returns the meta object for the reference
+     * '{@link org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration
+     * <em>Spd Semantic Configuration</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the reference '<em>Spd Semantic Configuration</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.InitialModel#getSpdSemanticConfiguration()
+     * @see #getInitialModel()
+     * @generated
+     */
+    EReference getInitialModel_SpdSemanticConfiguration();
+
+    /**
      * Returns the meta object for class
      * '{@link org.palladiosimulator.experimentautomation.experiments.ReconfigurationRulesFolder
      * <em>Reconfiguration Rules Folder</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1875,6 +1899,29 @@ public interface ExperimentsPackage extends EPackage {
      * @generated
      */
     EClass getSchedulingPolicy2DelayModification();
+
+    /**
+     * Returns the meta object for class
+     * '{@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider
+     * <em>Set Long Value Provider</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for class '<em>Set Long Value Provider</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider
+     * @generated
+     */
+    EClass getSetLongValueProvider();
+
+    /**
+     * Returns the meta object for the attribute
+     * '{@link org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider#getValues
+     * <em>Values</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @return the meta object for the attribute '<em>Values</em>'.
+     * @see org.palladiosimulator.experimentautomation.experiments.SetLongValueProvider#getValues()
+     * @see #getSetLongValueProvider()
+     * @generated
+     */
+    EAttribute getSetLongValueProvider_Values();
 
     /**
      * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
